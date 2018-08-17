@@ -1,0 +1,1 @@
+!function(n){"object"==typeof module&&module.exports?module.exports=n():"function"==typeof define&&define.amd&&define(n)}(function(){return function(n,e,t,a,i){return'<div id="taskbar" class="taskbar navbar-fixed-bottom">\n\t<div class="navbar-inner"><ul class="nav navbar-nav pull-right"></ul></div>\n</div>'}});

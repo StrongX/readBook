@@ -38,7 +38,7 @@ class MenuViewControllerState extends State<MenuViewController> {
       links = find.getListWithRegex(linkRegex);
       DataHelper db = await getDataHelp();
       for(int i = 0; i<chapters.length;i++){
-        await db.insertChapter(bookName, chapters[i], links[i]);
+        await db.insertChapter(bookName, chapters[i], "https://www.biqudu.com"+links[i]);
       }
       db.closeDataBase();
 
@@ -62,7 +62,7 @@ class MenuViewControllerState extends State<MenuViewController> {
       onTap: () {
         String url = links[i];
         Navigator.of(context).push(new MaterialPageRoute(
-            builder: (ctx) => new ReadViewController(url: "https://www.biqudu.com"+url,title: chapters[i],)
+            builder: (ctx) => new ReadViewController(url: "https://www.biqudu.com"+url,title: chapters[i],bookName: bookName,)
         ));
       },
     );;

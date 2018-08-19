@@ -188,6 +188,6 @@ class SearBookViewControllerState extends State<SearBookViewController> {
           itemBuilder: (context, i) => renderRow(i),
         ),
       )
-    );;
+    );
   }
 }

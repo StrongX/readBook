@@ -40,7 +40,7 @@ class HomeAppState extends State<MyApp> with SingleTickerProviderStateMixin {
                 icon: new Icon(Icons.store_mall_directory),
                 title: new Text("书城")),
             new BottomNavigationBarItem(
-                icon: new Icon(Icons.local_library), title: new Text("排行榜")),
+                icon: new Icon(Icons.local_library), title: new Text("找书")),
           ],
           currentIndex: _tabIndex,
           onTap: (index){

@@ -4,28 +4,34 @@ import 'package:book_view/Global/XHttp.dart';
 import 'package:book_view/tools/XRegexObject.dart';
 import 'package:book_view/Global/XPrint.dart';
 import 'package:book_view/menu/MenuViewController.dart';
-
-class SearBookViewController extends StatefulWidget{
+import 'package:book_view/dataHelper/dataHelper.dart';
+class SearchResultViewController extends StatefulWidget{
   final String bookName;
-  SearBookViewController({Key key,this.bookName}):super(key:key);
+  SearchResultViewController({Key key,this.bookName}):super(key:key);
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    return SearBookViewControllerState(bookName: bookName);
+    return SearchResultViewControllerState(bookName: bookName);
   }
 }
-class SearBookViewControllerState extends State<SearBookViewController> {
+class SearchResultViewControllerState extends State<SearchResultViewController> {
   String bookName;
   List titles = [];
   List covers;
   List authors;
   List intros;
   List links;
-  SearBookViewControllerState({Key key,this.bookName}){
+  TextField searchField;
+  TextEditingController editController;
+  SearchResultViewControllerState({Key key,this.bookName}){
     getDataFromHttp();
   }
 
   getDataFromHttp(){
+    if(bookName == "" || bookName == null){
+      return;
+    }
+
     XHttp.getWithCompleteUrl("https://www.biqudu.com/searchbook.php?keyword="+bookName, {}, (String response){
       response = response.replaceAll(RegExp("\r|\n|\\s"), "");
       XRegexObject find = new XRegexObject(text: response);
@@ -43,7 +49,16 @@ class SearBookViewControllerState extends State<SearBookViewController> {
       });
     });
   }
+  addRack(i)async{
+    String thumbImgUrl = covers[i];
+    if (!thumbImgUrl.startsWith(RegExp('^http'))) {
+      thumbImgUrl = "https://www.biqudu.com/" + thumbImgUrl;
+    }
+    DataHelper db = await getDataHelp();
+    await db.insertRack(bookName, thumbImgUrl, "", authors[i], "", "", intros[i], intros[i], "");
+    await db.closeDataBase();
 
+  }
   Widget renderRow(i) {
 
     if (i.isOdd) {
@@ -124,7 +139,21 @@ class SearBookViewControllerState extends State<SearBookViewController> {
         ),
       ],
     );
-
+    var btnRow = new Row(
+      children: <Widget>[
+        new Container(
+          padding: EdgeInsets.fromLTRB(0.0, 8.0, 8.0, 0.0),
+          height: 30.0,
+          child: new RaisedButton(
+            onPressed: (){
+              addRack(i);
+            },
+            child: new Text("加入书架",style: TextStyle(fontSize: 12.0),),
+            color: new Color.fromRGBO(255, 255, 255, 1.0),
+          ),
+        ),
+      ],
+    );
     var row = new Row(
       children: <Widget>[
         new Padding(
@@ -153,7 +182,10 @@ class SearBookViewControllerState extends State<SearBookViewController> {
                   padding: EdgeInsets.fromLTRB(0.0, 4.0, 0.0, 4.0),
                   child: descRow,
                 ),
-
+                Padding(
+                  padding: EdgeInsets.fromLTRB(0.0, 4.0, 0.0, 4.0),
+                  child: btnRow,
+                ),
               ],
             ),
           ),
@@ -171,23 +203,79 @@ class SearBookViewControllerState extends State<SearBookViewController> {
     );
   }
 
+  Widget searchInput() {
+    if(searchField == null){
+      editController = new TextEditingController(text: bookName);
+      searchField = TextField(
+        controller: editController,
+        autofocus: true,
+        decoration: new InputDecoration.collapsed(
+          hintText: "请输入书籍名称",
+          hintStyle: new TextStyle(color: XColor.fontColor),
+        ),
+      );
+    }
+    return new Container(
+      height: 30.0,
+      child: new Row(
+        children: <Widget>[
+          new Container(
+            child: new FlatButton.icon(
+              onPressed: (){
+                Navigator.of(context).pop();
+              },
+              icon: new Icon(Icons.arrow_back, color: XColor.fontColor),
+              label: new Text(""),
+            ),
+            width: 60.0,
+          ),
+          new Expanded(
+            child: Container(
+              alignment: AlignmentDirectional.center,
+              child: searchField,
+            )
+          ),
+          new Padding(
+            padding: EdgeInsets.all(0.0),
+            child: Container(
+              width: 40.0,
+              child:GestureDetector(
+                child: Text("确定",style: XTextStyle.barItemTStyle,),
+                onTap: (){
+                  bookName = editController.text;
+                  getDataFromHttp();
+                },
+              ),
+            )
+          ),
+        ],
+      ),
+      decoration: new BoxDecoration(
+          borderRadius: const BorderRadius.all(const Radius.circular(4.0)),
+          color: XColor.searchBackgroundColor
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("搜索结果"),
-        backgroundColor: XColor.appBarColor,
-        textTheme: TextTheme(title: XTextStyle.navigationTitleStyle),
-        iconTheme: IconThemeData(color: Colors.white),
+    return MaterialApp(
+      home:  Scaffold(
+          appBar: AppBar(
+            title: searchInput(),
+            backgroundColor: XColor.appBarColor,
+            textTheme: TextTheme(title: XTextStyle.navigationTitleStyle),
+            iconTheme: IconThemeData(color: Colors.white),
+          ),
+          body:Container(
+            padding: EdgeInsets.all(10.0),
+            child: new ListView.builder(
+              itemCount: titles.length*2,
+              itemBuilder: (context, i) => renderRow(i),
+            ),
+          )
       ),
-      body:Container(
-        padding: EdgeInsets.all(10.0),
-        child: new ListView.builder(
-          itemCount: titles.length*2,
-          itemBuilder: (context, i) => renderRow(i),
-        ),
-      )
     );
   }
 }

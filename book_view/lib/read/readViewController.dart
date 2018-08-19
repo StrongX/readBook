@@ -30,12 +30,13 @@ class ReadViewControllerState extends State<ReadViewController> {
   }
 
   getDataFromHttp() async {
+    DataHelper db = await getDataHelp();
     if(chapter == null){
-      DataHelper db = await getDataHelp();
       List chapters = await db.getChapter(bookName, title);
       chapter = chapters.first;
-      await db.closeDataBase();
     }
+    db.updateCurrentChapter(bookName, title);
+    await db.closeDataBase();
     XHttp.getWithCompleteUrl(url, {}, (String response) {
       response = response.replaceAll(RegExp("\r|\n"), "");
       XRegexObject find = new XRegexObject(text: response);

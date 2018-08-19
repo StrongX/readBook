@@ -4,7 +4,9 @@ import 'package:book_view/read/readViewController.dart';
 import 'package:book_view/Global/XContants.dart';
 import 'package:book_view/Global/XHttp.dart';
 import 'package:book_view/tools/XRegexObject.dart';
-import 'package:book_view/searchBook/searBookViewController.dart';
+import 'package:book_view/searchBook/searchResultViewController.dart';
+import 'package:book_view/dataHelper/dataHelper.dart';
+
 class BookDetailViewController extends StatefulWidget {
   final String bookName;
   final String link;
@@ -78,8 +80,14 @@ class BookDetailViewControllerState extends State<BookDetailViewController> {
 
     readNow(){
       Navigator.of(context).push(new MaterialPageRoute(
-          builder: (ctx) => SearBookViewController(bookName: bookName,)
+          builder: (ctx) => SearchResultViewController(bookName: bookName,)
       ));
+    }
+    addRack()async{
+      DataHelper db = await getDataHelp();
+      await db.insertRack(bookName, cover, link, author, type, lastChapter, desc, shortIntro, lastChapterDate);
+      await db.closeDataBase();
+
     }
 
     var btnRow = new Row(
@@ -97,7 +105,7 @@ class BookDetailViewControllerState extends State<BookDetailViewController> {
           padding: EdgeInsets.fromLTRB(0.0, 8.0, 8.0, 0.0),
           height: 30.0,
           child: new RaisedButton(
-            onPressed: (){print("加入书架");},
+            onPressed: addRack,
             child: new Text("加入书架",style: TextStyle(fontSize: 12.0),),
             color: new Color.fromRGBO(255, 255, 255, 1.0),
           ),

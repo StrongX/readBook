@@ -9,15 +9,15 @@ import 'package:html/dom.dart' as html;
 import 'package:url_launcher/url_launcher.dart';
 
 class HtmlWidget extends StatelessWidget {
-  const HtmlWidget({Key key, this.html}) : super(key: key);
+  const HtmlWidget({Key key, this.html,this.scroll}) : super(key: key);
 
   final String html;
-
+  final ScrollController scroll;
   @override
   Widget build(BuildContext context) {
     // wipe out <i> <b> <span>
     final strippedHtml = html.replaceAll(new RegExp("<\/*(i|b|span)>"), '');
-    return (new _HtmlParser(context)).parseFromStr(strippedHtml);
+    return (new _HtmlParser(context,scroll)).parseFromStr(strippedHtml);
   }
 }
 
@@ -26,13 +26,14 @@ class HtmlWidget extends StatelessWidget {
 
 class _HtmlParser {
   final BuildContext context;
+  final ScrollController scroll;
 
   // TODO wiki-flutter legacy
   final Map appContext;
 
   final TextTheme textTheme;
 
-  _HtmlParser(this.context, {this.appContext: const {}})
+  _HtmlParser(this.context, this.scroll,{this.appContext: const {}})
       : textTheme = Theme.of(context).textTheme {}
 
   List<Widget> _widgets = [];
@@ -54,7 +55,8 @@ class _HtmlParser {
 
     _parseNode(body);
     _tryCloseCurrentTextSpan();
-    return new ListView(children:_widgets,);
+    ListView listView = ListView(children:_widgets,controller: scroll,);
+    return listView;
 //    return new Wrap(children: _widgets);
   }
 

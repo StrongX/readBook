@@ -28,11 +28,14 @@ class MenuViewControllerState extends State<MenuViewController> {
 
   getDataFromHttp(){
     DataHelper.readDataFromTable(table: "Chapter");
+    print(url);
     XHttp.getWithCompleteUrl(url, {}, (String response) async{
       response = response.replaceAll(RegExp("\r|\n|\\s"), "");
+      print(response);
       XRegexObject find = new XRegexObject(text: response);
       String chapterRegex = r'<dd><ahref=".*?">(.*?)</a></dd>';
       String linkRegex = r'<dd><ahref="(.*?)">.*?</a></dd>';
+
 
       chapters = find.getListWithRegex(chapterRegex);
       links = find.getListWithRegex(linkRegex);

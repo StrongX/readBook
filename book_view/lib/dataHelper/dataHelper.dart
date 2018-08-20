@@ -52,11 +52,13 @@ class DataHelper{
   Future<List> getChapter(String bookName,String chapterName)async{
     return await database.rawQuery('select * from Chapter where bookName = "$bookName" and chapterName = "$chapterName"');
   }
-  Future<List> getNextChapter(String bookName,int id)async{
-    return await database.rawQuery('select * from Chapter where bookName = "$bookName" and id>"$id" limit 1');
+  Future<Map> getNextChapter(String bookName,int id)async{
+    List chapters = await database.rawQuery('select * from Chapter where bookName = "$bookName" and id>"$id" limit 1');
+    return chapters.first;
   }
-  Future<List> getLastChapter(String bookName,int id)async{
-    return await database.rawQuery('select * from Chapter where bookName = "$bookName" and id<"$id" limit 1');
+  Future<Map> getLastChapter(String bookName,int id)async{
+    List chapters = await database.rawQuery('select * from Chapter where bookName = "$bookName" and id<"$id"');
+    return chapters.last;
   }
 
   static readDataFromTable({Key key,table})async{

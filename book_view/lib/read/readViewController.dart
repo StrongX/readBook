@@ -25,6 +25,7 @@ class ReadViewControllerState extends State<ReadViewController> {
   String bookName;
   String content = '';
   Map chapter;
+  ScrollController scroll = ScrollController();
   ReadViewControllerState({Key key, this.url, this.title, this.bookName}) {
     getDataFromHttp();
   }
@@ -43,16 +44,19 @@ class ReadViewControllerState extends State<ReadViewController> {
       String contentRegex = r'<div id="content">(.*?)</div>';
       setState(() {
         content = find.getListWithRegex(contentRegex)[0];
+        scroll.animateTo(0.0, duration: new Duration(milliseconds:500), curve: Curves.ease);
       });
     });
   }
 
   AppBar _appBar;
+  double toolOpacity = 0.0;
   var showAppBar = false;
   showTipView() {
     setState(() {
       if (showAppBar == false) {
         showAppBar = true;
+        toolOpacity = 1.0;
         _appBar = AppBar(
           title: Text(title),
           backgroundColor: XColor.appBarColor,
@@ -70,34 +74,42 @@ class ReadViewControllerState extends State<ReadViewController> {
       } else {
         showAppBar = false;
         _appBar = null;
+        toolOpacity = 0.0;
       }
     });
   }
 
   nextChapter()async{
     DataHelper db = await getDataHelp();
-    List chapters = await db.getNextChapter(bookName, chapter["id"]);
-    if(chapters.length>0){
-      chapter = chapters.first;
+    chapter = await db.getNextChapter(bookName, chapter["id"]);
+    if(chapter!=null){
+
       title = chapter['chapterName'];
       url = chapter['link'];
       getDataFromHttp();
     }
-
-    await db.closeDataBase();
   }
   lastChapter()async{
     DataHelper db = await getDataHelp();
-    List chapters = await db.getLastChapter(bookName, chapter["id"]);
-    if(chapters.length>0){
-      chapter = chapters.first;
+    chapter = await db.getLastChapter(bookName, chapter["id"]);
+    if(chapter != null){
       title = chapter['chapterName'];
       url = chapter['link'];
       getDataFromHttp();
     }
-    await db.closeDataBase();
   }
+  bool _handleScrollNotification(ScrollNotification notification) {
+    if(notification is ScrollEndNotification){
+      //下滑到最底部
+      if(notification.metrics.extentAfter==0.0){
+      }
+      //滑动到最顶部
+      if(notification.metrics.extentBefore==0.0){
 
+      }
+    }
+    return false;
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -106,17 +118,21 @@ class ReadViewControllerState extends State<ReadViewController> {
         body: Stack(
           children: <Widget>[
             GestureDetector(
-              child: new HtmlWidget(
+              child: NotificationListener(child: new HtmlWidget(
                 html: content,
+                scroll: scroll,
+              ),
+              onNotification: _handleScrollNotification,
               ),
               onTap: showTipView,
             ),
             Align(
               alignment: AlignmentDirectional.bottomCenter,
+              child: Opacity(opacity: toolOpacity,
               child: ReadBottomView(
                 nextChapter: nextChapter,
                 lastChapter: lastChapter,
-              ),
+              ),),
             )
           ],
         ));

@@ -6,6 +6,7 @@ import 'package:book_view/rankList/V/rankListView.dart';
 import 'package:book_view/Global/XContants.dart';
 import 'package:book_view/Global/XHttp.dart';
 import 'package:book_view/searchBook/searchResultViewController.dart';
+import 'package:dio/dio.dart';
 
 class RankList extends StatefulWidget {
   @override
@@ -16,11 +17,13 @@ class RankListState extends State<RankList> {
   RankListView listView = new RankListView();
 
   RankListState(){
-    XHttp.get('/rankList', {}, (String response) {
-      Map model = json.decode(response);
-      if (model['code'] == 100) {
-        listView.loadDataWithList(model['rankList'],model['typeList'],model['doMain'],model['regex']);
+    XHttp.get('/rankList', {}, (Map response) {
+      if (response['code'] == 100) {
+        listView.loadDataWithList(response['rankList'],response['typeList'],response['doMain'],response['regex']);
       }
+    },(DioError e){
+      Map response = DefaultSetting.getDefaultSetting();
+      listView.loadDataWithList(response['rankList'],response['typeList'],response['doMain'],response['regex']);
     });
   }
   @override

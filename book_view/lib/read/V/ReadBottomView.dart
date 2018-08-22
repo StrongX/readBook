@@ -19,20 +19,32 @@ class ReadBottomViewState extends State<ReadBottomView>{
       children: <Widget>[
         Align(
             alignment: FractionalOffset.centerLeft,
-            child: Padding(padding: EdgeInsets.all(10.0),
-              child: GestureDetector(
-                child: Text("上一章",style: TextStyle(color: Colors.white,fontSize: 14.0),),
-                onTap:lastChapter,
+            child: GestureDetector(
+              child: Container(
+                color: Color.fromRGBO(0, 0, 0, 0.0),
+                width: 90.0,
+                height: 44.0,
+                child: Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: Text("上一章",style: TextStyle(color: Colors.white,fontSize: 14.0),),
+                ),
               ),
+              onTap:lastChapter,
             )
         ),
         Align(
             alignment: FractionalOffset.centerRight,
-            child: Padding(padding: EdgeInsets.all(10.0),
-              child: GestureDetector(
-                child: Text("下一章",style: TextStyle(color: Colors.white,fontSize: 14.0),),
-                onTap:nextChapter,
+            child: GestureDetector(
+              child: Container(
+                color: Color.fromRGBO(0, 0, 0, 0.0),
+                width: 90.0,
+                height: 44.0,
+                child: Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: Text("下一章",style: TextStyle(color: Colors.white,fontSize: 14.0,),textAlign: TextAlign.right,),
+                ),
               ),
+              onTap:nextChapter,
             )
         )
       ],

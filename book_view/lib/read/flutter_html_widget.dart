@@ -209,7 +209,7 @@ class _HtmlParser {
         padding: const EdgeInsets.all(8.0),
         child: new RichText(
             text: new TextSpan(
-                style: textTheme.body1,
+                style: textTheme.subhead,
                 children: new List.from(_currentTextSpans)))));
 
     _currentTextSpans.clear();

@@ -4,7 +4,7 @@ import 'package:book_view/Global/XHttp.dart';
 import 'package:book_view/tools/XRegexObject.dart';
 import 'package:book_view/Global/XPrint.dart';
 import 'package:book_view/menu/MenuViewController.dart';
-import 'package:book_view/dataHelper/dataHelper.dart';
+import 'package:book_view/Global/dataHelper.dart';
 class SearchResultViewController extends StatefulWidget{
   final String bookName;
   SearchResultViewController({Key key,this.bookName}):super(key:key);

@@ -6,7 +6,8 @@ import 'package:book_view/tools/XRegexObject.dart';
 import 'package:book_view/Global/XPrint.dart';
 import 'package:book_view/Global/XContants.dart';
 import 'package:book_view/read/V/ReadBottomView.dart';
-import 'package:book_view/dataHelper/dataHelper.dart';
+import 'package:book_view/Global/dataHelper.dart';
+import 'package:book_view/Global/cacehHelper.dart';
 
 class ReadViewController extends StatefulWidget {
   final String title;
@@ -33,20 +34,22 @@ class ReadViewControllerState extends State<ReadViewController> {
   getDataFromHttp() async {
     DataHelper db = await getDataHelp();
     if(chapter == null){
-      List chapters = await db.getChapter(bookName, title);
-      chapter = chapters.first;
+      chapter = await db.getChapter(bookName, title);
     }
     db.updateCurrentChapter(bookName, title);
     await db.closeDataBase();
-    XHttp.getWithCompleteUrl(url, {}, (String response) {
-      response = response.replaceAll(RegExp("\r|\n"), "");
-      XRegexObject find = new XRegexObject(text: response);
+    CacheHelper.cacheBookAuto(bookName, title);
+
+    await CacheHelper.getChapterContent(bookName, chapter['chapterName'], url,(String chapterCache){
+      print(chapterCache);
+      XRegexObject find = new XRegexObject(text: chapterCache);
       String contentRegex = r'<div id="content">(.*?)</div>';
       setState(() {
         content = find.getListWithRegex(contentRegex)[0];
         scroll.animateTo(0.0, duration: new Duration(milliseconds:500), curve: Curves.ease);
       });
     });
+
   }
 
   AppBar _appBar;

@@ -3,7 +3,7 @@ import 'package:book_view/Global/XContants.dart';
 import 'package:book_view/Global/XHttp.dart';
 import 'package:book_view/tools/XRegexObject.dart';
 import 'package:book_view/read/readViewController.dart';
-import 'package:book_view/dataHelper/dataHelper.dart';
+import 'package:book_view/Global/dataHelper.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart' as p;
 

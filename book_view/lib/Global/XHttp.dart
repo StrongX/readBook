@@ -18,14 +18,14 @@ class XHttp{
 
 
   }
-  static getWithDomain(String doMain,String url,Map<String, String> params,void callBak(String response)) async {
+  static getWithDomain(String doMain,String url,Map<String, String> params,void callBack(String response)) async {
     var httpClient = new HttpClient();
     var uri = new Uri.https(
         doMain, url, params);
     var request = await httpClient.getUrl(uri);
     var response = await request.close();
     var responseBody = await response.transform(utf8.decoder).join();
-    callBak(responseBody);
+    callBack(responseBody);
   }
   static getWithCompleteUrl(String url,Map<String, String> params,void callBak(String response)) async {
     Dio dio = new Dio();

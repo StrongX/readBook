@@ -5,7 +5,7 @@ import 'package:book_view/Global/XContants.dart';
 import 'package:book_view/Global/XHttp.dart';
 import 'package:book_view/tools/XRegexObject.dart';
 import 'package:book_view/searchBook/searchResultViewController.dart';
-import 'package:book_view/dataHelper/dataHelper.dart';
+import 'package:book_view/Global/dataHelper.dart';
 
 class BookDetailViewController extends StatefulWidget {
   final String bookName;

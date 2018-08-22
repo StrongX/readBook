@@ -2,6 +2,7 @@ import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
+import 'package:html/parser.dart';
 
 const dbName = 'test5.db';
 
@@ -24,6 +25,7 @@ class DataHelper{
     }
     await database.execute("CREATE TABLE IF NOT EXISTS Chapter (id INTEGER PRIMARY KEY, bookName TEXT, chapterName TEXT, link TEXT)");
     await database.execute("CREATE TABLE IF NOT EXISTS RackList (id INTEGER PRIMARY KEY, bookName TEXT, cover TEXT, link TEXT,author TEXT,type TEXT,lastChapter TEXT,desc TEXT,shortIntro TEXT,lastChapterDate TEXT,currentChapter TEXT)");
+    await database.execute("CREATE TABLE IF NOT EXISTS ChapterCache (id INTEGER PRIMARY KEY, bookName TEXT, chapterName TEXT, content TEXT,link TEXT)");
 
   }
   closeDataBase()async{
@@ -43,22 +45,61 @@ class DataHelper{
   updateCurrentChapter(String bookName,String chapterName)async{
     var result = await database.rawUpdate(
         'UPDATE RackList SET currentChapter = "$chapterName" WHERE bookName = "$bookName"',);
-    print(result);
+  }
+  cacheChapter(String bookName,String chapterName,String content,String link)async{
+//    var values = <String, dynamic>{
+//      'bookName': bookName,
+//      'chapterName': chapterName,
+//      'content': content,
+//    };
+    List val = [bookName,chapterName,content];
+//    await database.insert('ChapterCache', values,conflictAlgorithm: ConflictAlgorithm.ignore);
+//    await database.execute("INSERT INTO ChapterCache(bookName,chapterName,content) select '$bookName','$chapterName','$content' where not exists (select * from ChapterCache where bookName = '$bookName' and chapterName='$chapterName')");
+    List list = await database.rawQuery('select * from ChapterCache where bookName = "$bookName" and chapterName = "$chapterName"');
+    if(list.length == 0){
+      await database.execute("INSERT OR IGNORE INTO ChapterCache(bookName,chapterName,content) values (?,?,?)",val);
+    }else{
+      print("已缓存");
+    }
+  }
+  getChapterFromCache(String bookName,String chapterName)async{
+    List list = await database.rawQuery('select * from ChapterCache where bookName = "$bookName" and chapterName = "$chapterName"');
+    if(list.length == 0){
+      return null;
+    }else{
+      return list.first;
+    }
+  }
+  chapterIsCache(String bookName,String chapterName)async{
+    List list = await database.rawQuery('select * from ChapterCache where bookName = "$bookName" and chapterName = "$chapterName"');
+    if(list.length == 0){
+      return false;
+    }else{
+      return true;
+    }
   }
   getRackList()async{
     List list = await database.rawQuery('select * from RackList');
     return list;
   }
-  Future<List> getChapter(String bookName,String chapterName)async{
-    return await database.rawQuery('select * from Chapter where bookName = "$bookName" and chapterName = "$chapterName"');
+  Future<Map> getChapter(String bookName,String chapterName)async{
+    List chapters = await database.rawQuery('select * from Chapter where bookName = "$bookName" and chapterName = "$chapterName"');
+    return chapters.first;
   }
   Future<Map> getNextChapter(String bookName,int id)async{
     List chapters = await database.rawQuery('select * from Chapter where bookName = "$bookName" and id>"$id" limit 1');
+    if(chapters.length==0){
+      return null;
+    }
     return chapters.first;
   }
   Future<Map> getLastChapter(String bookName,int id)async{
     List chapters = await database.rawQuery('select * from Chapter where bookName = "$bookName" and id<"$id"');
     return chapters.last;
+  }
+  Future<List<Map<String, dynamic>>> getFlowChapter(String bookName,int id)async{//获取接下来的章节
+    List chapters = await database.rawQuery('select * from Chapter where bookName = "$bookName" and id>"$id"');
+    return chapters;
   }
 
   static readDataFromTable({Key key,table})async{

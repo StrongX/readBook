@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:book_view/dataHelper/dataHelper.dart';
+import 'package:book_view/Global/dataHelper.dart';
 import 'package:book_view/Global/XContants.dart';
 import 'package:book_view/read/readViewController.dart';
 import 'package:book_view/searchBook/searchResultViewController.dart';
+
 class BookRack extends StatefulWidget {
   @override
   BookRackState createState() => new BookRackState();
@@ -15,6 +16,9 @@ class BookRackState extends State<BookRack> {
   }
   getRackList()async{
     DataHelper db = await getDataHelp();
+    print('---');
+    List list = await db.database.rawQuery("select * from ChapterCache");
+    print(list.length);
     rackList = await db.getRackList();
     setState(() {
     });
@@ -37,13 +41,12 @@ class BookRackState extends State<BookRack> {
       ));
     }else{
       DataHelper db = await getDataHelp();
-      List chapters = await db.getChapter(book['bookName'], book['currentChapter']);
-      if(chapters.length == 0){
+      Map chapter = await db.getChapter(book['bookName'], book['currentChapter']);
+      if(chapter==null){
         Navigator.of(context).push(new MaterialPageRoute(
             builder: (ctx) => SearchResultViewController(bookName: book['bookName'],)
         ));
       }else{
-        Map chapter = chapters[0];
         Navigator.of(context).push(new MaterialPageRoute(
             builder: (ctx) =>  ReadViewController(url: chapter['link'],title: chapter['chapterName'],bookName: chapter['bookName'],)
         ));
@@ -199,6 +202,7 @@ class BookRackState extends State<BookRack> {
 
   @override
   Widget build(BuildContext context) {
+
     updateRackList();
     return new Scaffold(
       appBar: new AppBar(

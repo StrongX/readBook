@@ -86,7 +86,6 @@ class BookDetailViewControllerState extends State<BookDetailViewController> {
     addRack()async{
       DataHelper db = await getDataHelp();
       await db.insertRack(bookName, cover, link, author, type, lastChapter, desc, shortIntro, lastChapterDate);
-      await db.closeDataBase();
 
     }
 

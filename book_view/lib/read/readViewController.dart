@@ -37,7 +37,6 @@ class ReadViewControllerState extends State<ReadViewController> {
       chapter = await db.getChapter(bookName, title);
     }
     db.updateCurrentChapter(bookName, title);
-    await db.closeDataBase();
     CacheHelper.cacheBookAuto(bookName, title);
 
     await CacheHelper.getChapterContent(bookName, chapter['chapterName'], url,(String chapterCache){

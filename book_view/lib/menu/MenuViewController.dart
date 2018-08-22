@@ -43,7 +43,6 @@ class MenuViewControllerState extends State<MenuViewController> {
       for(int i = 0; i<chapters.length;i++){
         await db.insertChapter(bookName, chapters[i], "https://www.biqudu.com"+links[i]);
       }
-      db.closeDataBase();
 
       setState(() {
 

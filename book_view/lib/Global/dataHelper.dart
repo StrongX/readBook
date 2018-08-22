@@ -13,6 +13,13 @@ Future<DataHelper>getDataHelp()async{
 }
 
 class DataHelper{
+  static final DataHelper _singleton = new DataHelper._internal();
+  factory DataHelper() {
+    return _singleton;
+  }
+  DataHelper._internal();
+
+
   Database database;
   init()async{
     var databasesPath = await getDatabasesPath();
@@ -28,9 +35,9 @@ class DataHelper{
     await database.execute("CREATE TABLE IF NOT EXISTS ChapterCache (id INTEGER PRIMARY KEY, bookName TEXT, chapterName TEXT, content TEXT,link TEXT)");
 
   }
-  closeDataBase()async{
-    await database.close();
-  }
+//  closeDataBase()async{
+//    await database.close();
+//  }
   insertChapter(String bookName,String chapterName,String link)async{
     await database.execute('INSERT OR IGNORE INTO Chapter(bookName, chapterName, link) VALUES("$bookName", "$chapterName", "$link")');
   }

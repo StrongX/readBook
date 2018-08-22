@@ -56,7 +56,6 @@ class SearchResultViewControllerState extends State<SearchResultViewController> 
     }
     DataHelper db = await getDataHelp();
     await db.insertRack(bookName, thumbImgUrl, "", authors[i], "", "", intros[i], intros[i], "");
-    await db.closeDataBase();
 
   }
   Widget renderRow(i) {

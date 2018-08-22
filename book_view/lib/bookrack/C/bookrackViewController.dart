@@ -22,12 +22,10 @@ class BookRackState extends State<BookRack> {
     rackList = await db.getRackList();
     setState(() {
     });
-    await db.closeDataBase();
   }
   updateRackList()async{
     DataHelper db = await getDataHelp();
     rackList = await db.getRackList();
-    await db.closeDataBase();
   }
   List rackList=[];
 
@@ -51,7 +49,6 @@ class BookRackState extends State<BookRack> {
             builder: (ctx) =>  ReadViewController(url: chapter['link'],title: chapter['chapterName'],bookName: chapter['bookName'],)
         ));
       }
-      await db.closeDataBase();
 
     }
   }

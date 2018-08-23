@@ -15,8 +15,6 @@ class XHttp{
     }on DioError catch(e){
       error(e);
     }
-
-
   }
   static getWithDomain(String doMain,String url,Map<String, String> params,void callBack(String response)) async {
     var httpClient = new HttpClient();

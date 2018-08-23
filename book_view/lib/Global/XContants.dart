@@ -125,6 +125,6 @@ class DefaultSetting{
       "typeRegex":typeRegex,
       "linkRegex":linkRegex,
     };
-    return {'code':100,'rankList':rankList,'typeList':typeList,'doMain':"www.qidian.com","regex":regex};
+    return {'code':100,'rankList':rankList,'typeList':typeList,'doMain':"https://www.qidian.com","regex":regex};
   }
 }

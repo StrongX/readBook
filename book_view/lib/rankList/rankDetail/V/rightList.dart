@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:book_view/Global/XHttp.dart';
 import 'package:book_view/bookDetail/bookDetailViewController.dart';
 import 'package:book_view/tools/XRegexObject.dart';
+import "package:pull_to_refresh/pull_to_refresh.dart";
+import 'dart:async';
 
 class RankDetailRightList extends StatefulWidget {
   final Map source;
@@ -23,28 +25,60 @@ class RankDetailRightListState extends State<RankDetailRightList> {
   }
 
   List titles = [];
-  List covers;
-  List authors;
-  List types;
-  List intros;
-  List lasts;
-  List lastDates;
-  List links;
+  List covers = [];
+  List authors = [];
+  List types = [];
+  List intros = [];
+  List lasts = [];
+  List lastDates = [];
+  List links = [];
+  int page = 1;
+  RefreshController refreshState = RefreshController();
   getDataFromHttp() {
-    XHttp.getWithDomain(doMain, source['path'], {}, (String response) {
+    String path = source['path'];
+    XHttp.getWithCompleteUrl(doMain+path, {"page":"$page"}, (String response){
       response = response.replaceAll(RegExp("\r|\n"), "");
       XRegexObject find = new XRegexObject(text: response);
+      if(page==1){
+        titles = [];
+        covers = [];
+        authors = [];
+        types = [];
+        intros = [];
+        lasts = [];
+        lastDates = [];
+        links = [];
+      }
+      titles.addAll(find.getListWithRegex(regex['titleRegex']));
+      covers.addAll(find.getListWithRegex(regex['coverRegex']));
+      authors.addAll(find.getListWithRegex(regex['authorRegex']));
+      types.addAll(find.getListWithRegex(regex['typeRegex']));
+      intros.addAll(find.getListWithRegex(regex['introRegex']));
+      lasts.addAll(find.getListWithRegex(regex['lastRegex']));
+      lastDates.addAll(find.getListWithRegex(regex['lastDateRegex']));
+      links.addAll(find.getListWithRegex(regex['linkRegex']));
       setState(() {
-        titles = find.getListWithRegex(regex['titleRegex']);
-        covers = find.getListWithRegex(regex['coverRegex']);
-        authors = find.getListWithRegex(regex['authorRegex']);
-        types = find.getListWithRegex(regex['typeRegex']);
-        intros = find.getListWithRegex(regex['introRegex']);
-        lasts = find.getListWithRegex(regex['lastRegex']);
-        lastDates = find.getListWithRegex(regex['lastDateRegex']);
-        links = find.getListWithRegex(regex['linkRegex']);
       });
+      refreshState.sendBack(true, RefreshStatus.idle);
+      refreshState.sendBack(false, RefreshStatus.idle);
     });
+//    XHttp.getWithDomain(doMain, path, params, (String response) {
+//      response = response.replaceAll(RegExp("\r|\n"), "");
+//      XRegexObject find = new XRegexObject(text: response);
+//      setState(() {
+//        titles = find.getListWithRegex(regex['titleRegex']);
+//        covers = find.getListWithRegex(regex['coverRegex']);
+//        authors = find.getListWithRegex(regex['authorRegex']);
+//        types = find.getListWithRegex(regex['typeRegex']);
+//        intros = find.getListWithRegex(regex['introRegex']);
+//        lasts = find.getListWithRegex(regex['lastRegex']);
+//        lastDates = find.getListWithRegex(regex['lastDateRegex']);
+//        links = find.getListWithRegex(regex['linkRegex']);
+//      });
+//      refreshState.sendBack(true, RefreshStatus.idle);
+//      refreshState.sendBack(false, RefreshStatus.idle);
+//
+//    });
   }
 
   Widget renderRow(i) {
@@ -187,15 +221,38 @@ class RankDetailRightListState extends State<RankDetailRightList> {
     );
   }
 
+  void _onRefresh(bool up){
+    new Future.delayed(const Duration(milliseconds: 1000))
+        .then((val) {
+      if(up){
+        //headerIndicator callback
+        page = 1;
+        print("last page");
+      }else{
+        //footerIndicator Callback
+        page++;
+        print('next Page');
+      }
+      getDataFromHttp();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Container(
       padding: const EdgeInsets.all(.0),
-      child: new ListView.builder(
-        itemCount: titles.length * 2,
-        itemBuilder: (context, i) => renderRow(i),
-      ),
-    );
+      child: SmartRefresher(
+          enablePullDown: true,
+          enablePullUp: true,
+          onRefresh: _onRefresh,
+          onOffsetChange: null,
+          child: ListView.builder(
+            itemCount: titles.length * 2,
+            itemBuilder: (context, i) => renderRow(i),
+          ),
+          controller: refreshState,
+          )
+      );
   }
 }

@@ -8,16 +8,18 @@ import 'package:html/dom.dart' as html;
 
 import 'package:url_launcher/url_launcher.dart';
 
-class HtmlWidget extends StatelessWidget {
-  const HtmlWidget({Key key, this.html,this.scroll}) : super(key: key);
+class HtmlWidget extends ListView {
+  HtmlWidget({Key key, this.html,this.scroll}) : super(key: key);
 
   final String html;
   final ScrollController scroll;
+  ListView listView;
   @override
   Widget build(BuildContext context) {
     // wipe out <i> <b> <span>
     final strippedHtml = html.replaceAll(new RegExp("<\/*(i|b|span)>"), '');
-    return (new _HtmlParser(context,scroll)).parseFromStr(strippedHtml);
+    listView = (new _HtmlParser(context,scroll)).parseFromStr(strippedHtml);
+    return listView;
   }
 }
 
@@ -34,7 +36,7 @@ class _HtmlParser {
   final TextTheme textTheme;
 
   _HtmlParser(this.context, this.scroll,{this.appContext: const {}})
-      : textTheme = Theme.of(context).textTheme {}
+      : textTheme = Theme.of(context).textTheme;
 
   List<Widget> _widgets = [];
   List<TextSpan> _currentTextSpans = [];

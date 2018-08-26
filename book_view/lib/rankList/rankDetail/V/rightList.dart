@@ -5,15 +5,24 @@ import 'package:book_view/tools/XRegexObject.dart';
 import "package:pull_to_refresh/pull_to_refresh.dart";
 import 'dart:async';
 
+
 class RankDetailRightList extends StatefulWidget {
   final Map source;
   final String doMain;
   final Map regex;
+  RankDetailRightListState state;
+  void selectedTypeWithChn(String chn) {
+    state.selectedTypeWithChn(chn);
+  }
   RankDetailRightList({Key key, this.source, this.doMain, this.regex})
       : super(key: key);
+
   @override
-  RankDetailRightListState createState() => new RankDetailRightListState(
-      source: this.source, doMain: this.doMain, regex: this.regex);
+  RankDetailRightListState createState() {
+    state = RankDetailRightListState(
+        source: this.source, doMain: this.doMain, regex: this.regex);
+    return state;
+  }
 }
 
 class RankDetailRightListState extends State<RankDetailRightList> {
@@ -33,13 +42,17 @@ class RankDetailRightListState extends State<RankDetailRightList> {
   List lastDates = [];
   List links = [];
   int page = 1;
+  String _chn = "-1";
+
   RefreshController refreshState = RefreshController();
   getDataFromHttp() {
+
     String path = source['path'];
-    XHttp.getWithCompleteUrl(doMain+path, {"page":"$page"}, (String response){
+    XHttp.getWithCompleteUrl(doMain + path, {"page": "$page", "chn": _chn},
+        (String response) {
       response = response.replaceAll(RegExp("\r|\n"), "");
       XRegexObject find = new XRegexObject(text: response);
-      if(page==1){
+      if (page == 1) {
         titles = [];
         covers = [];
         authors = [];
@@ -57,8 +70,7 @@ class RankDetailRightListState extends State<RankDetailRightList> {
       lasts.addAll(find.getListWithRegex(regex['lastRegex']));
       lastDates.addAll(find.getListWithRegex(regex['lastDateRegex']));
       links.addAll(find.getListWithRegex(regex['linkRegex']));
-      setState(() {
-      });
+      setState(() {});
       refreshState.sendBack(true, RefreshStatus.idle);
       refreshState.sendBack(false, RefreshStatus.idle);
     });
@@ -216,19 +228,27 @@ class RankDetailRightListState extends State<RankDetailRightList> {
       onTap: () {
         print(titles[i]);
         Navigator.of(context).push(new MaterialPageRoute(
-            builder: (ctx) => new BookDetailViewController(bookName: titles[i],link: links[i],cover: covers[i],desc: intros[i],type: types[i],author: authors[i],lastChapter: lasts[i],lastChapterDate: lastDates[i],)));
+            builder: (ctx) => new BookDetailViewController(
+                  bookName: titles[i],
+                  link: links[i],
+                  cover: covers[i],
+                  desc: intros[i],
+                  type: types[i],
+                  author: authors[i],
+                  lastChapter: lasts[i],
+                  lastChapterDate: lastDates[i],
+                )));
       },
     );
   }
 
-  void _onRefresh(bool up){
-    new Future.delayed(const Duration(milliseconds: 1000))
-        .then((val) {
-      if(up){
+  void _onRefresh(bool up) {
+    new Future.delayed(const Duration(milliseconds: 1000)).then((val) {
+      if (up) {
         //headerIndicator callback
         page = 1;
         print("last page");
-      }else{
+      } else {
         //footerIndicator Callback
         page++;
         print('next Page');
@@ -237,12 +257,19 @@ class RankDetailRightListState extends State<RankDetailRightList> {
     });
   }
 
+  void selectedTypeWithChn(String chn) {
+    print(chn);
+    _chn = chn;
+    page = 1;
+    getDataFromHttp();
+  }
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Container(
-      padding: const EdgeInsets.all(.0),
-      child: SmartRefresher(
+        padding: const EdgeInsets.all(.0),
+        child: SmartRefresher(
           enablePullDown: true,
           enablePullUp: true,
           onRefresh: _onRefresh,
@@ -252,7 +279,6 @@ class RankDetailRightListState extends State<RankDetailRightList> {
             itemBuilder: (context, i) => renderRow(i),
           ),
           controller: refreshState,
-          )
-      );
+        ));
   }
 }

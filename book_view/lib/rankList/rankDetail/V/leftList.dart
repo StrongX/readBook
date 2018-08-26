@@ -1,21 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:book_view/Global/XContants.dart';
 
+typedef void SelectedType(String chn);
 
 class RankDetailLeftList extends StatefulWidget{
+
   final List typeList;
-  RankDetailLeftList({Key key,this.typeList}):super(key:key);
+  final SelectedType selectedBack;
+  RankDetailLeftList({Key key,this.typeList,this.selectedBack}):super(key:key);
   @override
-  RankDetailLeftListState createState() => new RankDetailLeftListState(typeList:typeList);
+  RankDetailLeftListState createState() => new RankDetailLeftListState(typeList:typeList,selectedBack: selectedBack);
 }
 
 class RankDetailLeftListState extends State<RankDetailLeftList>{
   final List typeList;
+  SelectedType selectedBack;
   int typeSelected = 0;
   final TextStyle normalSelectedStyle = new TextStyle(fontSize: 13.0, color: Color.fromRGBO(88, 88, 88, 1.0));
   final TextStyle selectedStyle = new TextStyle(fontSize: 13.0, color: Color.fromRGBO(234, 57, 79, 1.0));
 
-  RankDetailLeftListState({Key key,this.typeList});
+  RankDetailLeftListState({Key key,this.typeList,this.selectedBack});
 
   Widget renderRow(index) {
     Map data = typeList[index];
@@ -62,8 +66,10 @@ class RankDetailLeftListState extends State<RankDetailLeftList>{
               child: row,
             ),
             onTap: () {
+              typeSelected = index;
+              Map type = typeList[index];
+              selectedBack(type['chn']);
               setState(() {
-                typeSelected = index;
               });
             },
           ),

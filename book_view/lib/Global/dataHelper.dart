@@ -2,7 +2,6 @@ import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'package:html/parser.dart';
 
 const dbName = 'test5.db';
 
@@ -49,8 +48,11 @@ class DataHelper{
       print("已加入书架");
     }
   }
+  deleteRack(int id)async{
+    await database.rawDelete('DELETE FROM RackList WHERE id = ?', [id]);
+  }
   updateCurrentChapter(String bookName,String chapterName)async{
-    var result = await database.rawUpdate(
+    await database.rawUpdate(
         'UPDATE RackList SET currentChapter = "$chapterName" WHERE bookName = "$bookName"',);
   }
   cacheChapter(String bookName,String chapterName,String content,String link)async{

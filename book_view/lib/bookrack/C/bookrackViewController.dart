@@ -3,6 +3,10 @@ import 'package:book_view/Global/dataHelper.dart';
 import 'package:book_view/Global/XContants.dart';
 import 'package:book_view/read/readViewController.dart';
 import 'package:book_view/searchBook/searchResultViewController.dart';
+import "package:pull_to_refresh/pull_to_refresh.dart";
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:book_view/Global/V/blankView.dart';
 
 class BookRack extends StatefulWidget {
   @override
@@ -10,81 +14,74 @@ class BookRack extends StatefulWidget {
 }
 
 class BookRackState extends State<BookRack> {
+  RefreshController refreshController = RefreshController();
+  List rackList = [];
 
-  BookRackState(){
-    getRackList();
+  BookRackState() {
+    updateRackList();
+  }
+  updateRackList() async {
+    await getRackList();
+    setState(() {});
+    refreshController.sendBack(true, RefreshStatus.idle);
   }
   getRackList()async{
     DataHelper db = await getDataHelp();
-    print('---');
-    List list = await db.database.rawQuery("select * from ChapterCache");
-    print(list.length);
-    rackList = await db.getRackList();
-    setState(() {
-    });
-  }
-  updateRackList()async{
-    DataHelper db = await getDataHelp();
     rackList = await db.getRackList();
   }
-  List rackList=[];
-
-
-
-  startRead(index) async{
+  startRead(index) async {
     Map book = rackList[index];
-    if(book['currentChapter'] == null){
+    if (book['currentChapter'] == null) {
       Navigator.of(context).push(new MaterialPageRoute(
-          builder: (ctx) => SearchResultViewController(bookName: book['bookName'],)
-      ));
-    }else{
+          builder: (ctx) => SearchResultViewController(
+                bookName: book['bookName'],
+              )));
+    } else {
       DataHelper db = await getDataHelp();
-      Map chapter = await db.getChapter(book['bookName'], book['currentChapter']);
-      if(chapter==null){
+      Map chapter =
+          await db.getChapter(book['bookName'], book['currentChapter']);
+      if (chapter == null) {
         Navigator.of(context).push(new MaterialPageRoute(
-            builder: (ctx) => SearchResultViewController(bookName: book['bookName'],)
-        ));
-      }else{
+            builder: (ctx) => SearchResultViewController(
+                  bookName: book['bookName'],
+                )));
+      } else {
         Navigator.of(context).push(new MaterialPageRoute(
-            builder: (ctx) =>  ReadViewController(url: chapter['link'],title: chapter['chapterName'],bookName: chapter['bookName'],)
-        ));
+            builder: (ctx) => ReadViewController(
+                  url: chapter['link'],
+                  title: chapter['chapterName'],
+                  bookName: chapter['bookName'],
+                )));
       }
-
     }
   }
-
-
-
 
   Widget renderRow(i) {
-
-    if (i.isOdd) {
-      return new Container(
-        padding: EdgeInsets.fromLTRB(102.0, 0.0, 0.0, 0.0),
-        child: new Divider(height: 1.0),
-      );
-    }
-    i = i ~/ 2;
+//    if (i.isOdd) {
+//      return new Container(
+//        padding: EdgeInsets.fromLTRB(102.0, 0.0, 0.0, 0.0),
+//        child: new Divider(height: 1.0),
+//      );
+//    }
+//    i = i ~/ 2;
     Map book = rackList[i];
     String thumbImgUrl = book['cover'];
+//    String thumbImgUrl = "https://qidian.qpic.cn/qdbimg/349573/2248950/150";
     if (!thumbImgUrl.startsWith(RegExp('^http'))) {
-      thumbImgUrl = "http://" + thumbImgUrl;
+      thumbImgUrl = "https://" + thumbImgUrl;
     }
-    var thumbImg = new Container(
-      width: 102.0,
-      height: 136.0,
-      decoration: new BoxDecoration(
-        shape: BoxShape.rectangle,
-        color: const Color(0xFFECECEC),
-        image: new DecorationImage(
-            image: new ExactAssetImage('./images/01.jpg'), fit: BoxFit.cover),
-        border: new Border.all(
-          color: const Color(0xFFECECEC),
-          width: 2.0,
+    var thumbImg;
+    if (thumbImgUrl.startsWith(RegExp('^https'))) {
+      thumbImg = new Container(
+        width: 102.0,
+        height: 136.0,
+        color: Color(0xFFECECEC),
+        child: CachedNetworkImage(
+          imageUrl: thumbImgUrl,
+          placeholder: Image.asset("./images/01.jpg"),
         ),
-      ),
-    );
-    if (thumbImgUrl != null && thumbImgUrl.length > 0) {
+      );
+    } else {
       thumbImg = new Container(
         width: 102.0,
         height: 136.0,
@@ -92,11 +89,7 @@ class BookRackState extends State<BookRack> {
           shape: BoxShape.rectangle,
           color: const Color(0xFFECECEC),
           image: new DecorationImage(
-              image: new NetworkImage(thumbImgUrl), fit: BoxFit.cover),
-          border: new Border.all(
-            color: const Color(0xFFECECEC),
-            width: 2.0,
-          ),
+              image: new NetworkImage(thumbImgUrl), fit: BoxFit.fitWidth),
         ),
       );
     }
@@ -153,16 +146,8 @@ class BookRackState extends State<BookRack> {
     var row = new Row(
       children: <Widget>[
         new Padding(
-          padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
-          child: new Container(
-            width: 102.0,
-            height: 136.0,
-            color: const Color(0xFFECECEC),
-            child: new Center(
-              child: thumbImg,
-            ),
-          ),
-        ),
+            padding: const EdgeInsets.fromLTRB(10.0, 10.0, 0.0, 10.0),
+            child: thumbImg),
         new Expanded(
           flex: 1,
           child: new Padding(
@@ -190,33 +175,72 @@ class BookRackState extends State<BookRack> {
     );
     return new InkWell(
       child: row,
-      onTap: (){
+      onTap: () {
         startRead(i);
       },
     );
   }
 
+  void deleteAction(index) async {
+    Map book = rackList[index];
 
-  @override
-  Widget build(BuildContext context) {
-
+    DataHelper db = DataHelper();
+    await db.deleteRack(book['id']);
     updateRackList();
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text("书架"),
-        backgroundColor: XColor.appBarColor,
-        textTheme: TextTheme(title: XTextStyle.navigationTitleStyle),
-      ),
-      body:Container(
-        padding: const EdgeInsets.all(.0),
-        child: new ListView.builder(
-          itemCount: rackList.length * 2,
-          itemBuilder: (context, i) => renderRow(i),
+  }
+
+  Widget getSlidAbleRow(index) {
+    return new Slidable(
+      delegate: new SlidableDrawerDelegate(),
+      actionExtentRatio: 0.25,
+      child: renderRow(index),
+      secondaryActions: <Widget>[
+        new IconSlideAction(
+          caption: '删除',
+          color: Colors.red,
+          icon: Icons.delete,
+          onTap: () => deleteAction(index),
         ),
-      ),
+      ],
     );
   }
 
+  void _onRefresh(bool up) {
+    if (up) {
+      //headerIndicator callback
+      updateRackList();
+    } else {
+      //footerIndicator Callback
+    }
+  }
 
-
+  @override
+  Widget build(BuildContext context) {
+    getRackList();
+    Widget _body;
+    if (rackList.length == 0) {
+      _body = BlankView(tipText: "快去添加书籍吧～～",);
+    } else {
+      _body = Container(
+          padding: const EdgeInsets.all(.0),
+          child: SmartRefresher(
+            enablePullDown: true,
+            enablePullUp: false,
+            onRefresh: _onRefresh,
+            onOffsetChange: null,
+            child: new ListView.builder(
+              itemCount: rackList.length,
+              itemBuilder: (context, i) => getSlidAbleRow(i),
+            ),
+            controller: refreshController,
+          ));
+    }
+    return new Scaffold(
+        appBar: new AppBar(
+          title: new Text("书架"),
+          backgroundColor: XColor.appBarColor,
+          textTheme: TextTheme(title: XTextStyle.navigationTitleStyle),
+        ),
+        body: _body);
+  }
 }

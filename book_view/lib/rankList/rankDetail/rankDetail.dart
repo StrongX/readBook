@@ -4,6 +4,7 @@ import 'package:book_view/Global/XContants.dart';
 import 'package:book_view/rankList/rankDetail/V/leftList.dart';
 import 'package:book_view/rankList/rankDetail/V/rightList.dart';
 
+
 class RankDetailView extends StatefulWidget {
   final Map data;
   final List typeList;
@@ -19,6 +20,7 @@ class RankDetailViewDetail extends State<RankDetailView> {
   List typeList;
   String doMain;
   Map regex;
+
   RankDetailViewDetail({Key key, @required this.model, this.typeList,this.doMain,this.regex});
 
 
@@ -27,10 +29,12 @@ class RankDetailViewDetail extends State<RankDetailView> {
 
   @override
   Widget build(BuildContext context) {
+    RankDetailRightList rightList = RankDetailRightList(source: model,doMain: doMain,regex: regex);
 
-    Widget leftList = RankDetailLeftList(typeList: typeList,);
+    Widget leftList = RankDetailLeftList(typeList: typeList,selectedBack: (String chn){
+      rightList.selectedTypeWithChn(chn);
+    },);
 
-    Widget rightList = RankDetailRightList(source: model,doMain: doMain,regex: regex,);
 
     return Scaffold(
       appBar: AppBar(

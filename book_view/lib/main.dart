@@ -26,7 +26,7 @@ class HomeAppState extends State<MyApp> with SingleTickerProviderStateMixin {
         body: new IndexedStack(
           children: <Widget>[
             new BookRack(),
-            new BookMall(),
+//            new BookMall(),
             new RankList(),
           ],
           index: _tabIndex,
@@ -36,9 +36,9 @@ class HomeAppState extends State<MyApp> with SingleTickerProviderStateMixin {
           items: <BottomNavigationBarItem>[
             new BottomNavigationBarItem(
                 icon: new Icon(Icons.bookmark), title: new Text("书架")),
-            new BottomNavigationBarItem(
-                icon: new Icon(Icons.store_mall_directory),
-                title: new Text("书城")),
+//            new BottomNavigationBarItem(
+//                icon: new Icon(Icons.store_mall_directory),
+//                title: new Text("书城")),
             new BottomNavigationBarItem(
                 icon: new Icon(Icons.local_library), title: new Text("找书")),
           ],

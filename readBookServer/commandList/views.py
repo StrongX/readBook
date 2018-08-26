@@ -16,31 +16,31 @@ def rankList(request):
 		rankList = []
 		rankList.append({
 			'name':'原创风云榜·新书',
-			'path':'/rank/yuepiao',
+			'path':'https://www.qidian.com/rank/yuepiao',
 			})
 		rankList.append({
 			'name':'24小时热销榜',
-			'path':'/rank/hotsales',
+			'path':'https://www.qidian.com/rank/hotsales',
 			})
 		rankList.append({
 			'name':'新锐会员周点击榜',
-			'path':'/rank/newvipclick',
+			'path':'https://www.qidian.com/rank/newvipclick',
 			})
 		rankList.append({
 			'name':'推荐票榜',
-			'path':'/rank/recom',
+			'path':'https://www.qidian.com/rank/recom',
 			})
 		rankList.append({
 			'name':'收藏榜',
-			'path':'/rank/collect',
+			'path':'https://www.qidian.com/rank/collect',
 			})
 		rankList.append({
 			'name':'完本榜',
-			'path':'/rank/fin',
+			'path':'https://www.qidian.com/rank/fin',
 			})
 		rankList.append({
 			'name':'签约作家新书榜',
-			'path':'/rank/signnewbook',
+			'path':'https://www.qidian.com/rank/signnewbook',
 			})
 		rankList.append({
 			'name':'公众作家新书榜',
@@ -122,7 +122,7 @@ def rankList(request):
 	    "typeRegex":typeRegex,
 	    "linkRegex":linkRegex,
 	    }
-		return JsonResponse({'code':100,'rankList':rankList,'typeList':typeList,'doMain':"www.qidian.com","regex":regex})
+		return JsonResponse({'code':100,'rankList':rankList,'typeList':typeList,"regex":regex})
 
 
 

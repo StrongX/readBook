@@ -19,35 +19,35 @@ class DefaultSetting{
     List rankList = [];
     rankList.add({
       'name':'原创风云榜·新书',
-      'path':'/rank/yuepiao',
+      'path':'https://www.qidian.com/rank/yuepiao',
     });
     rankList.add({
       'name':'24小时热销榜',
-      'path':'/rank/hotsales',
+      'path':'https://www.qidian.com/rank/hotsales',
     });
     rankList.add({
       'name':'新锐会员周点击榜',
-      'path':'/rank/newvipclick',
+      'path':'https://www.qidian.com/rank/newvipclick',
     });
     rankList.add({
       'name':'推荐票榜',
-      'path':'/rank/recom',
+      'path':'https://www.qidian.com/rank/recom',
     });
     rankList.add({
       'name':'收藏榜',
-      'path':'/rank/collect',
+      'path':'https://www.qidian.com/rank/collect',
     });
     rankList.add({
       'name':'完本榜',
-      'path':'/rank/fin',
+      'path':'https://www.qidian.com/rank/fin',
     });
     rankList.add({
       'name':'签约作家新书榜',
-      'path':'/rank/signnewbook',
+      'path':'https://www.qidian.com/rank/signnewbook',
     });
     rankList.add({
       'name':'公众作家新书榜',
-      'path':'/rank/pubnewbook',
+      'path':'https://www.qidian.com/rank/pubnewbook',
     });
     List typeList = [];
     typeList.add({
@@ -125,6 +125,6 @@ class DefaultSetting{
       "typeRegex":typeRegex,
       "linkRegex":linkRegex,
     };
-    return {'code':100,'rankList':rankList,'typeList':typeList,'doMain':"https://www.qidian.com","regex":regex};
+    return {'code':100,'rankList':rankList,'typeList':typeList,"regex":regex};
   }
 }

@@ -19,11 +19,11 @@ class RankListState extends State<RankList> {
   RankListState(){
     XHttp.get('/rankList', {}, (Map response) {
       if (response['code'] == 100) {
-        listView.loadDataWithList(response['rankList'],response['typeList'],response['doMain'],response['regex']);
+        listView.loadDataWithList(response['rankList'],response['typeList'],response['regex']);
       }
     },(DioError e){
       Map response = DefaultSetting.getDefaultSetting();
-      listView.loadDataWithList(response['rankList'],response['typeList'],response['doMain'],response['regex']);
+      listView.loadDataWithList(response['rankList'],response['typeList'],response['regex']);
     });
   }
   @override

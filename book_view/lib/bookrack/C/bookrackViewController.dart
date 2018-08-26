@@ -186,7 +186,7 @@ class BookRackState extends State<BookRack> {
   void deleteAction(index) async {
     Map book = rackList[index];
 
-    DataHelper db = DataHelper();
+    DataHelper db = await getDataHelp();
     await db.deleteRack(book['id']);
     updateRackList();
   }

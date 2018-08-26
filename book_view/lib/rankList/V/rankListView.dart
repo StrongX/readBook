@@ -7,8 +7,8 @@ class RankListView extends StatefulWidget {
   RankListViewState createState() {
     return listView;
   }
-  loadDataWithList(rankList,typeList,doMain,regex){
-    listView.loadDataWithList(rankList,typeList,doMain,regex);
+  loadDataWithList(rankList,typeList,regex){
+    listView.loadDataWithList(rankList,typeList,regex);
   }
 }
 
@@ -17,17 +17,15 @@ class RankListViewState extends State<RankListView> {
 
   clickItem(model){
     Navigator.of(context).push(new MaterialPageRoute(
-        builder: (ctx) => new RankDetailView(data: model,typeList: _typeList,doMain: _domain,regex: _regex,)
+        builder: (ctx) => new RankDetailView(data: model,typeList: _typeList,regex: _regex,)
     ));
   }
   List _typeList;
   List dataSource=[];
-  String _domain;
   Map _regex;
   List<Widget> childsWidget = [];
-  loadDataWithList(rankList,typeList,doMain,regex){
+  loadDataWithList(rankList,typeList,regex){
     _typeList = typeList;
-    _domain = doMain;
     _regex = regex;
     setState(() {
       dataSource = rankList;

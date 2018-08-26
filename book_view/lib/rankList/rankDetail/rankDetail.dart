@@ -8,20 +8,18 @@ import 'package:book_view/rankList/rankDetail/V/rightList.dart';
 class RankDetailView extends StatefulWidget {
   final Map data;
   final List typeList;
-  final String doMain;
   final Map regex;
-  RankDetailView({Key key, @required this.data ,@required this.typeList,this.doMain,this.regex}):super(key:key);
+  RankDetailView({Key key, @required this.data ,@required this.typeList,this.regex}):super(key:key);
   @override
-  RankDetailViewDetail createState() => new RankDetailViewDetail(model: this.data,typeList: this.typeList,doMain: this.doMain,regex: this.regex);
+  RankDetailViewDetail createState() => new RankDetailViewDetail(model: this.data,typeList: this.typeList,regex: this.regex);
 }
 
 class RankDetailViewDetail extends State<RankDetailView> {
   Map model;
   List typeList;
-  String doMain;
   Map regex;
 
-  RankDetailViewDetail({Key key, @required this.model, this.typeList,this.doMain,this.regex});
+  RankDetailViewDetail({Key key, @required this.model, this.typeList,this.regex});
 
 
 
@@ -29,7 +27,7 @@ class RankDetailViewDetail extends State<RankDetailView> {
 
   @override
   Widget build(BuildContext context) {
-    RankDetailRightList rightList = RankDetailRightList(source: model,doMain: doMain,regex: regex);
+    RankDetailRightList rightList = RankDetailRightList(source: model,regex: regex);
 
     Widget leftList = RankDetailLeftList(typeList: typeList,selectedBack: (String chn){
       rightList.selectedTypeWithChn(chn);

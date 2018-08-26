@@ -7,28 +7,26 @@ import 'dart:async';
 import 'package:book_view/Global/V/XHUD.dart';
 class RankDetailRightList extends StatefulWidget {
   final Map source;
-  final String doMain;
   final Map regex;
   RankDetailRightListState state;
   void selectedTypeWithChn(String chn) {
     state.selectedTypeWithChn(chn);
   }
-  RankDetailRightList({Key key, this.source, this.doMain, this.regex})
+  RankDetailRightList({Key key, this.source, this.regex})
       : super(key: key);
 
   @override
   RankDetailRightListState createState() {
     state = RankDetailRightListState(
-        source: this.source, doMain: this.doMain, regex: this.regex);
+        source: this.source, regex: this.regex);
     return state;
   }
 }
 
 class RankDetailRightListState extends State<RankDetailRightList> {
   final Map source;
-  final String doMain;
   Map regex;
-  RankDetailRightListState({Key key, this.source, this.doMain, this.regex}){
+  RankDetailRightListState({Key key, this.source, this.regex}){
     getDataFromHttp();
   }
 
@@ -48,13 +46,19 @@ class RankDetailRightListState extends State<RankDetailRightList> {
   int page = 1;
   String _chn = "-1";
 
+  XHud hud = XHud(
+    backgroundColor: Colors.black12,
+    color: Colors.white,
+    containerColor: Colors.black26,
+    borderRadius: 5.0,
+  );
 
 
   RefreshController refreshState = RefreshController();
   getDataFromHttp() {
     hud.state.show();
     String path = source['path'];
-    XHttp.getWithCompleteUrl(doMain + path, {"page": "$page", "chn": _chn},
+    XHttp.getWithCompleteUrl(path, {"page": "$page", "chn": _chn},
         (String response) {
       response = response.replaceAll(RegExp("\r|\n"), "");
       XRegexObject find = new XRegexObject(text: response);
@@ -81,23 +85,6 @@ class RankDetailRightListState extends State<RankDetailRightList> {
       refreshState.sendBack(false, RefreshStatus.idle);
       hud.state.dismiss();
     });
-//    XHttp.getWithDomain(doMain, path, params, (String response) {
-//      response = response.replaceAll(RegExp("\r|\n"), "");
-//      XRegexObject find = new XRegexObject(text: response);
-//      setState(() {
-//        titles = find.getListWithRegex(regex['titleRegex']);
-//        covers = find.getListWithRegex(regex['coverRegex']);
-//        authors = find.getListWithRegex(regex['authorRegex']);
-//        types = find.getListWithRegex(regex['typeRegex']);
-//        intros = find.getListWithRegex(regex['introRegex']);
-//        lasts = find.getListWithRegex(regex['lastRegex']);
-//        lastDates = find.getListWithRegex(regex['lastDateRegex']);
-//        links = find.getListWithRegex(regex['linkRegex']);
-//      });
-//      refreshState.sendBack(true, RefreshStatus.idle);
-//      refreshState.sendBack(false, RefreshStatus.idle);
-//
-//    });
   }
 
   Widget renderRow(i) {
@@ -110,7 +97,7 @@ class RankDetailRightListState extends State<RankDetailRightList> {
     i = i ~/ 2;
     String thumbImgUrl = covers[i];
     if (!thumbImgUrl.startsWith(RegExp('^http'))) {
-      thumbImgUrl = "http://" + thumbImgUrl;
+      thumbImgUrl = "https://" + thumbImgUrl;
     }
     var thumbImg = new Container(
       width: 102.0,
@@ -119,7 +106,7 @@ class RankDetailRightListState extends State<RankDetailRightList> {
         shape: BoxShape.rectangle,
         color: const Color(0xFFECECEC),
         image: new DecorationImage(
-            image: new ExactAssetImage('./images/01.jpg'), fit: BoxFit.cover),
+            image: new NetworkImage(thumbImgUrl), fit: BoxFit.cover),
         border: new Border.all(
           color: const Color(0xFFECECEC),
           width: 2.0,
@@ -127,20 +114,7 @@ class RankDetailRightListState extends State<RankDetailRightList> {
       ),
     );
     if (thumbImgUrl != null && thumbImgUrl.length > 0) {
-      thumbImg = new Container(
-        width: 102.0,
-        height: 136.0,
-        decoration: new BoxDecoration(
-          shape: BoxShape.rectangle,
-          color: const Color(0xFFECECEC),
-          image: new DecorationImage(
-              image: new NetworkImage(thumbImgUrl), fit: BoxFit.cover),
-          border: new Border.all(
-            color: const Color(0xFFECECEC),
-            width: 2.0,
-          ),
-        ),
-      );
+
     }
 
     var titleRow = new Row(

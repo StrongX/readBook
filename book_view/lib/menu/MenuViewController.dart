@@ -4,8 +4,8 @@ import 'package:book_view/Global/XHttp.dart';
 import 'package:book_view/tools/XRegexObject.dart';
 import 'package:book_view/read/readViewController.dart';
 import 'package:book_view/Global/dataHelper.dart';
-import 'package:sqflite/sqflite.dart';
-import 'package:path/path.dart' as p;
+import 'package:book_view/Global/V/XHUD.dart';
+
 
 class MenuViewController extends StatefulWidget{
   final String url;
@@ -22,14 +22,28 @@ class MenuViewControllerState extends State<MenuViewController> {
   String bookName;
   List chapters=[];
   List links;
-  MenuViewControllerState({Key key,this.url,this.bookName}){
-    getDataFromHttp();
+  XHud hud = XHud(
+    backgroundColor: Colors.black12,
+    color: Colors.white,
+    containerColor: Colors.black26,
+    borderRadius: 5.0,
+  );
+
+  MenuViewControllerState({Key key,this.url,this.bookName});
+
+  @override
+  initState(){
+    super.initState();
+    WidgetsBinding.instance
+        .addPostFrameCallback((_) => getDataFromHttp());
   }
 
-  getDataFromHttp(){
+  getDataFromHttp()async{
+    hud.state.showWithString("正在搜索目录信息");
     DataHelper.readDataFromTable(table: "Chapter");
-    print(url);
     XHttp.getWithCompleteUrl(url, {}, (String response) async{
+      hud.state.showWithString("正在分析目录信息");
+
       response = response.replaceAll(RegExp("\r|\n|\\s"), "");
       print(response);
       XRegexObject find = new XRegexObject(text: response);
@@ -39,14 +53,19 @@ class MenuViewControllerState extends State<MenuViewController> {
 
       chapters = find.getListWithRegex(chapterRegex);
       links = find.getListWithRegex(linkRegex);
+
+      hud.state.showWithString("正在更新本地目录");
+
       DataHelper db = await getDataHelp();
       for(int i = 0; i<chapters.length;i++){
         await db.insertChapter(bookName, chapters[i], "https://www.biqudu.com"+links[i]);
       }
+      hud.state.showWithString("正在加载目录");
 
       setState(() {
 
       });
+      hud.state.dismiss();
     });
   }
 
@@ -60,7 +79,7 @@ class MenuViewControllerState extends State<MenuViewController> {
     }
     i = i ~/ 2;
     return new InkWell(
-      child: Text(chapters[i]),
+      child: Text(chapters[i],style: TextStyle(fontSize: 18.0),),
       onTap: () {
         String url = links[i];
         Navigator.of(context).push(new MaterialPageRoute(
@@ -85,12 +104,17 @@ class MenuViewControllerState extends State<MenuViewController> {
           textTheme: TextTheme(title: XTextStyle.navigationTitleStyle),
           iconTheme: IconThemeData(color: Colors.white),
         ),
-        body:Container(
-          padding: EdgeInsets.all(10.0),
-          child: new ListView.builder(
-            itemCount: chapters.length*2,
-            itemBuilder: (context, i) => renderRow(i),
-          ),
+        body:Stack(
+          children: <Widget>[
+            Container(
+              padding: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
+              child: new ListView.builder(
+                itemCount: chapters.length*2,
+                itemBuilder: (context, i) => renderRow(i),
+              ),
+            ),
+            hud,
+          ],
         )
     );;
   }

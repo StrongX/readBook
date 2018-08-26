@@ -5,6 +5,7 @@ import 'package:book_view/tools/XRegexObject.dart';
 import 'package:book_view/Global/XPrint.dart';
 import 'package:book_view/menu/MenuViewController.dart';
 import 'package:book_view/Global/dataHelper.dart';
+import 'package:book_view/Global/V/XHUD.dart';
 class SearchResultViewController extends StatefulWidget{
   final String bookName;
   SearchResultViewController({Key key,this.bookName}):super(key:key);
@@ -23,15 +24,25 @@ class SearchResultViewControllerState extends State<SearchResultViewController> 
   List links;
   TextField searchField;
   TextEditingController editController;
-  SearchResultViewControllerState({Key key,this.bookName}){
-    getDataFromHttp();
+  XHud hud = XHud(
+    backgroundColor: Colors.black12,
+    color: Colors.white,
+    containerColor: Colors.black26,
+    borderRadius: 5.0,
+  );
+  SearchResultViewControllerState({Key key,this.bookName});
+  @override
+  initState(){
+    super.initState();
+    WidgetsBinding.instance
+        .addPostFrameCallback((_) => getDataFromHttp());
   }
 
   getDataFromHttp(){
     if(bookName == "" || bookName == null){
       return;
     }
-
+    hud.state.showWithString("正在搜索书籍资源");
     XHttp.getWithCompleteUrl("https://www.biqudu.com/searchbook.php?keyword="+bookName, {}, (String response){
       response = response.replaceAll(RegExp("\r|\n|\\s"), "");
       XRegexObject find = new XRegexObject(text: response);
@@ -47,6 +58,7 @@ class SearchResultViewControllerState extends State<SearchResultViewController> 
         links = find.getListWithRegex(linkRegex);
         intros = find.getListWithRegex(introRegex);
       });
+      hud.state.dismiss();
     });
   }
   addRack(i)async{
@@ -57,6 +69,12 @@ class SearchResultViewControllerState extends State<SearchResultViewController> 
     DataHelper db = await getDataHelp();
     await db.insertRack(bookName, thumbImgUrl, "", authors[i], "", "", intros[i], intros[i], "");
 
+  }
+  showMenuList(i){
+    String url = links[i];
+    Navigator.of(context).push(new MaterialPageRoute(
+        builder: (ctx) => new MenuViewController(url: "https://www.biqudu.com"+url,bookName: titles[i],)
+    ));
   }
   Widget renderRow(i) {
 
@@ -145,6 +163,17 @@ class SearchResultViewControllerState extends State<SearchResultViewController> 
           height: 30.0,
           child: new RaisedButton(
             onPressed: (){
+              showMenuList(i);
+            },
+            child: new Text("查看目录",style: TextStyle(fontSize: 12.0),),
+            color: new Color.fromRGBO(255, 255, 255, 1.0),
+          ),
+        ),
+        new Container(
+          padding: EdgeInsets.fromLTRB(0.0, 8.0, 8.0, 0.0),
+          height: 30.0,
+          child: new RaisedButton(
+            onPressed: (){
               addRack(i);
             },
             child: new Text("加入书架",style: TextStyle(fontSize: 12.0),),
@@ -194,24 +223,35 @@ class SearchResultViewControllerState extends State<SearchResultViewController> 
     return new InkWell(
       child: row,
       onTap: () {
-        String url = links[i];
-        Navigator.of(context).push(new MaterialPageRoute(
-            builder: (ctx) => new MenuViewController(url: "https://www.biqudu.com"+url,bookName: titles[i],)
-        ));
+        showMenuList(i);
       },
     );
   }
 
+  searchAction(){
+    bookName = editController.text;
+    getDataFromHttp();
+  }
+
   Widget searchInput() {
+    bool focus;
+    if(bookName.isEmpty){
+      focus = true;
+    }else{
+      focus = false;
+    }
     if(searchField == null){
       editController = new TextEditingController(text: bookName);
       searchField = TextField(
         controller: editController,
-        autofocus: true,
+        autofocus: focus,
         decoration: new InputDecoration.collapsed(
           hintText: "请输入书籍名称",
           hintStyle: new TextStyle(color: XColor.fontColor),
         ),
+        onSubmitted: (String key){
+          searchAction();
+        },
       );
     }
     return new Container(
@@ -241,8 +281,7 @@ class SearchResultViewControllerState extends State<SearchResultViewController> 
               child:GestureDetector(
                 child: Text("确定",style: XTextStyle.barItemTStyle,),
                 onTap: (){
-                  bookName = editController.text;
-                  getDataFromHttp();
+                  searchAction();
                 },
               ),
             )
@@ -267,12 +306,17 @@ class SearchResultViewControllerState extends State<SearchResultViewController> 
             textTheme: TextTheme(title: XTextStyle.navigationTitleStyle),
             iconTheme: IconThemeData(color: Colors.white),
           ),
-          body:Container(
-            padding: EdgeInsets.all(10.0),
-            child: new ListView.builder(
-              itemCount: titles.length*2,
-              itemBuilder: (context, i) => renderRow(i),
-            ),
+          body:Stack(
+            children: <Widget>[
+              Container(
+                padding: EdgeInsets.all(10.0),
+                child: new ListView.builder(
+                  itemCount: titles.length*2,
+                  itemBuilder: (context, i) => renderRow(i),
+                ),
+              ),
+              hud,
+            ],
           )
       ),
     );

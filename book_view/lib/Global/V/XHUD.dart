@@ -1,11 +1,5 @@
 import 'package:flutter/material.dart';
 
-var hud = XHud(
-  backgroundColor: Colors.black12,
-  color: Colors.white,
-  containerColor: Colors.black26,
-  borderRadius: 5.0,
-);
 
 class XHud extends StatefulWidget {
   final Color backgroundColor;
@@ -109,10 +103,12 @@ class XHudState extends State<XHud> {
         children: [
           _getCircularProgress(),
           new Container(
-            margin: const EdgeInsets.fromLTRB(0.0, 15.0, 0.0, 0.0),
+            width: 90.0,
+            margin: const EdgeInsets.fromLTRB(5.0, 15.0, 5.0, 0.0),
             child: new Text(
               _text,
-              style: new TextStyle(color: widget.color),
+              textAlign: TextAlign.center,
+              style: new TextStyle(color: widget.color,),
             ),
           )
         ],

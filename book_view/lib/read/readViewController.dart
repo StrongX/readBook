@@ -52,7 +52,6 @@ class ReadViewControllerState extends State<ReadViewController> {
       setState(() {
       });
       scroll.animateTo(0.0, duration: new Duration(milliseconds: 200), curve: Curves.ease);
-
     });
   }
 

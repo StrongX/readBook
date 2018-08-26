@@ -57,9 +57,8 @@ class MenuViewControllerState extends State<MenuViewController> {
       hud.state.showWithString("正在更新本地目录");
 
       DataHelper db = await getDataHelp();
-      for(int i = 0; i<chapters.length;i++){
-        await db.insertChapter(bookName, chapters[i], "https://www.biqudu.com"+links[i]);
-      }
+      db.insertChapterList(bookName, chapters, links);
+
       hud.state.showWithString("正在加载目录");
 
       setState(() {

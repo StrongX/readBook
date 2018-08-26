@@ -3,7 +3,7 @@ import 'package:sqflite/sqflite.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-const dbName = 'test5.db';
+const dbName = 'test6.db';
 
 Future<DataHelper>getDataHelp()async{
   DataHelper helper = DataHelper();
@@ -38,8 +38,22 @@ class DataHelper{
 //    await database.close();
 //  }
   insertChapter(String bookName,String chapterName,String link)async{
-    await database.execute('INSERT OR IGNORE INTO Chapter(bookName, chapterName, link) VALUES("$bookName", "$chapterName", "$link")');
+    await database.rawInsert('INSERT OR IGNORE INTO Chapter(bookName, chapterName, link) VALUES("$bookName", "$chapterName", "$link")');
+
   }
+  insertChapterList(String bookName,List chapters,List links)async{
+    Batch batch = database.batch();
+    for(int i = 0; i<chapters.length;i++){
+      String chapterName = chapters[i];
+      String link = links[i];
+      if(!link.startsWith(RegExp("^http"))){
+        link = "https://www.biqudu.com"+link;
+      }
+      batch.execute('INSERT OR IGNORE INTO Chapter(bookName, chapterName, link) VALUES("$bookName", "$chapterName", "$link")');
+    }
+    await batch.commit();
+  }
+
   insertRack(String bookName,String cover,String link,String author,String type,String lastChapter,String desc,String shortIntro,String lastChapterDate)async{
     List list = await database.rawQuery('select * from RackList where bookName = "$bookName"');
     if(list.length==0){

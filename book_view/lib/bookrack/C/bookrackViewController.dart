@@ -23,7 +23,9 @@ class BookRackState extends State<BookRack> {
   updateRackList() async {
     await getRackList();
     setState(() {});
-    refreshController.sendBack(true, RefreshStatus.idle);
+    if(refreshController.scrollController!= null){
+      refreshController.sendBack(true, RefreshStatus.idle);
+    }
   }
   getRackList()async{
     DataHelper db = await getDataHelp();
@@ -71,17 +73,17 @@ class BookRackState extends State<BookRack> {
       thumbImgUrl = "https://" + thumbImgUrl;
     }
     var thumbImg;
-    if (thumbImgUrl.startsWith(RegExp('^https'))) {
-      thumbImg = new Container(
-        width: 102.0,
-        height: 136.0,
-        color: Color(0xFFECECEC),
-        child: CachedNetworkImage(
-          imageUrl: thumbImgUrl,
-          placeholder: Image.asset("./images/01.jpg"),
-        ),
-      );
-    } else {
+//    if (thumbImgUrl.startsWith(RegExp('^https'))) {
+//      thumbImg = new Container(
+//        width: 102.0,
+//        height: 136.0,
+//        color: Color(0xFFECECEC),
+//        child: CachedNetworkImage(
+//          imageUrl: thumbImgUrl,
+//          placeholder: Image.asset("./images/01.jpg"),
+//        ),
+//      );
+//    } else {
       thumbImg = new Container(
         width: 102.0,
         height: 136.0,
@@ -92,7 +94,7 @@ class BookRackState extends State<BookRack> {
               image: new NetworkImage(thumbImgUrl), fit: BoxFit.fitWidth),
         ),
       );
-    }
+//    }
 
     var titleRow = new Row(
       children: <Widget>[

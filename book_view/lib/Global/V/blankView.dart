@@ -16,7 +16,7 @@ class BlankView extends StatelessWidget{
               width: 150.0,
               child: Image.asset('./images/blank.png'),
             ),
-            Text(tipText,style: TextStyle(color: Colors.black26,fontSize: 12.0),),
+            Text(tipText,style: TextStyle(color: Colors.black26,fontSize: 15.0),),
           ],
         )
       ),

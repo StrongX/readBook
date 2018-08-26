@@ -5,7 +5,7 @@ import 'package:html/dom.dart' as html;
 class ReadHtmlParser{
   List<Widget> _widgets;
   List<TextSpan> _currentTextSpans;
-  TextStyle textStyle = TextStyle(color: Colors.black54,fontSize: 14.0);
+  TextStyle textStyle = TextStyle(color: Colors.black54,fontSize: 18.0);
 
 
 

@@ -4,8 +4,7 @@ import 'package:book_view/bookDetail/bookDetailViewController.dart';
 import 'package:book_view/tools/XRegexObject.dart';
 import "package:pull_to_refresh/pull_to_refresh.dart";
 import 'dart:async';
-
-
+import 'package:book_view/Global/V/XHUD.dart';
 class RankDetailRightList extends StatefulWidget {
   final Map source;
   final String doMain;
@@ -29,8 +28,13 @@ class RankDetailRightListState extends State<RankDetailRightList> {
   final Map source;
   final String doMain;
   Map regex;
-  RankDetailRightListState({Key key, this.source, this.doMain, this.regex}) {
+  RankDetailRightListState({Key key, this.source, this.doMain, this.regex}){
     getDataFromHttp();
+  }
+
+  @override
+  initState(){
+    super.initState();
   }
 
   List titles = [];
@@ -44,9 +48,11 @@ class RankDetailRightListState extends State<RankDetailRightList> {
   int page = 1;
   String _chn = "-1";
 
+
+
   RefreshController refreshState = RefreshController();
   getDataFromHttp() {
-
+    hud.state.show();
     String path = source['path'];
     XHttp.getWithCompleteUrl(doMain + path, {"page": "$page", "chn": _chn},
         (String response) {
@@ -73,6 +79,7 @@ class RankDetailRightListState extends State<RankDetailRightList> {
       setState(() {});
       refreshState.sendBack(true, RefreshStatus.idle);
       refreshState.sendBack(false, RefreshStatus.idle);
+      hud.state.dismiss();
     });
 //    XHttp.getWithDomain(doMain, path, params, (String response) {
 //      response = response.replaceAll(RegExp("\r|\n"), "");
@@ -266,19 +273,26 @@ class RankDetailRightListState extends State<RankDetailRightList> {
 
   @override
   Widget build(BuildContext context) {
+
     // TODO: implement build
     return Container(
         padding: const EdgeInsets.all(.0),
-        child: SmartRefresher(
-          enablePullDown: true,
-          enablePullUp: true,
-          onRefresh: _onRefresh,
-          onOffsetChange: null,
-          child: ListView.builder(
-            itemCount: titles.length * 2,
-            itemBuilder: (context, i) => renderRow(i),
-          ),
-          controller: refreshState,
-        ));
+        child: Stack(
+          children: <Widget>[
+            hud,
+            SmartRefresher(
+              enablePullDown: true,
+              enablePullUp: true,
+              onRefresh: _onRefresh,
+              onOffsetChange: null,
+              child: ListView.builder(
+                itemCount: titles.length * 2,
+                itemBuilder: (context, i) => renderRow(i),
+              ),
+              controller: refreshState,
+            ),
+          ],
+        )
+    );
   }
 }

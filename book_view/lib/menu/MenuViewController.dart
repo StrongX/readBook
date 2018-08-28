@@ -5,7 +5,7 @@ import 'package:book_view/tools/XRegexObject.dart';
 import 'package:book_view/read/readViewController.dart';
 import 'package:book_view/Global/dataHelper.dart';
 import 'package:book_view/Global/V/XHUD.dart';
-
+import 'dart:async';
 
 class MenuViewController extends StatefulWidget{
   final String url;
@@ -79,13 +79,15 @@ class MenuViewControllerState extends State<MenuViewController> {
     i = i ~/ 2;
     return new InkWell(
       child: Text(chapters[i],style: TextStyle(fontSize: 18.0),),
-      onTap: () {
+      onTap: () async {
+        DataHelper db = await getDataHelp();
+        Map chapter = await db.getChapter(bookName, chapters[i]);
         String url = links[i];
         Navigator.of(context).push(new MaterialPageRoute(
-            builder: (ctx) => new ReadViewController(url: "https://www.biqudu.com"+url,title: chapters[i],bookName: bookName,)
+            builder: (ctx) => new ReadViewController(chapter: chapter,)
         ));
       },
-    );;
+    );
   }
 
   @override

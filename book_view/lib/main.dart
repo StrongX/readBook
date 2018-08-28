@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'bookrack/C/bookrackViewController.dart';
 import 'rankList/rankListViewController.dart';
 import 'Global/XContants.dart';
-import 'bookMall/bookMallViewController.dart';
+import 'package:flutter/services.dart';
 void main() => runApp(new MyApp());
 
 
@@ -20,6 +20,8 @@ class HomeAppState extends State<MyApp> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
+
     return new MaterialApp(
       theme: ThemeData(primaryColor: Colors.white),
       home: new Scaffold(

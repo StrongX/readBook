@@ -7,6 +7,7 @@ import "package:pull_to_refresh/pull_to_refresh.dart";
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:book_view/Global/V/blankView.dart';
+import 'package:flutter/services.dart';
 
 class BookRack extends StatefulWidget {
   @override
@@ -18,6 +19,9 @@ class BookRackState extends State<BookRack> {
   List rackList = [];
 
   BookRackState() {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light.copyWith(
+        statusBarIconBrightness: Brightness.light
+    ));
     updateRackList();
   }
   updateRackList() async {
@@ -50,22 +54,14 @@ class BookRackState extends State<BookRack> {
       } else {
         Navigator.of(context).push(new MaterialPageRoute(
             builder: (ctx) => ReadViewController(
-                  url: chapter['link'],
-                  title: chapter['chapterName'],
-                  bookName: chapter['bookName'],
+                  chapter: chapter,
                 )));
       }
     }
   }
 
   Widget renderRow(i) {
-//    if (i.isOdd) {
-//      return new Container(
-//        padding: EdgeInsets.fromLTRB(102.0, 0.0, 0.0, 0.0),
-//        child: new Divider(height: 1.0),
-//      );
-//    }
-//    i = i ~/ 2;
+
     Map book = rackList[i];
     String thumbImgUrl = book['cover'];
 //    String thumbImgUrl = "https://qidian.qpic.cn/qdbimg/349573/2248950/150";

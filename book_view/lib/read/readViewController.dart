@@ -8,42 +8,33 @@ import 'package:book_view/Global/cacehHelper.dart';
 import 'package:book_view/read/V/ReadHtmlParser.dart';
 
 class ReadViewController extends StatefulWidget {
-  final String title;
-  final String bookName;
-  final String url;
+  final Map chapter;
 
-  ReadViewController({Key key, this.title, this.bookName, this.url})
+  ReadViewController({Key key,  this.chapter})
       : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => new ReadViewControllerState(
-      title: this.title, bookName: this.bookName, url: this.url);
+  State<StatefulWidget> createState() => new ReadViewControllerState(chapter: chapter);
 }
 
 class ReadViewControllerState extends State<ReadViewController> {
-  String url;
-  String title;
-  String bookName;
   String content = '';
   Map chapter;
   ScrollController scroll = ScrollController();
   ReadHtmlParser contentObject;
   double maxOffset=0.0;
   double minOffSet=0.0;
-  ReadViewControllerState({Key key, this.url, this.title, this.bookName}) {
+  ReadViewControllerState({Key key,this.chapter}) {
     contentObject = ReadHtmlParser();
     getDataFromHttp();
   }
 
   getDataFromHttp() async {
     DataHelper db = await getDataHelp();
-    if (chapter == null) {
-      chapter = await db.getChapter(bookName, title);
-    }
-    db.updateCurrentChapter(bookName, title);
-    CacheHelper.cacheBookAuto(bookName, title);
+    db.updateCurrentChapter(chapter['bookName'], chapter['chapterName']);
+    CacheHelper.cacheBookAuto(chapter['bookName'], chapter['chapterName']);
 
-    await CacheHelper.getChapterContent(bookName, chapter['chapterName'], url,
+    await CacheHelper.getChapterContent(chapter['bookName'], chapter['chapterName'], chapter['link'],
         (String chapterCache) {
       XRegexObject find = new XRegexObject(text: chapterCache);
       String contentRegex = r'<div id="content">(.*?)</div>';
@@ -64,7 +55,7 @@ class ReadViewControllerState extends State<ReadViewController> {
         showAppBar = true;
         toolOpacity = 1.0;
         _appBar = AppBar(
-          title: Text(title),
+          title: Text(chapter['chapterName']),
           backgroundColor: XColor.appBarColor,
           textTheme: TextTheme(title: XTextStyle.readTitleStyle),
           iconTheme: IconThemeData(color: Colors.white),
@@ -88,10 +79,8 @@ class ReadViewControllerState extends State<ReadViewController> {
   nextChapter() async {
     print("next");
     DataHelper db = await getDataHelp();
-    chapter = await db.getNextChapter(bookName, chapter["id"]);
+    chapter = await db.getNextChapter(chapter['bookName'], chapter["id"]);
     if (chapter != null) {
-      title = chapter['chapterName'];
-      url = chapter['link'];
       getDataFromHttp();
     }
   }
@@ -99,10 +88,8 @@ class ReadViewControllerState extends State<ReadViewController> {
   lastChapter() async {
     print("last");
     DataHelper db = await getDataHelp();
-    chapter = await db.getLastChapter(bookName, chapter["id"]);
+    chapter = await db.getLastChapter(chapter['bookName'], chapter["id"]);
     if (chapter != null) {
-      title = chapter['chapterName'];
-      url = chapter['link'];
       getDataFromHttp();
     }
   }

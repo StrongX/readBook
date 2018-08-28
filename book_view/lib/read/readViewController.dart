@@ -6,7 +6,7 @@ import 'package:book_view/read/V/ReadBottomView.dart';
 import 'package:book_view/Global/dataHelper.dart';
 import 'package:book_view/Global/cacehHelper.dart';
 import 'package:book_view/read/V/ReadHtmlParser.dart';
-
+import 'package:book_view/read/V/ReadTopView.dart';
 class ReadViewController extends StatefulWidget {
   final Map chapter;
 
@@ -46,7 +46,7 @@ class ReadViewControllerState extends State<ReadViewController> {
     });
   }
 
-  AppBar _appBar;
+
   double toolOpacity = 0.0;
   var showAppBar = false;
   showTipView() {
@@ -54,23 +54,8 @@ class ReadViewControllerState extends State<ReadViewController> {
       if (showAppBar == false) {
         showAppBar = true;
         toolOpacity = 1.0;
-        _appBar = AppBar(
-          title: Text(chapter['chapterName']),
-          backgroundColor: XColor.appBarColor,
-          textTheme: TextTheme(title: XTextStyle.readTitleStyle),
-          iconTheme: IconThemeData(color: Colors.white),
-          actions: <Widget>[
-            IconButton(
-                icon: Icon(
-                  Icons.menu,
-                  color: Colors.white,
-                ),
-                onPressed: null),
-          ],
-        );
       } else {
         showAppBar = false;
-        _appBar = null;
         toolOpacity = 0.0;
       }
     });
@@ -110,6 +95,7 @@ class ReadViewControllerState extends State<ReadViewController> {
         if(maxOffset-notification.metrics.maxScrollExtent>100){
           nextChapter();
           maxOffset=0.0;
+          minOffSet=0.0;
         }
       }
       //滑动到最顶部
@@ -117,6 +103,7 @@ class ReadViewControllerState extends State<ReadViewController> {
         if(minOffSet<-100){
           lastChapter();
           minOffSet=0.0;
+          maxOffset=0.0;
         }
       }
     }
@@ -127,15 +114,24 @@ class ReadViewControllerState extends State<ReadViewController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: _appBar,
         backgroundColor: Color.fromRGBO(247, 235, 157, 1.0),
         body: Stack(
           children: <Widget>[
+
             GestureDetector(
               child: NotificationListener(child: contentObject.getParseListFromStr(content,scroll),
                 onNotification: _handleScrollNotification,
               ),
               onTap: showTipView,
+            ),
+            Align(
+              alignment: AlignmentDirectional.topCenter,
+              child: Opacity(
+                opacity: toolOpacity,
+                child: ReadTopView(
+
+                ),
+              ),
             ),
             Align(
               alignment: AlignmentDirectional.bottomCenter,

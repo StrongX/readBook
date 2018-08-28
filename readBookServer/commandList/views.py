@@ -44,7 +44,7 @@ def rankList(request):
 			})
 		rankList.append({
 			'name':'公众作家新书榜',
-			'path':'/rank/pubnewbook',
+			'path':'https://www.qidian.com/rank/pubnewbook',
 			})
 		typeList = []
 		typeList.append({

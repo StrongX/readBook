@@ -5,6 +5,7 @@ import 'package:book_view/tools/XRegexObject.dart';
 import "package:pull_to_refresh/pull_to_refresh.dart";
 import 'dart:async';
 import 'package:book_view/Global/V/XHUD.dart';
+
 class RankDetailRightList extends StatefulWidget {
   final Map source;
   final Map regex;
@@ -12,13 +13,12 @@ class RankDetailRightList extends StatefulWidget {
   void selectedTypeWithChn(String chn) {
     state.selectedTypeWithChn(chn);
   }
-  RankDetailRightList({Key key, this.source, this.regex})
-      : super(key: key);
+
+  RankDetailRightList({Key key, this.source, this.regex}) : super(key: key);
 
   @override
   RankDetailRightListState createState() {
-    state = RankDetailRightListState(
-        source: this.source, regex: this.regex);
+    state = RankDetailRightListState(source: this.source, regex: this.regex);
     return state;
   }
 }
@@ -28,10 +28,9 @@ class RankDetailRightListState extends State<RankDetailRightList> {
   Map regex;
   RankDetailRightListState({Key key, this.source, this.regex});
   @override
-  initState(){
+  initState() {
     super.initState();
-    WidgetsBinding.instance
-        .addPostFrameCallback((_) => getDataFromHttp());
+    WidgetsBinding.instance.addPostFrameCallback((_) => getDataFromHttp());
   }
 
   List titles = [];
@@ -51,7 +50,6 @@ class RankDetailRightListState extends State<RankDetailRightList> {
     containerColor: Colors.black26,
     borderRadius: 5.0,
   );
-
 
   RefreshController refreshState = RefreshController();
   getDataFromHttp() {
@@ -87,13 +85,6 @@ class RankDetailRightListState extends State<RankDetailRightList> {
   }
 
   Widget renderRow(i) {
-    if (i.isOdd) {
-      return new Container(
-        padding: EdgeInsets.fromLTRB(102.0, 0.0, 0.0, 0.0),
-        child: new Divider(height: 1.0),
-      );
-    }
-    i = i ~/ 2;
     String thumbImgUrl = covers[i];
     if (!thumbImgUrl.startsWith(RegExp('^http'))) {
       thumbImgUrl = "https://" + thumbImgUrl;
@@ -112,9 +103,7 @@ class RankDetailRightListState extends State<RankDetailRightList> {
         ),
       ),
     );
-    if (thumbImgUrl != null && thumbImgUrl.length > 0) {
-
-    }
+    if (thumbImgUrl != null && thumbImgUrl.length > 0) {}
 
     var titleRow = new Row(
       children: <Widget>[
@@ -165,42 +154,47 @@ class RankDetailRightListState extends State<RankDetailRightList> {
         ),
       ],
     );
-    var row = new Row(
+    var row = Column(
       children: <Widget>[
-        new Padding(
-          padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
-          child: new Container(
-            width: 102.0,
-            height: 136.0,
-            color: const Color(0xFFECECEC),
-            child: new Center(
-              child: thumbImg,
+        Row(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+              child: new Container(
+                width: 102.0,
+                height: 136.0,
+                color: const Color(0xFFECECEC),
+                child: new Center(
+                  child: thumbImg,
+                ),
+              ),
             ),
-          ),
-        ),
-        new Expanded(
-          flex: 1,
-          child: new Padding(
-            padding: const EdgeInsets.all(4.0),
-            child: new Column(
-              children: <Widget>[
-                titleRow,
-                Padding(
-                  padding: EdgeInsets.fromLTRB(0.0, 4.0, 0.0, 4.0),
-                  child: authorRow,
+            Expanded(
+              flex: 1,
+              child: new Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: new Column(
+                  children: <Widget>[
+                    titleRow,
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(0.0, 4.0, 0.0, 4.0),
+                      child: authorRow,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(0.0, 4.0, 0.0, 4.0),
+                      child: descRow,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(0.0, 4.0, 0.0, 4.0),
+                      child: lastChapterRow,
+                    ),
+                  ],
                 ),
-                Padding(
-                  padding: EdgeInsets.fromLTRB(0.0, 4.0, 0.0, 4.0),
-                  child: descRow,
-                ),
-                Padding(
-                  padding: EdgeInsets.fromLTRB(0.0, 4.0, 0.0, 4.0),
-                  child: lastChapterRow,
-                ),
-              ],
+              ),
             ),
-          ),
+          ],
         ),
+        Divider(height: 1.0,),
       ],
     );
     return new InkWell(
@@ -246,7 +240,6 @@ class RankDetailRightListState extends State<RankDetailRightList> {
 
   @override
   Widget build(BuildContext context) {
-
     // TODO: implement build
     return Container(
         padding: const EdgeInsets.all(.0),
@@ -258,15 +251,13 @@ class RankDetailRightListState extends State<RankDetailRightList> {
               onRefresh: _onRefresh,
               onOffsetChange: null,
               child: ListView.builder(
-                itemCount: titles.length * 2,
+                itemCount: titles.length,
                 itemBuilder: (context, i) => renderRow(i),
               ),
               controller: refreshState,
             ),
             hud,
-
           ],
-        )
-    );
+        ));
   }
 }

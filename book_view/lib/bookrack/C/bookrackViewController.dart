@@ -19,22 +19,23 @@ class BookRackState extends State<BookRack> {
   List rackList = [];
 
   BookRackState() {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light.copyWith(
-        statusBarIconBrightness: Brightness.light
-    ));
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light
+        .copyWith(statusBarIconBrightness: Brightness.light));
     updateRackList();
   }
   updateRackList() async {
     await getRackList();
     setState(() {});
-    if(refreshController.scrollController!= null){
+    if (refreshController.scrollController != null) {
       refreshController.sendBack(true, RefreshStatus.idle);
     }
   }
-  getRackList()async{
+
+  getRackList() async {
     DataHelper db = await getDataHelp();
     rackList = await db.getRackList();
   }
+
   startRead(index) async {
     Map book = rackList[index];
     if (book['currentChapter'] == null) {
@@ -61,7 +62,6 @@ class BookRackState extends State<BookRack> {
   }
 
   Widget renderRow(i) {
-
     Map book = rackList[i];
     String thumbImgUrl = book['cover'];
 //    String thumbImgUrl = "https://qidian.qpic.cn/qdbimg/349573/2248950/150";
@@ -80,16 +80,16 @@ class BookRackState extends State<BookRack> {
 //        ),
 //      );
 //    } else {
-      thumbImg = new Container(
-        width: 102.0,
-        height: 136.0,
-        decoration: new BoxDecoration(
-          shape: BoxShape.rectangle,
-          color: const Color(0xFFECECEC),
-          image: new DecorationImage(
-              image: new NetworkImage(thumbImgUrl), fit: BoxFit.fitWidth),
-        ),
-      );
+    thumbImg = new Container(
+      width: 102.0,
+      height: 136.0,
+      decoration: new BoxDecoration(
+        shape: BoxShape.rectangle,
+        color: const Color(0xFFECECEC),
+        image: new DecorationImage(
+            image: new NetworkImage(thumbImgUrl), fit: BoxFit.fitWidth),
+      ),
+    );
 //    }
 
     var titleRow = new Row(
@@ -141,34 +141,40 @@ class BookRackState extends State<BookRack> {
         ),
       ],
     );
-    var row = new Row(
+    var row = Column(
       children: <Widget>[
-        new Padding(
-            padding: const EdgeInsets.fromLTRB(10.0, 10.0, 0.0, 10.0),
-            child: thumbImg),
-        new Expanded(
-          flex: 1,
-          child: new Padding(
-            padding: const EdgeInsets.all(4.0),
-            child: new Column(
-              children: <Widget>[
-                titleRow,
-                Padding(
-                  padding: EdgeInsets.fromLTRB(0.0, 4.0, 0.0, 4.0),
-                  child: authorRow,
+        Row(
+          children: <Widget>[
+            Padding(
+                padding: const EdgeInsets.fromLTRB(10.0, 10.0, 0.0, 10.0),
+                child: thumbImg),
+            Expanded(
+              flex: 1,
+              child: new Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: new Column(
+                  children: <Widget>[
+                    titleRow,
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(0.0, 4.0, 0.0, 4.0),
+                      child: authorRow,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(0.0, 4.0, 0.0, 4.0),
+                      child: descRow,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(0.0, 4.0, 0.0, 4.0),
+                      child: lastChapterRow,
+                    ),
+                  ],
                 ),
-                Padding(
-                  padding: EdgeInsets.fromLTRB(0.0, 4.0, 0.0, 4.0),
-                  child: descRow,
-                ),
-                Padding(
-                  padding: EdgeInsets.fromLTRB(0.0, 4.0, 0.0, 4.0),
-                  child: lastChapterRow,
-                ),
-              ],
+              ),
             ),
-          ),
+          ],
         ),
+        Divider(height: 1.0,),
+
       ],
     );
     return new InkWell(
@@ -217,7 +223,9 @@ class BookRackState extends State<BookRack> {
     getRackList();
     Widget _body;
     if (rackList.length == 0) {
-      _body = BlankView(tipText: "快去添加书籍吧～～",);
+      _body = BlankView(
+        tipText: "快去添加书籍吧～～",
+      );
     } else {
       _body = Container(
           padding: const EdgeInsets.all(.0),

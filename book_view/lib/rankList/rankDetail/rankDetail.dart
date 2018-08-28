@@ -43,16 +43,16 @@ class RankDetailViewDetail extends State<RankDetailView> {
       ),
       body: Row(
         children: <Widget>[
-          new Padding(
+          Padding(
             padding: EdgeInsets.all(0.0),
             child: new Container(
               width: 60.0,
-              child: new Center(
+              child: Center(
                 child: leftList,
               ),
             ),
           ),
-          new Expanded(
+          Expanded(
             child: new Container(
               child: new Center(
                 child: rightList,

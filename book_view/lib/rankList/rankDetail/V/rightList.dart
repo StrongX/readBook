@@ -26,13 +26,12 @@ class RankDetailRightList extends StatefulWidget {
 class RankDetailRightListState extends State<RankDetailRightList> {
   final Map source;
   Map regex;
-  RankDetailRightListState({Key key, this.source, this.regex}){
-    getDataFromHttp();
-  }
-
+  RankDetailRightListState({Key key, this.source, this.regex});
   @override
   initState(){
     super.initState();
+    WidgetsBinding.instance
+        .addPostFrameCallback((_) => getDataFromHttp());
   }
 
   List titles = [];
@@ -253,7 +252,6 @@ class RankDetailRightListState extends State<RankDetailRightList> {
         padding: const EdgeInsets.all(.0),
         child: Stack(
           children: <Widget>[
-            hud,
             SmartRefresher(
               enablePullDown: true,
               enablePullUp: true,
@@ -265,6 +263,8 @@ class RankDetailRightListState extends State<RankDetailRightList> {
               ),
               controller: refreshState,
             ),
+            hud,
+
           ],
         )
     );

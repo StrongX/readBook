@@ -8,7 +8,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:book_view/Global/V/blankView.dart';
 import 'package:flutter/services.dart';
-
+import 'package:book_view/Global/Adnet.dart';
 class BookRack extends StatefulWidget {
   @override
   BookRackState createState() => new BookRackState();
@@ -21,6 +21,7 @@ class BookRackState extends State<BookRack> {
   BookRackState() {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light
         .copyWith(statusBarIconBrightness: Brightness.light));
+    AdNet.load();
     updateRackList();
   }
   updateRackList() async {
@@ -217,6 +218,7 @@ class BookRackState extends State<BookRack> {
       //footerIndicator Callback
     }
   }
+
 
   @override
   Widget build(BuildContext context) {

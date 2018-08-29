@@ -20,6 +20,18 @@
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
+		9F9042EB2135B07000C1EEF1 /* libGDTMobSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F9042EA2135B07000C1EEF1 /* libGDTMobSDK.a */; };
+		9F9042ED2135B09900C1EEF1 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F9042EC2135B09900C1EEF1 /* AdSupport.framework */; };
+		9F9042EF2135B0A000C1EEF1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F9042EE2135B0A000C1EEF1 /* CoreLocation.framework */; };
+		9F9042F12135B0B800C1EEF1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F9042F02135B0B800C1EEF1 /* QuartzCore.framework */; };
+		9F9042F32135B0C100C1EEF1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F9042F22135B0C100C1EEF1 /* SystemConfiguration.framework */; };
+		9F9042F52135B0C700C1EEF1 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F9042F42135B0C700C1EEF1 /* CoreTelephony.framework */; };
+		9F9042F72135B0D700C1EEF1 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F9042F62135B0D700C1EEF1 /* libz.tbd */; };
+		9F9042F92135B0DD00C1EEF1 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F9042F82135B0DD00C1EEF1 /* Security.framework */; };
+		9F9042FB2135B0E400C1EEF1 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F9042FA2135B0E400C1EEF1 /* StoreKit.framework */; };
+		9F9042FD2135B0EA00C1EEF1 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F9042FC2135B0EA00C1EEF1 /* WebKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		9F9042FF2135B0F700C1EEF1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F9042FE2135B0F700C1EEF1 /* AVFoundation.framework */; };
+		9F9043012135B0FE00C1EEF1 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F9043002135B0FE00C1EEF1 /* libxml2.tbd */; };
 		EB3AA3C690E91AFBC778E1F8 /* libPods-Runner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F94583BE9D57BF0B2369C88 /* libPods-Runner.a */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +69,26 @@
 		97C146FD1CF9000F007C117D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97C147001CF9000F007C117D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97C147021CF9000F007C117D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F9042E22135B07000C1EEF1 /* GDTNativeExpressAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeExpressAdView.h; sourceTree = "<group>"; };
+		9F9042E32135B07000C1EEF1 /* GDTMobBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMobBannerView.h; sourceTree = "<group>"; };
+		9F9042E42135B07000C1EEF1 /* GDTNativeAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeAd.h; sourceTree = "<group>"; };
+		9F9042E52135B07000C1EEF1 /* GDTSDKConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTSDKConfig.h; sourceTree = "<group>"; };
+		9F9042E62135B07000C1EEF1 /* GDTMobInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMobInterstitial.h; sourceTree = "<group>"; };
+		9F9042E72135B07000C1EEF1 /* GDTSplashAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTSplashAd.h; sourceTree = "<group>"; };
+		9F9042E82135B07000C1EEF1 /* GDTNativeExpressAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeExpressAd.h; sourceTree = "<group>"; };
+		9F9042E92135B07000C1EEF1 /* GDTSDKDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTSDKDefines.h; sourceTree = "<group>"; };
+		9F9042EA2135B07000C1EEF1 /* libGDTMobSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGDTMobSDK.a; sourceTree = "<group>"; };
+		9F9042EC2135B09900C1EEF1 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		9F9042EE2135B0A000C1EEF1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9F9042F02135B0B800C1EEF1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9F9042F22135B0C100C1EEF1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9F9042F42135B0C700C1EEF1 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		9F9042F62135B0D700C1EEF1 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		9F9042F82135B0DD00C1EEF1 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		9F9042FA2135B0E400C1EEF1 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		9F9042FC2135B0EA00C1EEF1 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		9F9042FE2135B0F700C1EEF1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		9F9043002135B0FE00C1EEF1 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,9 +96,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F9043012135B0FE00C1EEF1 /* libxml2.tbd in Frameworks */,
+				9F9042FF2135B0F700C1EEF1 /* AVFoundation.framework in Frameworks */,
+				9F9042FD2135B0EA00C1EEF1 /* WebKit.framework in Frameworks */,
+				9F9042FB2135B0E400C1EEF1 /* StoreKit.framework in Frameworks */,
+				9F9042F92135B0DD00C1EEF1 /* Security.framework in Frameworks */,
+				9F9042F72135B0D700C1EEF1 /* libz.tbd in Frameworks */,
+				9F9042F52135B0C700C1EEF1 /* CoreTelephony.framework in Frameworks */,
+				9F9042F32135B0C100C1EEF1 /* SystemConfiguration.framework in Frameworks */,
+				9F9042F12135B0B800C1EEF1 /* QuartzCore.framework in Frameworks */,
+				9F9042EF2135B0A000C1EEF1 /* CoreLocation.framework in Frameworks */,
+				9F9042ED2135B09900C1EEF1 /* AdSupport.framework in Frameworks */,
 				9705A1C61CF904A100538489 /* Flutter.framework in Frameworks */,
 				3B80C3941E831B6300D905FE /* App.framework in Frameworks */,
 				EB3AA3C690E91AFBC778E1F8 /* libPods-Runner.a in Frameworks */,
+				9F9042EB2135B07000C1EEF1 /* libGDTMobSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +120,17 @@
 		4154736596441D6F267F8A7E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9F9043002135B0FE00C1EEF1 /* libxml2.tbd */,
+				9F9042FE2135B0F700C1EEF1 /* AVFoundation.framework */,
+				9F9042FC2135B0EA00C1EEF1 /* WebKit.framework */,
+				9F9042FA2135B0E400C1EEF1 /* StoreKit.framework */,
+				9F9042F82135B0DD00C1EEF1 /* Security.framework */,
+				9F9042F62135B0D700C1EEF1 /* libz.tbd */,
+				9F9042F42135B0C700C1EEF1 /* CoreTelephony.framework */,
+				9F9042F22135B0C100C1EEF1 /* SystemConfiguration.framework */,
+				9F9042F02135B0B800C1EEF1 /* QuartzCore.framework */,
+				9F9042EE2135B0A000C1EEF1 /* CoreLocation.framework */,
+				9F9042EC2135B09900C1EEF1 /* AdSupport.framework */,
 				1F94583BE9D57BF0B2369C88 /* libPods-Runner.a */,
 			);
 			name = Frameworks;
@@ -98,6 +153,7 @@
 		97C146E51CF9000F007C117D = {
 			isa = PBXGroup;
 			children = (
+				9F9042E12135B07000C1EEF1 /* GDTlib */,
 				9740EEB11CF90186004384FC /* Flutter */,
 				97C146F01CF9000F007C117D /* Runner */,
 				97C146EF1CF9000F007C117D /* Products */,
@@ -136,6 +192,22 @@
 				97C146F21CF9000F007C117D /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9F9042E12135B07000C1EEF1 /* GDTlib */ = {
+			isa = PBXGroup;
+			children = (
+				9F9042E22135B07000C1EEF1 /* GDTNativeExpressAdView.h */,
+				9F9042E32135B07000C1EEF1 /* GDTMobBannerView.h */,
+				9F9042E42135B07000C1EEF1 /* GDTNativeAd.h */,
+				9F9042E52135B07000C1EEF1 /* GDTSDKConfig.h */,
+				9F9042E62135B07000C1EEF1 /* GDTMobInterstitial.h */,
+				9F9042E72135B07000C1EEF1 /* GDTSplashAd.h */,
+				9F9042E82135B07000C1EEF1 /* GDTNativeExpressAd.h */,
+				9F9042E92135B07000C1EEF1 /* GDTSDKDefines.h */,
+				9F9042EA2135B07000C1EEF1 /* libGDTMobSDK.a */,
+			);
+			path = GDTlib;
 			sourceTree = "<group>";
 		};
 		DD6505799BE80C4C952A29BE /* Pods */ = {
@@ -438,6 +510,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
+					"$(PROJECT_DIR)/GDTlib",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bookview.xlx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -462,6 +535,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
+					"$(PROJECT_DIR)/GDTlib",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bookview.xlx;
 				PRODUCT_NAME = "$(TARGET_NAME)";

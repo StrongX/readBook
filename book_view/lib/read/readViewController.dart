@@ -7,6 +7,7 @@ import 'package:book_view/Global/dataHelper.dart';
 import 'package:book_view/Global/cacehHelper.dart';
 import 'package:book_view/read/V/ReadHtmlParser.dart';
 import 'package:book_view/read/V/ReadTopView.dart';
+import 'package:book_view/Global/Adnet.dart';
 class ReadViewController extends StatefulWidget {
   final Map chapter;
 
@@ -29,11 +30,20 @@ class ReadViewControllerState extends State<ReadViewController> {
     getDataFromHttp();
   }
 
+  int readCount = 0;
+
   getDataFromHttp() async {
     DataHelper db = await getDataHelp();
     db.updateCurrentChapter(chapter['bookName'], chapter['chapterName']);
     CacheHelper.cacheBookAuto(chapter['bookName'], chapter['chapterName']);
 
+    if(readCount%5==0){
+      AdNet.show();
+    }
+    if(readCount%5==1){
+      AdNet.load();
+    }
+    readCount++;
     await CacheHelper.getChapterContent(chapter['bookName'], chapter['chapterName'], chapter['link'],
         (String chapterCache) {
       XRegexObject find = new XRegexObject(text: chapterCache);

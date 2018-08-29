@@ -6,10 +6,12 @@ class ReadHtmlParser{
   List<Widget> _widgets;
   List<TextSpan> _currentTextSpans;
   TextStyle textStyle = TextStyle(color: Colors.black54,fontSize: 18.0);
+  TextStyle titleStyle = TextStyle(color: Colors.black54,fontSize: 22.0);
+  TextStyle tagStyle = TextStyle(color: Colors.black54,fontSize: 15.0);
 
 
 
-  ListView getParseListFromStr(String htmlStr,ScrollController scroll) {
+  ListView getParseListFromStr(String htmlStr,ScrollController scroll,String chapterName) {
     // print('*** parsing html...');
     _widgets = [];
     _currentTextSpans = [];
@@ -17,6 +19,11 @@ class ReadHtmlParser{
 
     _parseNode(body);
     _tryCloseCurrentTextSpan();
+    Widget titleLabel = Text(chapterName,style: titleStyle,textAlign: TextAlign.center,);
+    _widgets.insert(0, titleLabel);
+    Widget tag = Text("继续上拉查看下一章",style: tagStyle,textAlign: TextAlign.center,);
+    _widgets.add(tag);
+
     ListView listView = ListView(children:_widgets,controller: scroll,);
     return listView;
   }

@@ -4,7 +4,6 @@ import 'package:book_view/Global/XContants.dart';
 import 'package:book_view/read/readViewController.dart';
 import 'package:book_view/searchBook/searchResultViewController.dart';
 import "package:pull_to_refresh/pull_to_refresh.dart";
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:book_view/Global/V/blankView.dart';
 import 'package:flutter/services.dart';

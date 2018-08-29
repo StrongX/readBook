@@ -29,7 +29,7 @@ class DataHelper{
             // When creating the db, create the table
           });
     }
-    await database.execute("CREATE TABLE IF NOT EXISTS Chapter (id INTEGER PRIMARY KEY, bookName TEXT, chapterName TEXT, link TEXT)");
+    await database.execute("CREATE TABLE IF NOT EXISTS Chapter (id INTEGER PRIMARY KEY, bookName TEXT, chapterName TEXT, link TEXT,menuLink TEXT)");
     await database.execute("CREATE TABLE IF NOT EXISTS RackList (id INTEGER PRIMARY KEY, bookName TEXT, cover TEXT, link TEXT,author TEXT,type TEXT,lastChapter TEXT,desc TEXT,shortIntro TEXT,lastChapterDate TEXT,currentChapter TEXT)");
     await database.execute("CREATE TABLE IF NOT EXISTS ChapterCache (id INTEGER PRIMARY KEY, bookName TEXT, chapterName TEXT, content TEXT,link TEXT)");
 
@@ -37,11 +37,11 @@ class DataHelper{
 //  closeDataBase()async{
 //    await database.close();
 //  }
-  insertChapter(String bookName,String chapterName,String link)async{
-    await database.rawInsert('INSERT OR IGNORE INTO Chapter(bookName, chapterName, link) VALUES("$bookName", "$chapterName", "$link")');
-
-  }
-  insertChapterList(String bookName,List chapters,List links)async{
+//  insertChapter(String bookName,String chapterName,String link)async{
+//    await database.rawInsert('INSERT OR IGNORE INTO Chapter(bookName, chapterName, link) VALUES("$bookName", "$chapterName", "$link")');
+//
+//  }
+  insertChapterList(String bookName,List chapters,List links,String menuLink)async{
     Batch batch = database.batch();
     for(int i = 0; i<chapters.length;i++){
       String chapterName = chapters[i];
@@ -49,7 +49,7 @@ class DataHelper{
       if(!link.startsWith(RegExp("^http"))){
         link = "https://www.biqudu.com"+link;
       }
-      batch.execute('INSERT OR IGNORE INTO Chapter(bookName, chapterName, link) VALUES("$bookName", "$chapterName", "$link")');
+      batch.execute('INSERT OR IGNORE INTO Chapter(bookName, chapterName, link,menuLink) VALUES("$bookName", "$chapterName", "$link","$menuLink")');
     }
     await batch.commit();
   }
@@ -108,6 +108,10 @@ class DataHelper{
   Future<Map> getChapter(String bookName,String chapterName)async{
     List chapters = await database.rawQuery('select * from Chapter where bookName = "$bookName" and chapterName = "$chapterName"');
     return chapters.first;
+  }
+  Future<List> getChapterList(String bookName)async{
+    List chapters = await database.rawQuery('select * from Chapter where bookName = "$bookName"');
+    return chapters;
   }
   Future<Map> getNextChapter(String bookName,int id)async{
     List chapters = await database.rawQuery('select * from Chapter where bookName = "$bookName" and id>"$id" limit 1');

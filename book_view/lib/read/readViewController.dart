@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:book_view/tools/XRegexObject.dart';
-import 'package:book_view/Global/XContants.dart';
 import 'package:book_view/read/V/ReadBottomView.dart';
 import 'package:book_view/Global/dataHelper.dart';
 import 'package:book_view/Global/cacehHelper.dart';
@@ -37,10 +36,10 @@ class ReadViewControllerState extends State<ReadViewController> {
     db.updateCurrentChapter(chapter['bookName'], chapter['chapterName']);
     CacheHelper.cacheBookAuto(chapter['bookName'], chapter['chapterName']);
 
-    if(readCount%5==0){
+    if(readCount%5==4){
       AdNet.show();
     }
-    if(readCount%5==1){
+    if(readCount%5==0){
       AdNet.load();
     }
     readCount++;
@@ -127,9 +126,8 @@ class ReadViewControllerState extends State<ReadViewController> {
         backgroundColor: Color.fromRGBO(247, 235, 157, 1.0),
         body: Stack(
           children: <Widget>[
-
             GestureDetector(
-              child: NotificationListener(child: contentObject.getParseListFromStr(content,scroll),
+              child: NotificationListener(child: contentObject.getParseListFromStr(content,scroll,chapter['chapterName']),
                 onNotification: _handleScrollNotification,
               ),
               onTap: showTipView,
@@ -139,7 +137,7 @@ class ReadViewControllerState extends State<ReadViewController> {
               child: Opacity(
                 opacity: toolOpacity,
                 child: ReadTopView(
-
+                  chapter: this.chapter,
                 ),
               ),
             ),

@@ -5,11 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35ab1461-c0ff-4787-a505-c17882dd39de" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/android/.idea/runConfigurations.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Global/V/XHUD.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Global/V/XHUD.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Global/cacehHelper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Global/cacehHelper.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Global/dataHelper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Global/dataHelper.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/read/V/ReadTopView.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/read/V/ReadTopView.dart" afterDir="false" />
@@ -81,25 +76,25 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dart" value="21396" />
+          <entry key="dart" value="21552" />
           <entry key="yaml" value="144" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Dart" value="21396" />
+          <entry key="Dart" value="21552" />
           <entry key="YAML" value="144" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="dart" value="187" />
+          <entry key="dart" value="188" />
           <entry key="yaml" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Dart" value="187" />
+          <entry key="Dart" value="188" />
           <entry key="YAML" value="7" />
         </counts>
       </usages-collector>
@@ -107,14 +102,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/read/V/ReadTopView.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="62" column="99" selection-start-line="62" selection-start-column="99" selection-end-line="62" selection-end-column="99" />
+            <state relative-caret-position="210">
+              <caret line="78" column="26" selection-start-line="78" selection-start-column="26" selection-end-line="78" selection-end-column="26" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/flutter/packages/flutter/lib/src/material/flat_button.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="113" column="20" selection-start-line="113" selection-start-column="8" selection-end-line="113" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -152,17 +156,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/Global/dataHelper.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="83" column="17" selection-start-line="83" selection-start-column="17" selection-end-line="83" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/flutter/packages/flutter/lib/src/widgets/navigator.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="507">
-              <caret line="1795" column="49" selection-start-line="1795" selection-start-column="49" selection-end-line="1795" selection-end-column="49" />
+            <state relative-caret-position="1395">
+              <caret line="93" column="22" selection-start-line="93" selection-start-column="17" selection-end-line="93" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -191,17 +186,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/Global/cacehHelper.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="51" column="9" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
+            <state relative-caret-position="382">
+              <caret line="78" column="44" lean-forward="true" selection-start-line="78" selection-start-column="44" selection-end-line="78" selection-end-column="44" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/read/readViewController.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="146" column="31" selection-start-line="146" selection-start-column="31" selection-end-line="146" selection-end-column="31" />
+            <state relative-caret-position="277">
+              <caret line="148" column="38" selection-start-line="148" selection-start-column="38" selection-end-line="148" selection-end-column="38" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -220,9 +215,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>textStyle</find>
-      <find>context</find>
-      <find>_tryCloseCurrentTextSpan</find>
       <find>strippedHtml</find>
       <find>parseFromStr</find>
       <find>scroll</find>
@@ -250,6 +242,9 @@
       <find>chapter</find>
       <find>cacheChapter</find>
       <find>_getCircularProgress</find>
+      <find>first</find>
+      <find>last</find>
+      <find>.last</find>
     </findStrings>
   </component>
   <component name="FlutterView" splitter-proportion="0.96732026" />
@@ -292,11 +287,11 @@
         <option value="$PROJECT_DIR$/test/widget_test.dart" />
         <option value="$PROJECT_DIR$/lib/read/V/ReadHtmlParser.dart" />
         <option value="$PROJECT_DIR$/lib/menu/MenuViewController.dart" />
-        <option value="$PROJECT_DIR$/lib/Global/dataHelper.dart" />
-        <option value="$PROJECT_DIR$/lib/Global/cacehHelper.dart" />
-        <option value="$PROJECT_DIR$/lib/read/readViewController.dart" />
         <option value="$PROJECT_DIR$/lib/Global/V/XHUD.dart" />
+        <option value="$PROJECT_DIR$/lib/Global/cacehHelper.dart" />
+        <option value="$PROJECT_DIR$/lib/Global/dataHelper.dart" />
         <option value="$PROJECT_DIR$/lib/read/V/ReadTopView.dart" />
+        <option value="$PROJECT_DIR$/lib/read/readViewController.dart" />
       </list>
     </option>
   </component>
@@ -480,7 +475,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535594879432" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535646484834" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -639,13 +634,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/sqflite-0.11.1/lib/sqflite.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1980">
-          <caret line="148" column="2" selection-start-line="148" selection-start-column="2" selection-end-line="148" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/flutter/packages/flutter/lib/src/material/colors.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-835">
@@ -953,30 +941,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Global/cacehHelper.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="51" column="9" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/read/readViewController.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="146" column="31" selection-start-line="146" selection-start-column="31" selection-end-line="146" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Global/dataHelper.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="83" column="17" selection-start-line="83" selection-start-column="17" selection-end-line="83" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/searchBook/searchResultViewController.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -1004,10 +968,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Global/cacehHelper.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="78" column="44" lean-forward="true" selection-start-line="78" selection-start-column="44" selection-end-line="78" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Global/dataHelper.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1395">
+          <caret line="93" column="22" selection-start-line="93" selection-start-column="17" selection-end-line="93" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/flutter/packages/flutter/lib/src/material/flat_button.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="113" column="20" selection-start-line="113" selection-start-column="8" selection-end-line="113" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/read/V/ReadTopView.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="62" column="99" selection-start-line="62" selection-start-column="99" selection-end-line="62" selection-end-column="99" />
+        <state relative-caret-position="210">
+          <caret line="78" column="26" selection-start-line="78" selection-start-column="26" selection-end-line="78" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/read/readViewController.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="148" column="38" selection-start-line="148" selection-start-column="38" selection-end-line="148" selection-end-column="38" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>

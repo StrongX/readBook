@@ -145,6 +145,9 @@ class ReadViewControllerState extends State<ReadViewController> {
                 child: ReadTopView(
                   chapter: this.chapter,
                   hud: this.hud,
+                  reload: (){
+                    getDataFromHttp();
+                  },
                 ),
               ),
             ),

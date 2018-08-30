@@ -9,7 +9,8 @@ import 'package:book_view/Global/V/XHUD.dart';
 class ReadTopView extends StatefulWidget{
   final Map chapter;
   final XHud hud;
-  ReadTopView({Key key,this.chapter,this.hud}):super(key:key);
+  final VoidCallback reload;
+  ReadTopView({Key key,this.chapter,this.hud,this.reload}):super(key:key);
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
@@ -74,7 +75,10 @@ class ReadTopViewState extends State<ReadTopView>{
         );
       });
     }else if(item.value == 4){
-
+        CacheHelper.updateChapterContent(widget.chapter['bookName'], widget.chapter['chapterName'], widget.chapter['link'], (String content){
+          widget.reload();
+          widget.hud.state.showSuccessWithString("刷新成功");
+        });
     }
   }
 

@@ -91,7 +91,7 @@ class DataHelper{
     if(list.length == 0){
       return null;
     }else{
-      return list.first;
+      return list.last;
     }
   }
   chapterIsCache(String bookName,String chapterName)async{

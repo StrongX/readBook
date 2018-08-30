@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'dart:async';
 
 class XHud extends StatefulWidget {
   final Color backgroundColor;
@@ -11,10 +11,10 @@ class XHud extends StatefulWidget {
 
   XHud(
       {Key key,
-        this.backgroundColor = Colors.black54,
+        this.backgroundColor = Colors.black12,
         this.color = Colors.white,
-        this.containerColor = Colors.transparent,
-        this.borderRadius = 10.0,
+        this.containerColor = Colors.black26,
+        this.borderRadius = 5.0,
         this.loading = true})
       : super(key: key){
     state = new XHudState();
@@ -28,6 +28,7 @@ class XHud extends StatefulWidget {
 
 class XHudState extends State<XHud> {
   bool _visible = true;
+  bool _isSuccess = false;
   String _text;
 
   @override
@@ -51,9 +52,24 @@ class XHudState extends State<XHud> {
     if(widget == null){
       return;
     }
+    _isSuccess = false;
     _text = text;
     setState(() {
       this._visible = true;
+    });
+  }
+  void showSuccessWithString(String text) {
+    if(widget == null){
+      return;
+    }
+    _isSuccess = true;
+    _text = text;
+    setState(() {
+      this._visible = true;
+    });
+    Future.delayed(const Duration(milliseconds: 2000))
+        .then((val) {
+          dismiss();
     });
   }
   void show() {
@@ -61,6 +77,7 @@ class XHudState extends State<XHud> {
     if(widget == null){
       return;
     }
+    _isSuccess = false;
     setState(() {
       this._visible = true;
     });
@@ -117,7 +134,12 @@ class XHudState extends State<XHud> {
   }
 
   Widget _getCircularProgress() {
-    return new CircularProgressIndicator(
-        valueColor: new AlwaysStoppedAnimation(widget.color));
+    if(_isSuccess){
+      return Icon(Icons.check,color: Colors.lightGreenAccent,size: 60.0,);
+    }else{
+      return new CircularProgressIndicator(
+          valueColor: new AlwaysStoppedAnimation(widget.color));
+    }
+
   }
 }

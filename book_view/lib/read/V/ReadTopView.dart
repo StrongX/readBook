@@ -3,12 +3,13 @@ import 'package:book_view/Global/XContants.dart';
 import 'package:book_view/bookDetail/bookDetailViewController.dart';
 import 'package:book_view/Global/dataHelper.dart';
 import 'package:book_view/menu/MenuViewController.dart';
-
+import 'package:book_view/Global/cacehHelper.dart';
+import 'package:book_view/Global/V/XHUD.dart';
 
 class ReadTopView extends StatefulWidget{
   final Map chapter;
-
-  ReadTopView({Key key,this.chapter}):super(key:key);
+  final XHud hud;
+  ReadTopView({Key key,this.chapter,this.hud}):super(key:key);
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
@@ -34,7 +35,7 @@ class ReadTopViewState extends State<ReadTopView>{
 
   TextStyle buttonStyle = TextStyle(color: Colors.white);
 
-  void _select(PopMenuItemObject item) {
+  void _select(PopMenuItemObject item) async{
     if(item.value == 1){
 //      Navigator.of(context).push(new MaterialPageRoute(
 //          builder: (ctx) => BookDetailViewController(
@@ -52,7 +53,26 @@ class ReadTopViewState extends State<ReadTopView>{
           builder: (ctx) => new MenuViewController(bookName: widget.chapter['bookName'],)
       ));
     }else if(item.value == 3){
-
+      final  bottomSheetId = await showModalBottomSheet<int>(context:context, builder:(BuildContext context) {
+        return Container(
+          height: 100.0,
+          child: Column(
+            children: <Widget>[
+              FlatButton(child: Text("从当前章节缓存",style: TextStyle(fontSize: 17.0),),onPressed: (){
+                Navigator.of(context).pop();
+                CacheHelper.cacheBookFromCurrent(widget.chapter['bookName'], widget.chapter['id']);
+                widget.hud.state.showSuccessWithString("开始缓存");
+              },),
+              Divider(height: 1.0,),
+              FlatButton(child: Text("缓存全部章节",style: TextStyle(fontSize: 17.0),),onPressed: (){
+                Navigator.of(context).pop();
+                CacheHelper.cacheBookAllChapter(widget.chapter['bookName']);
+                widget.hud.state.showSuccessWithString("开始缓存");
+              },),
+            ],
+          ),
+        );
+      });
     }else if(item.value == 4){
 
     }

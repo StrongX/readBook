@@ -81,6 +81,7 @@ class DataHelper{
     List list = await database.rawQuery('select * from ChapterCache where bookName = "$bookName" and chapterName = "$chapterName"');
     if(list.length == 0){
       await database.execute("INSERT OR IGNORE INTO ChapterCache(bookName,chapterName,content) values (?,?,?)",val);
+      print("插入成功");
     }else{
       print("已缓存");
     }

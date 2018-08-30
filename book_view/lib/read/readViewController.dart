@@ -7,6 +7,9 @@ import 'package:book_view/Global/cacehHelper.dart';
 import 'package:book_view/read/V/ReadHtmlParser.dart';
 import 'package:book_view/read/V/ReadTopView.dart';
 import 'package:book_view/Global/Adnet.dart';
+import 'package:book_view/Global/V/XHUD.dart';
+
+
 class ReadViewController extends StatefulWidget {
   final Map chapter;
 
@@ -18,12 +21,15 @@ class ReadViewController extends StatefulWidget {
 }
 
 class ReadViewControllerState extends State<ReadViewController> {
+  XHud hud = XHud();
   String content = '';
   Map chapter;
   ScrollController scroll = ScrollController();
   ReadHtmlParser contentObject;
   double maxOffset=0.0;
   double minOffSet=0.0;
+
+
   ReadViewControllerState({Key key,this.chapter}) {
     contentObject = ReadHtmlParser();
     getDataFromHttp();
@@ -138,6 +144,7 @@ class ReadViewControllerState extends State<ReadViewController> {
                 opacity: toolOpacity,
                 child: ReadTopView(
                   chapter: this.chapter,
+                  hud: this.hud,
                 ),
               ),
             ),
@@ -150,7 +157,8 @@ class ReadViewControllerState extends State<ReadViewController> {
                   lastChapter: lastChapter,
                 ),
               ),
-            )
+            ),
+            hud,
           ],
         ));
   }

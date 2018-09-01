@@ -41,6 +41,7 @@ class ReadViewControllerState extends State<ReadViewController> {
     DataHelper db = await getDataHelp();
     db.updateCurrentChapter(chapter['bookName'], chapter['chapterName']);
     CacheHelper.cacheBookAuto(chapter['bookName'], chapter['chapterName']);
+    double offset = await db.getOffset(chapter['bookName']);
 
     if(readCount%5==4){
       AdNet.show();
@@ -57,7 +58,12 @@ class ReadViewControllerState extends State<ReadViewController> {
       content = find.getListWithRegex(contentRegex)[0];
       setState(() {
       });
-      scroll.animateTo(0.0, duration: new Duration(milliseconds: 200), curve: Curves.ease);
+      print("offset:$offset");
+      if(offset == null){
+        scroll.animateTo(0.0, duration: new Duration(milliseconds: 200), curve: Curves.ease);
+      }else{
+        scroll.animateTo(offset, duration: new Duration(milliseconds: 200), curve: Curves.ease);
+      }
     });
   }
 
@@ -79,6 +85,7 @@ class ReadViewControllerState extends State<ReadViewController> {
   nextChapter() async {
     print("next");
     DataHelper db = await getDataHelp();
+    await db.updateOffset(chapter['bookName'], 0.0);
     chapter = await db.getNextChapter(chapter['bookName'], chapter["id"]);
     if (chapter != null) {
       getDataFromHttp();
@@ -88,6 +95,7 @@ class ReadViewControllerState extends State<ReadViewController> {
   lastChapter() async {
     print("last");
     DataHelper db = await getDataHelp();
+    await db.updateOffset(chapter['bookName'], 0.0);
     chapter = await db.getLastChapter(chapter['bookName'], chapter["id"]);
     if (chapter != null) {
       getDataFromHttp();
@@ -106,6 +114,8 @@ class ReadViewControllerState extends State<ReadViewController> {
     }
     if(notification is ScrollEndNotification){
       //下滑到最底部
+      double offset = notification.metrics.pixels;
+      updateOffset(offset);
       if(notification.metrics.extentAfter==0.0){
         if(maxOffset-notification.metrics.maxScrollExtent>100){
           nextChapter();
@@ -124,7 +134,10 @@ class ReadViewControllerState extends State<ReadViewController> {
     }
     return false;
   }
-
+  updateOffset(double offset)async{
+    DataHelper db = await getDataHelp();
+    db.updateOffset(chapter['bookName'], offset);
+  }
 
   @override
   Widget build(BuildContext context) {

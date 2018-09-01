@@ -3,7 +3,7 @@ import 'package:sqflite/sqflite.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-const dbName = 'test6.db';
+const dbName = 'test7.db';
 
 Future<DataHelper>getDataHelp()async{
   DataHelper helper = DataHelper();
@@ -30,7 +30,7 @@ class DataHelper{
           });
     }
     await database.execute("CREATE TABLE IF NOT EXISTS Chapter (id INTEGER PRIMARY KEY, bookName TEXT, chapterName TEXT, link TEXT,menuLink TEXT)");
-    await database.execute("CREATE TABLE IF NOT EXISTS RackList (id INTEGER PRIMARY KEY, bookName TEXT, cover TEXT, link TEXT,author TEXT,type TEXT,lastChapter TEXT,desc TEXT,shortIntro TEXT,lastChapterDate TEXT,currentChapter TEXT)");
+    await database.execute("CREATE TABLE IF NOT EXISTS RackList (id INTEGER PRIMARY KEY, bookName TEXT, cover TEXT, link TEXT,author TEXT,type TEXT,lastChapter TEXT,desc TEXT,shortIntro TEXT,lastChapterDate TEXT,currentChapter TEXT,offset REAL)");
     await database.execute("CREATE TABLE IF NOT EXISTS ChapterCache (id INTEGER PRIMARY KEY, bookName TEXT, chapterName TEXT, content TEXT,link TEXT)");
 
   }
@@ -68,6 +68,15 @@ class DataHelper{
   updateCurrentChapter(String bookName,String chapterName)async{
     await database.rawUpdate(
         'UPDATE RackList SET currentChapter = "$chapterName" WHERE bookName = "$bookName"',);
+  }
+  updateOffset(String bookName,double offset)async{
+    await database.rawUpdate(
+      'UPDATE RackList SET offset = ? WHERE bookName = ?',[offset,bookName]);
+  }
+  getOffset(String bookName)async{
+    List books = await database.rawQuery('select * from RackList where bookName = "$bookName"');
+    Map book = await books.first;
+    return book['offset'];
   }
   cacheChapter(String bookName,String chapterName,String content,String link)async{
 //    var values = <String, dynamic>{

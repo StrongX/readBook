@@ -7,8 +7,8 @@ class RankListView extends StatefulWidget {
   RankListViewState createState() {
     return listView;
   }
-  loadDataWithList(rankList,typeList,regex){
-    listView.loadDataWithList(rankList,typeList,regex);
+  loadDataWithList(rankList){
+    listView.loadDataWithList(rankList);
   }
 }
 
@@ -17,21 +17,16 @@ class RankListViewState extends State<RankListView> {
 
   clickItem(model){
     Navigator.of(context).push(new MaterialPageRoute(
-        builder: (ctx) => new RankDetailView(data: model,typeList: _typeList,regex: _regex,)
+        builder: (ctx) => new RankDetailView(data: model)
     ));
   }
-  List _typeList;
-  List dataSource=[];
-  Map _regex;
-  List<Widget> childsWidget = [];
-  loadDataWithList(rankList,typeList,regex){
-    _typeList = typeList;
-    _regex = regex;
+
+  List<Widget> childWidget = [];
+  loadDataWithList(rankList){
     setState(() {
-      dataSource = rankList;
-      childsWidget = [];
-      for(var model in dataSource){
-        childsWidget.add(new ListTile(
+      childWidget = [];
+      for(var model in rankList){
+        childWidget.add(new ListTile(
           title: new Text(model['name']),
           onTap: (){
             clickItem(model);
@@ -45,7 +40,7 @@ class RankListViewState extends State<RankListView> {
   @override
   Widget build(BuildContext context) {
     return new ListView(
-      children: childsWidget,
+      children: childWidget,
     );
   }
 }

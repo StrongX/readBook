@@ -26,6 +26,7 @@ dependencies:
   flutter_slidable: any
   flutter_webview_plugin: "0.2.1"
   html: any
+  url_launcher: any
 
 dev_dependencies:
 

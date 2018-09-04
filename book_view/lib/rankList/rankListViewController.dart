@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
-import 'dart:io';
-import 'dart:convert';
-import 'package:book_view/tools/XRegexObject.dart';
 import 'package:book_view/rankList/V/rankListView.dart';
 import 'package:book_view/Global/XContants.dart';
-import 'package:book_view/Global/XHttp.dart';
 import 'package:book_view/searchBook/searchResultViewController.dart';
-import 'package:dio/dio.dart';
 
 class RankList extends StatefulWidget {
   @override
@@ -16,16 +11,20 @@ class RankList extends StatefulWidget {
 class RankListState extends State<RankList> {
   RankListView listView = new RankListView();
 
-  RankListState(){
-    XHttp.get('/rankList', {}, (Map response) {
-      if (response['code'] == 100) {
-        listView.loadDataWithList(response['rankList'],response['typeList'],response['regex']);
-      }
-    },(DioError e){
-      Map response = DefaultSetting.getDefaultSetting();
-      listView.loadDataWithList(response['rankList'],response['typeList'],response['regex']);
+
+  getRankTypeList(){
+    DefaultSetting.getRankList((List typeList){
+        listView.loadDataWithList(typeList);
     });
   }
+
+  @override
+  initState(){
+    super.initState();
+    WidgetsBinding.instance
+        .addPostFrameCallback((_) => getRankTypeList());
+  }
+
   @override
   Widget build(BuildContext context) {
 

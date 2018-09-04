@@ -75,6 +75,9 @@ class DataHelper{
   }
   getOffset(String bookName)async{
     List books = await database.rawQuery('select * from RackList where bookName = "$bookName"');
+    if(books.length == 0){
+      return 0.0;
+    }
     Map book = await books.first;
     return book['offset'];
   }

@@ -8,6 +8,10 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:book_view/Global/V/blankView.dart';
 import 'package:flutter/services.dart';
 import 'package:book_view/Global/Adnet.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:book_view/Global/XHttp.dart';
+import 'package:flutter/cupertino.dart';
+
 class BookRack extends StatefulWidget {
   @override
   BookRackState createState() => new BookRackState();
@@ -22,6 +26,47 @@ class BookRackState extends State<BookRack> {
         .copyWith(statusBarIconBrightness: Brightness.light));
     AdNet.load();
     updateRackList();
+  }
+  @override
+  initState(){
+    super.initState();
+    WidgetsBinding.instance
+        .addPostFrameCallback((_) => checkVersion());
+  }
+  checkVersion(){
+    print("checkVersion");
+    XHttp.get("/checkVersion", {}, (Map response){
+      if(response['code'] == 100){
+        print("show alert");
+        showDialog<String>(
+          context: context,
+          builder: (BuildContext context){
+            return new CupertinoAlertDialog(
+              title: Text(response['description']),
+              actions: <Widget>[
+                new CupertinoDialogAction(
+                  child: const Text('取消'),
+                  isDestructiveAction: true,
+                  onPressed: () {
+                    Navigator.pop(context, '取消');
+                  },
+                ),
+                new CupertinoDialogAction(
+                  child: const Text('确定'),
+                  isDefaultAction: true,
+                  onPressed: () {
+                    launch(response['link']);
+                    Navigator.pop(context, '确定');
+                  },
+                ),
+              ],
+            );
+          },
+        );
+      }
+    }, (e){
+
+    });
   }
   updateRackList() async {
     await getRackList();

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:book_view/read/readViewController.dart';
 import 'package:book_view/Global/XContants.dart';
 import 'package:book_view/Global/XHttp.dart';
 import 'package:book_view/tools/XRegexObject.dart';
@@ -44,11 +43,14 @@ class BookDetailViewControllerState extends State<BookDetailViewController> {
     XHttp.getWithCompleteUrl(link, {}, (String response){
       response = response.replaceAll(RegExp("\r|\n"), "");
       XRegexObject find = new XRegexObject(text: response);
-      String shortIntroRegex = r'<p class="intro">(.*?)</p>';
-
-      setState(() {
-        shortIntro = find.getListWithRegex(shortIntroRegex)[0];
-      });
+      Map qiDianIndexRegex = DefaultSetting.getQiDianIndexRegex();
+      String shortIntroRegex = qiDianIndexRegex['shortIntro'];
+      List result = find.getListWithRegex(shortIntroRegex);
+      if(result.length!=0){
+        setState(() {
+          shortIntro = result.first;
+        });
+      }
     });
   }
   @override
@@ -161,107 +163,7 @@ class BookDetailViewControllerState extends State<BookDetailViewController> {
     );
 
 
-    Widget renderRow(i) {
 
-      if (i.isOdd) {
-        return new Divider(height: 1.0);
-      }
-      i = i ~/ 2;
-      var titleRow = new Row(
-        children: <Widget>[
-          new Expanded(
-            child: new Text('书友20170727164900641',style: TextStyle(fontSize: 12.0,color: Color.fromRGBO(55, 80, 136, 1.0)),),
-          )
-        ],
-      );
-      var contentRow = new Row(
-        children: <Widget>[
-
-          new Expanded(
-            child: new Text(
-              '总觉得青虹怜命运不会太好，“怜”嘛。就像《红楼梦》的甄英莲（“真应怜”）一样',
-            ),
-          ),
-        ],
-      );
-      var timeRow = new Row(
-        children: <Widget>[
-
-          new Expanded(
-            child: new Text(
-              '2018-08-04 21:17',
-              style: TextStyle(fontSize: 11.0,color: Color.fromRGBO(196, 196, 196, 1.0)),
-            ),
-          ),
-        ],
-      );
-      var thumbImgUrl = 'https://facepic.qidian.com/qd_face/349573/0/50';
-      var thumbImg = new Container(
-        margin: const EdgeInsets.all(0.0),
-        width: 50.0,
-        height: 50.0,
-        decoration: new BoxDecoration(
-          shape: BoxShape.circle,
-          color: const Color(0xFFECECEC),
-          image: new DecorationImage(
-              image: new ExactAssetImage('./images/ic_img_default.jpg'),
-              fit: BoxFit.cover),
-
-        ),
-      );
-      if (thumbImgUrl != null && thumbImgUrl.length > 0) {
-        thumbImg = new Container(
-          margin: const EdgeInsets.all(0.0),
-          width: 50.0,
-          height: 50.0,
-          decoration: new BoxDecoration(
-            shape: BoxShape.circle,
-            color: const Color(0xFFECECEC),
-            image: new DecorationImage(
-                image: new NetworkImage(thumbImgUrl), fit: BoxFit.cover),
-
-          ),
-        );
-      }
-      var row = new Row(
-        children: <Widget>[
-          new Padding(
-            padding: const EdgeInsets.all(0.0),
-            child: new Container(
-              width: 50.0,
-              height: 50.0,
-              color: const Color(0xFF),
-              child: new Center(
-                child: thumbImg,
-              ),
-            ),
-          ),
-          new Expanded(
-            flex: 1,
-            child: new Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: new Column(
-                children: <Widget>[
-                  titleRow,
-                  contentRow,
-                  new Padding(
-                    padding: const EdgeInsets.fromLTRB(0.0, 4.0, 0.0, 0.0),
-                    child: timeRow,
-                  )
-                ],
-              ),
-            ),
-          ),
-
-        ],
-      );
-      return new InkWell(
-        child: row,
-        onTap: () {
-          print(i);
-        },
-      );
-    }
     desc = desc.replaceAll(RegExp('\\s'), '');
     return new Scaffold(
       appBar: new AppBar(

@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:book_view/Global/XContants.dart';
 import 'package:book_view/Global/XHttp.dart';
 import 'package:book_view/tools/XRegexObject.dart';
-import 'package:book_view/Global/XPrint.dart';
 import 'package:book_view/menu/MenuViewController.dart';
 import 'package:book_view/Global/dataHelper.dart';
 import 'package:book_view/Global/V/XHUD.dart';
+import 'package:book_view/Global/XParse.dart';
+
 class SearchResultViewController extends StatefulWidget{
   final String bookName;
   SearchResultViewController({Key key,this.bookName}):super(key:key);
@@ -24,13 +25,10 @@ class SearchResultViewControllerState extends State<SearchResultViewController> 
   List links;
   TextField searchField;
   TextEditingController editController;
-  XHud hud = XHud(
-    backgroundColor: Colors.black12,
-    color: Colors.white,
-    containerColor: Colors.black26,
-    borderRadius: 5.0,
-  );
+  XHud hud = XHud();
   SearchResultViewControllerState({Key key,this.bookName});
+  Map regexSource = DefaultSetting.getSearchRegexData();
+
   @override
   initState(){
     super.initState();
@@ -43,14 +41,15 @@ class SearchResultViewControllerState extends State<SearchResultViewController> 
       return;
     }
     hud.state.showWithString("正在搜索书籍资源");
-    XHttp.getWithCompleteUrl("https://www.biqudu.com/searchbook.php?keyword="+bookName, {}, (String response){
+    XHttp.getWithCompleteUrl(regexSource['searchUrl']+bookName, {}, (String response){
       response = response.replaceAll(RegExp("\r|\n|\\s"), "");
       XRegexObject find = new XRegexObject(text: response);
-      String titleRegex = r'<dl><dt><span>.*?</span><ahref=".*?">(.*?)</a></dt><dd>.*?</dd></dl>';
-      String coverRegex = r'<ahref=".*?"><imgsrc="(.*?)"alt=".*?"width="120"height="150"/>';
-      String authorRegex = r'<dl><dt><span>(.*?)</span><ahref=".*?">.*?</a></dt><dd>.*?</dd></dl>';
-      String linkRegex = r'<dl><dt><span>.*?</span><ahref="(.*?)">.*?</a></dt><dd>.*?</dd></dl>';
-      String introRegex = r'<dd>(.*?)</dd>';
+      Map regex = regexSource['regex'];
+      String titleRegex = regex['titleRegex'];
+      String coverRegex = regex['coverRegex'];
+      String authorRegex = regex['authorRegex'];
+      String linkRegex = regex['linkRegex'];
+      String introRegex = regex['introRegex'];
       setState(() {
         titles = find.getListWithRegex(titleRegex);
         covers = find.getListWithRegex(coverRegex);
@@ -64,7 +63,7 @@ class SearchResultViewControllerState extends State<SearchResultViewController> 
   addRack(i)async{
     String thumbImgUrl = covers[i];
     if (!thumbImgUrl.startsWith(RegExp('^http'))) {
-      thumbImgUrl = "https://www.biqudu.com/" + thumbImgUrl;
+      thumbImgUrl = regexSource['domain'] + thumbImgUrl;
     }
     DataHelper db = await getDataHelp();
     await db.insertRack(bookName, thumbImgUrl, "", authors[i], "", "", intros[i], intros[i], "");
@@ -73,7 +72,7 @@ class SearchResultViewControllerState extends State<SearchResultViewController> 
   showMenuList(i){
     String url = links[i];
     Navigator.of(context).push(new MaterialPageRoute(
-        builder: (ctx) => new MenuViewController(url: "https://www.biqudu.com"+url,bookName: titles[i],)
+        builder: (ctx) => new MenuViewController(url:XParse.urlJoin(regexSource['domain'],url),bookName: titles[i],)
     ));
   }
   Widget renderRow(i) {
@@ -87,7 +86,7 @@ class SearchResultViewControllerState extends State<SearchResultViewController> 
     i = i ~/ 2;
     String thumbImgUrl = covers[i];
     if (!thumbImgUrl.startsWith(RegExp('^http'))) {
-      thumbImgUrl = "https://www.biqudu.com/" + thumbImgUrl;
+      thumbImgUrl = XParse.urlJoin(regexSource['domain'],thumbImgUrl);
     }
     var thumbImg = new Container(
       width: 102.0,

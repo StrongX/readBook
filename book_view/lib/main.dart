@@ -4,6 +4,7 @@ import 'bookrack/C/bookrackViewController.dart';
 import 'rankList/rankListViewController.dart';
 import 'Global/XContants.dart';
 import 'package:flutter/services.dart';
+
 void main() => runApp(new MyApp());
 
 
@@ -15,8 +16,6 @@ class MyApp extends StatefulWidget {
 
 class HomeAppState extends State<MyApp> with SingleTickerProviderStateMixin {
   int _tabIndex = 0;
-
-
 
   @override
   Widget build(BuildContext context) {

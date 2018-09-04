@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:book_view/Global/XHttp.dart';
+import 'package:dio/dio.dart';
 
 class XColor{
   static const redColor = Color.fromRGBO(224, 90, 85, 1.0);
@@ -15,7 +17,20 @@ class XTextStyle{
 
 }
 class DefaultSetting{
-  static getDefaultSetting(){
+  static getRankList(void callBack(List rankList)){
+    XHttp.get('/rankList', {}, (Map response) {
+      if (response['code'] == 100) {
+        print("get new");
+
+      }else{
+        print("get cache");
+      }
+    },(DioError e){
+      print("get default");
+      callBack(DefaultSetting.getDefaultRankTypeList());
+    });
+  }
+  static getDefaultRankTypeList(){
     List rankList = [];
     rankList.add({
       'name':'原创风云榜·新书',
@@ -49,6 +64,10 @@ class DefaultSetting{
       'name':'公众作家新书榜',
       'path':'https://www.qidian.com/rank/pubnewbook',
     });
+    return rankList;
+  }
+
+  static getTypeList(){
     List typeList = [];
     typeList.add({
       'name':'全部分类',
@@ -106,8 +125,11 @@ class DefaultSetting{
       'name':'二次元',
       'chn':'12',
     });
+    return typeList;
+  }
+  static getRankRegex(){
     String titleRegex = r'''<div class="book-mid-info">.*?<h4><a href="//book.qidian.com/info/[\s\S]*?>(.*?)</a>''';
-    String coverRegex = r'<a href="//book.qidian.com/info/.*?" target="_blank" data-eid="qd_C39" data-bid=".*?"><img src="//([\s\S]*?)"></a>';;
+    String coverRegex = r'<a href="//book.qidian.com/info/.*?" target="_blank" data-eid="qd_C39" data-bid=".*?"><img src="//([\s\S]*?)"></a>';
     String introRegex = r'<p class="intro">(.*?)</p>';
     String lastRegex = r'<p class="update"><a href=".*?" target="_blank" data-eid="qd_C43" data-bid=".*?" data-cid=".*?">(.*?)</a><em>&#183;</em><span>.*?</span>';
     String lastDateRegex = r'<p class="update"><a href=".*?" target="_blank" data-eid="qd_C43" data-bid=".*?" data-cid=".*?">.*?</a><em>&#183;</em><span>(.*?)</span>';
@@ -125,6 +147,51 @@ class DefaultSetting{
       "typeRegex":typeRegex,
       "linkRegex":linkRegex,
     };
-    return {'code':100,'rankList':rankList,'typeList':typeList,"regex":regex};
+    return regex;
+  }
+  static getQiDianIndexRegex(){
+    Map qiDianIndexRegex = {
+      "shortIntro":r'<p class="intro">(.*?)</p>'
+    };
+    return qiDianIndexRegex;
+  }
+  static getSearchRegexData(){
+    Map data = {};
+    data['searchUrl'] = 'https://www.biqudu.com/searchbook.php?keyword=';
+    String titleRegex = r'<dl><dt><span>.*?</span><ahref=".*?">(.*?)</a></dt><dd>.*?</dd></dl>';
+    String coverRegex = r'<ahref=".*?"><imgsrc="(.*?)"alt=".*?"width="120"height="150"/>';
+    String authorRegex = r'<dl><dt><span>(.*?)</span><ahref=".*?">.*?</a></dt><dd>.*?</dd></dl>';
+    String linkRegex = r'<dl><dt><span>.*?</span><ahref="(.*?)">.*?</a></dt><dd>.*?</dd></dl>';
+    String introRegex = r'<dd>(.*?)</dd>';
+    Map regex = {
+      'titleRegex':titleRegex,
+      'coverRegex':coverRegex,
+      'authorRegex':authorRegex,
+      'linkRegex':linkRegex,
+      'introRegex':introRegex,
+    };
+    data['regex'] = regex;
+    data['domain'] = "https://www.biqudu.com/";
+    return data;
+  }
+  static getMenuRegexData(){
+    Map data = {};
+    String chapterRegex = r'<dd><ahref=".*?">(.*?)</a></dd>';
+    String linkRegex = r'<dd><ahref="(.*?)">.*?</a></dd>';
+    Map regex = {
+      "chapterRegex":chapterRegex,
+      "linkRegex":linkRegex,
+    };
+    data['regex'] = regex;
+    return data;
+  }
+  static getReadRegexData(){
+    Map data = {};
+    String contentRegex = r'<div id="content">(.*?)</div>';
+    Map regex = {
+      "contentRegex":contentRegex,
+    };
+    data['regex'] = regex;
+    return data;
   }
 }

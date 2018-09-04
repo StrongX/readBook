@@ -8,7 +8,7 @@ import 'package:book_view/read/V/ReadHtmlParser.dart';
 import 'package:book_view/read/V/ReadTopView.dart';
 import 'package:book_view/Global/Adnet.dart';
 import 'package:book_view/Global/V/XHUD.dart';
-
+import 'package:book_view/Global/XContants.dart';
 
 class ReadViewController extends StatefulWidget {
   final Map chapter;
@@ -29,6 +29,7 @@ class ReadViewControllerState extends State<ReadViewController> {
   double maxOffset=0.0;
   double minOffSet=0.0;
 
+  Map dataRegex = DefaultSetting.getReadRegexData();
 
   ReadViewControllerState({Key key,this.chapter}) {
     contentObject = ReadHtmlParser();
@@ -53,12 +54,10 @@ class ReadViewControllerState extends State<ReadViewController> {
     await CacheHelper.getChapterContent(chapter['bookName'], chapter['chapterName'], chapter['link'],
         (String chapterCache) {
       XRegexObject find = new XRegexObject(text: chapterCache);
-      String contentRegex = r'<div id="content">(.*?)</div>';
-
+      String contentRegex = dataRegex['regex']['contentRegex'];
       content = find.getListWithRegex(contentRegex)[0];
       setState(() {
       });
-      print("offset:$offset");
       if(offset == null){
         scroll.animateTo(0.0, duration: new Duration(milliseconds: 200), curve: Curves.ease);
       }else{

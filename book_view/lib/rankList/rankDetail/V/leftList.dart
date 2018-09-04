@@ -5,21 +5,33 @@ typedef void SelectedType(String chn);
 
 class RankDetailLeftList extends StatefulWidget{
 
-  final List typeList;
   final SelectedType selectedBack;
-  RankDetailLeftList({Key key,this.typeList,this.selectedBack}):super(key:key);
+  RankDetailLeftList({Key key,this.selectedBack}):super(key:key);
   @override
-  RankDetailLeftListState createState() => new RankDetailLeftListState(typeList:typeList,selectedBack: selectedBack);
+  RankDetailLeftListState createState() => new RankDetailLeftListState();
 }
 
 class RankDetailLeftListState extends State<RankDetailLeftList>{
-  final List typeList;
-  SelectedType selectedBack;
-  int typeSelected = 0;
+  RankDetailLeftListState({Key key});
+
   final TextStyle normalSelectedStyle = new TextStyle(fontSize: 13.0, color: Color.fromRGBO(88, 88, 88, 1.0));
   final TextStyle selectedStyle = new TextStyle(fontSize: 13.0, color: Color.fromRGBO(234, 57, 79, 1.0));
 
-  RankDetailLeftListState({Key key,this.typeList,this.selectedBack});
+  int typeSelected = 0;
+  List typeList = [];
+
+  @override
+  initState(){
+    super.initState();
+    WidgetsBinding.instance
+        .addPostFrameCallback((_) => getTypeList());
+  }
+
+  getTypeList(){
+    setState(() {
+      typeList = DefaultSetting.getTypeList();
+    });
+  }
 
   Widget renderRow(index) {
     Map data = typeList[index];
@@ -68,7 +80,7 @@ class RankDetailLeftListState extends State<RankDetailLeftList>{
             onTap: () {
               typeSelected = index;
               Map type = typeList[index];
-              selectedBack(type['chn']);
+              widget.selectedBack(type['chn']);
               setState(() {
               });
             },

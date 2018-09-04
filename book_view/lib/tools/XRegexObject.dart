@@ -1,7 +1,3 @@
-library XRegexObject;
-
-
-
 
 class XRegexObject {
 
@@ -14,8 +10,7 @@ class XRegexObject {
   static RegExp phoneRegex = new RegExp(r'(\d?[^\s\w]*(?:\(?\d{3}\)?\W*)?\d{3}\W*\d{4})', multiLine: true, caseSensitive: false);
   static RegExp linkRegex = new RegExp(r'''((?:https?:\/\/|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/)(?:[^\s()<>]+|\((?:[^\s()<>]+|(?:\([^\s()<>]+\)))*\))+(?:\((?:[^\s()<>]+|(?:\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:\'".,<>?\xab\xbb\u201c\u201d\u2018\u2019]))''', multiLine: true, caseSensitive: false);
   static RegExp emailRegex = new RegExp(r'''([a-z0-9!#$%&'*+\/=?\^_`{|}~\-]+@([a-z0-9]+\.)+([a-z0-9]+))''', multiLine: true, caseSensitive: false);
-  static RegExp IPv4Regex = new RegExp(r'\b((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b', multiLine: true, caseSensitive: false);
-  static RegExp IPv6Regex = new RegExp(r'((([0-9A-Fa-f]{1,4}:){7}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){6}:[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){5}:([0-9A-Fa-f]{1,4}:)?[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){4}:([0-9A-Fa-f]{1,4}:){0,2}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){3}:([0-9A-Fa-f]{1,4}:){0,3}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){2}:([0-9A-Fa-f]{1,4}:){0,4}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){6}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b)\.){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(([0-9A-Fa-f]{1,4}:){0,5}:((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b)\.){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(::([0-9A-Fa-f]{1,4}:){0,5}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b)\.){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|([0-9A-Fa-f]{1,4}::([0-9A-Fa-f]{1,4}:){0,5}[0-9A-Fa-f]{1,4})|(::([0-9A-Fa-f]{1,4}:){0,6}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){1,7}:))\b', multiLine: true, caseSensitive: false);
+
   static RegExp hexColorRegex = new RegExp(r'#(?:[0-9a-fA-F]{3}){1,2}\b', multiLine: true, caseSensitive: false);
   static RegExp acronymRegex = new RegExp(r'\b(([A-Z]\.)+|([A-Z]){2,})', multiLine: true);
   static RegExp moneyRegex = new RegExp(r'((^|\b)US?)?\$\s?[0-9]{1,3}((,[0-9]{3})+|([0-9]{3})+)?(\.[0-9]{1,2})?\b', multiLine: true, caseSensitive: false);
@@ -34,8 +29,6 @@ class XRegexObject {
   List<String> get phones => getPhones();
   List<String> get links => getLinks();
   List<String> get emails => getEmails();
-  List<String> get IPv4 => getIPv4();
-  List<String> get IPv6 => getIPv6();
   List<String> get hexColors => getHexColors();
   List<String> get acronyms => getAcronyms();
   List<String> get money => getMoney();
@@ -88,13 +81,7 @@ class XRegexObject {
     return _getMatches(emailRegex, (text != null ? text : this._text));
   }
 
-  List<String> getIPv4({String text}) {
-    return _getMatches(IPv4Regex, (text != null ? text : this._text));
-  }
 
-  List<String> getIPv6({String text}) {
-    return _getMatches(IPv6Regex, (text != null ? text : this._text));
-  }
 
   List<String> getHexColors({String text}) {
     return _getMatches(hexColorRegex, (text != null ? text : this._text));

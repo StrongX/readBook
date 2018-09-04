@@ -5,7 +5,6 @@ import 'package:book_view/tools/XRegexObject.dart';
 import 'package:book_view/read/readViewController.dart';
 import 'package:book_view/Global/dataHelper.dart';
 import 'package:book_view/Global/V/XHUD.dart';
-import 'dart:async';
 
 class MenuViewController extends StatefulWidget {
   final String url;
@@ -22,12 +21,8 @@ class MenuViewControllerState extends State<MenuViewController> {
   String url;
   String bookName;
   List menuList = [];
-  XHud hud = XHud(
-    backgroundColor: Colors.black12,
-    color: Colors.white,
-    containerColor: Colors.black26,
-    borderRadius: 5.0,
-  );
+  Map regexData = DefaultSetting.getMenuRegexData();
+  XHud hud = XHud();
 
   MenuViewControllerState({Key key, this.url, this.bookName});
 
@@ -62,8 +57,8 @@ class MenuViewControllerState extends State<MenuViewController> {
       response = response.replaceAll(RegExp("\r|\n|\\s"), "");
       print(response);
       XRegexObject find = new XRegexObject(text: response);
-      String chapterRegex = r'<dd><ahref=".*?">(.*?)</a></dd>';
-      String linkRegex = r'<dd><ahref="(.*?)">.*?</a></dd>';
+      String chapterRegex = regexData['regex']['chapterRegex'];
+      String linkRegex = regexData['regex']['linkRegex'];
 
       List titles = find.getListWithRegex(chapterRegex);
       List links = find.getListWithRegex(linkRegex);
@@ -87,8 +82,9 @@ class MenuViewControllerState extends State<MenuViewController> {
     XHttp.getWithCompleteUrl(url, {}, (String response) async {
       response = response.replaceAll(RegExp("\r|\n|\\s"), "");
       XRegexObject find = new XRegexObject(text: response);
-      String chapterRegex = r'<dd><ahref=".*?">(.*?)</a></dd>';
-      String linkRegex = r'<dd><ahref="(.*?)">.*?</a></dd>';
+      String chapterRegex = regexData['regex']['chapterRegex'];
+      String linkRegex = regexData['regex']['linkRegex'];
+
       List titles = find.getListWithRegex(chapterRegex);
       List links = find.getListWithRegex(linkRegex);
       DataHelper db = await getDataHelp();
@@ -133,11 +129,6 @@ class MenuViewControllerState extends State<MenuViewController> {
 
   @override
   Widget build(BuildContext context) {
-    var list = DataHelper.readDataFromTable(table: "Chapter");
-//    for(var item in list){
-//      print(item);
-//    }
-//
     // TODO: implement build
     return Scaffold(
         appBar: AppBar(
@@ -155,6 +146,5 @@ class MenuViewControllerState extends State<MenuViewController> {
             hud,
           ],
         ));
-    ;
   }
 }

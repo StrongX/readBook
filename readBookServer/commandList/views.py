@@ -9,7 +9,7 @@ import json
 
 # Create your views here.
 @csrf_exempt
-def rankList(request):
+def getRankList(request):
 	if request.method == 'GET':
 		return JsonResponse({"code":300,"description":"Please use postMothed"})
 	else:
@@ -122,9 +122,23 @@ def rankList(request):
 	    "typeRegex":typeRegex,
 	    "linkRegex":linkRegex,
 	    }
-		return JsonResponse({'code':100,'rankList':rankList,'typeList':typeList,"regex":regex})
+		qidianIndexRegex = {
+	    "shortIntro":r'<p class="intro">(.*?)</p>'
+	    }
+		return JsonResponse({'code':100,'rankList':rankList,'typeList':typeList,"regex":regex,"qidianIndexRegex":qidianIndexRegex})
 
-
+@csrf_exempt
+def checkVersion(request):
+	if request.method == 'GET':
+		v = request.GET.get("v",1.0)
+	else:
+		v = request.POST.get("v",1.0)
+	v = float(v)
+	print v;
+	if v<1.0:
+		return JsonResponse({"code":100,"description":"快去下载新版本","link":"https://baidu.com"})
+	else:
+		return JsonResponse({"code":300})
 
 
 

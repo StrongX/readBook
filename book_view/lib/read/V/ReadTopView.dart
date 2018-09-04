@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:book_view/Global/XContants.dart';
-import 'package:book_view/bookDetail/bookDetailViewController.dart';
-import 'package:book_view/Global/dataHelper.dart';
 import 'package:book_view/menu/MenuViewController.dart';
 import 'package:book_view/Global/cacehHelper.dart';
 import 'package:book_view/Global/V/XHUD.dart';
@@ -24,7 +22,7 @@ class PopMenuItemObject {
   final int value;
 }
 const List<PopMenuItemObject> menuItems = const <PopMenuItemObject>[
-  const PopMenuItemObject(title: '书籍信息', icon: Icons.book,value: 1),
+//  const PopMenuItemObject(title: '书籍信息', icon: Icons.book,value: 1),
   const PopMenuItemObject(title: '目录详情', icon: Icons.list,value: 2),
   const PopMenuItemObject(title: '缓存', icon: Icons.cached,value: 3),
   const PopMenuItemObject(title: '刷新', icon: Icons.refresh,value: 4),
@@ -54,7 +52,7 @@ class ReadTopViewState extends State<ReadTopView>{
           builder: (ctx) => new MenuViewController(bookName: widget.chapter['bookName'],)
       ));
     }else if(item.value == 3){
-      final  bottomSheetId = await showModalBottomSheet<int>(context:context, builder:(BuildContext context) {
+      await showModalBottomSheet<int>(context:context, builder:(BuildContext context) {
         return Container(
           height: 100.0,
           child: Column(

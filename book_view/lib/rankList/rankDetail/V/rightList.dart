@@ -5,28 +5,27 @@ import 'package:book_view/tools/XRegexObject.dart';
 import "package:pull_to_refresh/pull_to_refresh.dart";
 import 'dart:async';
 import 'package:book_view/Global/V/XHUD.dart';
-
+import 'package:book_view/Global/XContants.dart';
 class RankDetailRightList extends StatefulWidget {
   final Map source;
-  final Map regex;
   RankDetailRightListState state;
   void selectedTypeWithChn(String chn) {
     state.selectedTypeWithChn(chn);
   }
 
-  RankDetailRightList({Key key, this.source, this.regex}) : super(key: key);
+  RankDetailRightList({Key key, this.source}) : super(key: key);
 
   @override
   RankDetailRightListState createState() {
-    state = RankDetailRightListState(source: this.source, regex: this.regex);
+    state = RankDetailRightListState(source: this.source,);
     return state;
   }
 }
 
 class RankDetailRightListState extends State<RankDetailRightList> {
   final Map source;
-  Map regex;
-  RankDetailRightListState({Key key, this.source, this.regex});
+
+  RankDetailRightListState({Key key, this.source});
   @override
   initState() {
     super.initState();
@@ -44,15 +43,12 @@ class RankDetailRightListState extends State<RankDetailRightList> {
   int page = 1;
   String _chn = "-1";
 
-  XHud hud = XHud(
-    backgroundColor: Colors.black12,
-    color: Colors.white,
-    containerColor: Colors.black26,
-    borderRadius: 5.0,
-  );
+  XHud hud = XHud();
+
 
   RefreshController refreshState = RefreshController();
   getDataFromHttp() {
+
     hud.state.show();
     String path = source['path'];
     XHttp.getWithCompleteUrl(path, {"page": "$page", "chn": _chn},
@@ -69,6 +65,7 @@ class RankDetailRightListState extends State<RankDetailRightList> {
         lastDates = [];
         links = [];
       }
+      Map regex = DefaultSetting.getRankRegex();
       titles.addAll(find.getListWithRegex(regex['titleRegex']));
       covers.addAll(find.getListWithRegex(regex['coverRegex']));
       authors.addAll(find.getListWithRegex(regex['authorRegex']));

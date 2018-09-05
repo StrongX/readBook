@@ -32,7 +32,7 @@ class DefaultSetting{
         print('myRegexVersion:$myRegexVersion');
         print('regexVersion:$regexVersion');
         String rankList;
-        if(myRegexVersion==null || regexVersion>=myRegexVersion){
+        if(myRegexVersion==null || regexVersion>myRegexVersion){
           print("get new");
           await prefs.setInt('regexVersion', regexVersion);
           rankList = json.encode(response['rankList']);

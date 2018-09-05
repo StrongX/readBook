@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,21 +22,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="YRO-k0-Ey4">
-                                <rect key="frame" x="187" y="333" width="1" height="1"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashNormal" translatesAutoresizingMaskIntoConstraints="NO" id="m4t-Me-AXA">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="heQ-C5-wE6">
+                                <rect key="frame" x="0.0" y="296" width="375" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="heQ-C5-wE6" secondAttribute="height" multiplier="10:2" id="bfA-0Z-Vak"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="YRO-k0-Ey4" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1a2-6s-vTC"/>
-                            <constraint firstItem="YRO-k0-Ey4" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="4X2-HB-R7a"/>
-                            <constraint firstAttribute="trailing" secondItem="m4t-Me-AXA" secondAttribute="trailing" id="7Qj-W6-Pop"/>
-                            <constraint firstItem="m4t-Me-AXA" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Fh9-Ra-HVt"/>
-                            <constraint firstItem="m4t-Me-AXA" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="cfw-Mv-Np2"/>
-                            <constraint firstItem="xbc-2k-c8Z" firstAttribute="top" secondItem="m4t-Me-AXA" secondAttribute="bottom" id="d8X-9z-661"/>
+                            <constraint firstItem="heQ-C5-wE6" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="9uA-Bj-JfM"/>
+                            <constraint firstItem="heQ-C5-wE6" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Ebw-fM-BAe"/>
+                            <constraint firstAttribute="trailing" secondItem="heQ-C5-wE6" secondAttribute="trailing" id="NKf-x0-Y0b"/>
+                            <constraint firstItem="heQ-C5-wE6" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="i0X-3x-JFf"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -45,7 +44,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LaunchImage" width="1" height="1"/>
-        <image name="SplashNormal" width="828" height="1472"/>
+        <image name="logo" width="1000" height="200"/>
     </resources>
 </document>

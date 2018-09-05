@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 
 class XHttp{
-  static const domain = 'http://127.0.0.1:8000';
+  static const domain = 'http://commonapi.cn';
 
   static get(String url,Map params,void callBak(Map response),void error(DioError e)) async {
     Dio dio = new Dio();

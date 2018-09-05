@@ -41,20 +41,24 @@ NSString * const gdtAppId = @"1107804384";
     _interstitialObj.isGpsOn = NO; //【可选】设置GPS开关
     
     
-    //开屏广告
-    //开屏广告初始化并展示代码
-    splash = [[GDTSplashAd alloc] initWithAppId:gdtAppId placementId:@"1090234941828184"];
-    splash.delegate = self; //设置代理
-    UIImage *splashImage = [UIImage imageNamed:@"SplashNormal"];
-    if (IS_IPHONEX) {
-        splashImage = [UIImage imageNamed:@"SplashX"];
-    } else if ([UIScreen mainScreen].bounds.size.height == 480) {
-        splashImage = [UIImage imageNamed:@"SplashSmall"];
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        //开屏广告
+        //开屏广告初始化并展示代码
+        splash = [[GDTSplashAd alloc] initWithAppId:gdtAppId placementId:@"1090234941828184"];
+        splash.delegate = self; //设置代理
+        UIImage *splashImage = [UIImage imageNamed:@"SplashNormal"];
+        if (IS_IPHONEX) {
+            splashImage = [UIImage imageNamed:@"SplashX"];
+        } else if ([UIScreen mainScreen].bounds.size.height == 480) {
+            splashImage = [UIImage imageNamed:@"SplashSmall"];
+        }
+        splash.backgroundImage = splashImage;
+        splash.fetchDelay = 3; //开发者可以设置开屏拉取时间，超时则放弃展示
+        //［可选］拉取并展示全屏开屏广告
+        [splash loadAdAndShowInWindow:self.window];
+
     }
-    splash.backgroundImage = splashImage;
-    splash.fetchDelay = 3; //开发者可以设置开屏拉取时间，超时则放弃展示
-    //［可选］拉取并展示全屏开屏广告
-    [splash loadAdAndShowInWindow:self.window];
     
     
     

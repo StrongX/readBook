@@ -52,7 +52,7 @@ class RankDetailRightListState extends State<RankDetailRightList> {
     hud.state.show();
     String path = source['path'];
     XHttp.getWithCompleteUrl(path, {"page": "$page", "chn": _chn},
-        (String response) {
+        (String response) async{
       response = response.replaceAll(RegExp("\r|\n"), "");
       XRegexObject find = new XRegexObject(text: response);
       if (page == 1) {
@@ -65,7 +65,7 @@ class RankDetailRightListState extends State<RankDetailRightList> {
         lastDates = [];
         links = [];
       }
-      Map regex = DefaultSetting.getRankRegex();
+      Map regex = await DefaultSetting.getRankRegex();
       titles.addAll(find.getListWithRegex(regex['titleRegex']));
       covers.addAll(find.getListWithRegex(regex['coverRegex']));
       authors.addAll(find.getListWithRegex(regex['authorRegex']));

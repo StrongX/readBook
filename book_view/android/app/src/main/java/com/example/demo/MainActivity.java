@@ -1,4 +1,4 @@
-package com.bookview.bookview;
+package com.example.demo;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

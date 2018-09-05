@@ -24,7 +24,7 @@ dependencies:
   pull_to_refresh: ^1.1.5
   flutter_refresh : ^0.0.2
   flutter_slidable: any
-  flutter_webview_plugin: "0.2.1"
+#  flutter_webview_plugin: "0.2.1"
   html: any
   url_launcher: any
 

@@ -27,9 +27,9 @@ class RankDetailLeftListState extends State<RankDetailLeftList>{
         .addPostFrameCallback((_) => getTypeList());
   }
 
-  getTypeList(){
+  getTypeList()async{
+    typeList = await DefaultSetting.getTypeList();
     setState(() {
-      typeList = DefaultSetting.getTypeList();
     });
   }
 

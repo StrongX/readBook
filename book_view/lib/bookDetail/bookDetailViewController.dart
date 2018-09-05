@@ -40,10 +40,10 @@ class BookDetailViewControllerState extends State<BookDetailViewController> {
     if (!link.startsWith(RegExp('^http'))) {
       link = "https://" + link;
     }
-    XHttp.getWithCompleteUrl(link, {}, (String response){
+    XHttp.getWithCompleteUrl(link, {}, (String response)async{
       response = response.replaceAll(RegExp("\r|\n"), "");
       XRegexObject find = new XRegexObject(text: response);
-      Map qiDianIndexRegex = DefaultSetting.getQiDianIndexRegex();
+      Map qiDianIndexRegex = await DefaultSetting.getQiDianIndexRegex();
       String shortIntroRegex = qiDianIndexRegex['shortIntro'];
       List result = find.getListWithRegex(shortIntroRegex);
       if(result.length!=0){

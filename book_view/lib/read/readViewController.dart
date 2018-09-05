@@ -29,7 +29,7 @@ class ReadViewControllerState extends State<ReadViewController> {
   double maxOffset=0.0;
   double minOffSet=0.0;
 
-  Map dataRegex = DefaultSetting.getReadRegexData();
+  Map dataRegex;
 
   ReadViewControllerState({Key key,this.chapter}) {
     contentObject = ReadHtmlParser();
@@ -39,6 +39,7 @@ class ReadViewControllerState extends State<ReadViewController> {
   int readCount = 0;
 
   getDataFromHttp() async {
+    dataRegex = await DefaultSetting.getReadRegexData();
     DataHelper db = await getDataHelp();
     db.updateCurrentChapter(chapter['bookName'], chapter['chapterName']);
     CacheHelper.cacheBookAuto(chapter['bookName'], chapter['chapterName']);

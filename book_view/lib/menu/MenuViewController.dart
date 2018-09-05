@@ -21,7 +21,7 @@ class MenuViewControllerState extends State<MenuViewController> {
   String url;
   String bookName;
   List menuList = [];
-  Map regexData = DefaultSetting.getMenuRegexData();
+  Map regexData;
   XHud hud = XHud();
 
   MenuViewControllerState({Key key, this.url, this.bookName});
@@ -33,6 +33,7 @@ class MenuViewControllerState extends State<MenuViewController> {
   }
 
   showMenuList() async {
+    regexData = await DefaultSetting.getMenuRegexData();
     DataHelper db = await getDataHelp();
     menuList = await db.getChapterList(bookName);
     if (menuList.length == 0) {

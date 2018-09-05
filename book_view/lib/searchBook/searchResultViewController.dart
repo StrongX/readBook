@@ -27,7 +27,7 @@ class SearchResultViewControllerState extends State<SearchResultViewController> 
   TextEditingController editController;
   XHud hud = XHud();
   SearchResultViewControllerState({Key key,this.bookName});
-  Map regexSource = DefaultSetting.getSearchRegexData();
+  Map regexSource;
 
   @override
   initState(){
@@ -36,12 +36,14 @@ class SearchResultViewControllerState extends State<SearchResultViewController> 
         .addPostFrameCallback((_) => getDataFromHttp());
   }
 
-  getDataFromHttp(){
+  getDataFromHttp()async{
+    regexSource = await DefaultSetting.getSearchRegexData();
     if(bookName == "" || bookName == null){
       return;
     }
     hud.state.showWithString("正在搜索书籍资源");
     XHttp.getWithCompleteUrl(regexSource['searchUrl']+bookName, {}, (String response){
+
       response = response.replaceAll(RegExp("\r|\n|\\s"), "");
       XRegexObject find = new XRegexObject(text: response);
       Map regex = regexSource['regex'];

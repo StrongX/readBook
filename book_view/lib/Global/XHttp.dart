@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-
+import 'dart:io';
 class XHttp{
   static const domain = 'http://commonapi.cn';
 
@@ -10,7 +10,6 @@ class XHttp{
       params = {};
     }
     params['v'] = 1.0;
-    print(params);
     dio.options.responseType = ResponseType.JSON;
     try{
       Response response=await dio.get(url,data: params);
@@ -22,7 +21,18 @@ class XHttp{
   static getWithCompleteUrl(String url,Map<String, String> params,void callBak(String response)) async {
     print(url);
     Dio dio = new Dio();
-    Response<String> response=await dio.get(url,data: params);
-    callBak(response.data.toString());
+    dio.onHttpClientCreate = (HttpClient client) {
+      client.badCertificateCallback =
+          (X509Certificate cert, String host, int port) {
+        return true;
+      };
+    };
+    try{
+      Response<String> response=await dio.get(url,data: params);
+      callBak(response.data.toString());
+    }on DioError catch(e){
+      print(e);
+    }
+
   }
 }

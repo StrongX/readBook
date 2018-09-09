@@ -7,16 +7,18 @@ import 'package:book_view/Global/dataHelper.dart';
 import 'package:book_view/Global/V/XHUD.dart';
 import 'package:book_view/Global/XParse.dart';
 
-class SearchResultViewController extends StatefulWidget{
+class SearchResultViewController extends StatefulWidget {
   final String bookName;
-  SearchResultViewController({Key key,this.bookName}):super(key:key);
+  SearchResultViewController({Key key, this.bookName}) : super(key: key);
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
     return SearchResultViewControllerState(bookName: bookName);
   }
 }
-class SearchResultViewControllerState extends State<SearchResultViewController> {
+
+class SearchResultViewControllerState
+    extends State<SearchResultViewController> {
   String bookName;
   List titles = [];
   List covers;
@@ -26,24 +28,23 @@ class SearchResultViewControllerState extends State<SearchResultViewController> 
   TextField searchField;
   TextEditingController editController;
   XHud hud = XHud();
-  SearchResultViewControllerState({Key key,this.bookName});
+  SearchResultViewControllerState({Key key, this.bookName});
   Map regexSource;
 
   @override
-  initState(){
+  initState() {
     super.initState();
-    WidgetsBinding.instance
-        .addPostFrameCallback((_) => getDataFromHttp());
+    WidgetsBinding.instance.addPostFrameCallback((_) => getDataFromHttp());
   }
 
-  getDataFromHttp()async{
+  getDataFromHttp() async {
     regexSource = await DefaultSetting.getSearchRegexData();
-    if(bookName == "" || bookName == null){
+    if (bookName == "" || bookName == null) {
       return;
     }
     hud.state.showWithString("正在搜索书籍资源");
-    XHttp.getWithCompleteUrl(regexSource['searchUrl']+bookName, {}, (String response){
-
+    XHttp.getWithCompleteUrl(regexSource['searchUrl'] + bookName, {},
+        (String response) {
       response = response.replaceAll(RegExp("\r|\n|\\s"), "");
       XRegexObject find = new XRegexObject(text: response);
       Map regex = regexSource['regex'];
@@ -62,23 +63,27 @@ class SearchResultViewControllerState extends State<SearchResultViewController> 
       hud.state.dismiss();
     });
   }
-  addRack(i)async{
+
+  addRack(i) async {
     String thumbImgUrl = covers[i];
     if (!thumbImgUrl.startsWith(RegExp('^http'))) {
       thumbImgUrl = regexSource['domain'] + thumbImgUrl;
     }
     DataHelper db = await getDataHelp();
-    await db.insertRack(bookName, thumbImgUrl, "", authors[i], "", "", intros[i], intros[i], "");
-
+    await db.insertRack(bookName, thumbImgUrl, "", authors[i], "", "",
+        intros[i], intros[i], "");
   }
-  showMenuList(i){
+
+  showMenuList(i) {
     String url = links[i];
     Navigator.of(context).push(new MaterialPageRoute(
-        builder: (ctx) => new MenuViewController(url:XParse.urlJoin(regexSource['domain'],url),bookName: titles[i],)
-    ));
+        builder: (ctx) => new MenuViewController(
+              url: XParse.urlJoin(regexSource['domain'], url),
+              bookName: titles[i],
+            )));
   }
-  Widget renderRow(i) {
 
+  Widget renderRow(i) {
     if (i.isOdd) {
       return new Container(
         padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
@@ -88,8 +93,10 @@ class SearchResultViewControllerState extends State<SearchResultViewController> 
     i = i ~/ 2;
     String thumbImgUrl = covers[i];
     if (!thumbImgUrl.startsWith(RegExp('^http'))) {
-      thumbImgUrl = XParse.urlJoin(regexSource['domain'],thumbImgUrl);
+      thumbImgUrl = XParse.urlJoin(regexSource['domain'], thumbImgUrl);
     }
+
+    print(thumbImgUrl);
     var thumbImg = new Container(
       width: 102.0,
       height: 136.0,
@@ -97,29 +104,13 @@ class SearchResultViewControllerState extends State<SearchResultViewController> 
         shape: BoxShape.rectangle,
         color: const Color(0xFFECECEC),
         image: new DecorationImage(
-            image: new ExactAssetImage('./images/01.jpg'), fit: BoxFit.cover),
+            image: new NetworkImage(thumbImgUrl), fit: BoxFit.cover),
         border: new Border.all(
           color: const Color(0xFFECECEC),
           width: 2.0,
         ),
       ),
     );
-    if (thumbImgUrl != null && thumbImgUrl.length > 0) {
-      thumbImg = new Container(
-        width: 102.0,
-        height: 136.0,
-        decoration: new BoxDecoration(
-          shape: BoxShape.rectangle,
-          color: const Color(0xFFECECEC),
-          image: new DecorationImage(
-              image: new NetworkImage(thumbImgUrl), fit: BoxFit.cover),
-          border: new Border.all(
-            color: const Color(0xFFECECEC),
-            width: 2.0,
-          ),
-        ),
-      );
-    }
 
     var titleRow = new Row(
       children: <Widget>[
@@ -163,10 +154,13 @@ class SearchResultViewControllerState extends State<SearchResultViewController> 
           padding: EdgeInsets.fromLTRB(0.0, 8.0, 8.0, 0.0),
           height: 30.0,
           child: new RaisedButton(
-            onPressed: (){
+            onPressed: () {
               showMenuList(i);
             },
-            child: new Text("查看目录",style: TextStyle(fontSize: 12.0),),
+            child: new Text(
+              "查看目录",
+              style: TextStyle(fontSize: 12.0),
+            ),
             color: new Color.fromRGBO(255, 255, 255, 1.0),
           ),
         ),
@@ -174,10 +168,13 @@ class SearchResultViewControllerState extends State<SearchResultViewController> 
           padding: EdgeInsets.fromLTRB(0.0, 8.0, 8.0, 0.0),
           height: 30.0,
           child: new RaisedButton(
-            onPressed: (){
+            onPressed: () {
               addRack(i);
             },
-            child: new Text("加入书架",style: TextStyle(fontSize: 12.0),),
+            child: new Text(
+              "加入书架",
+              style: TextStyle(fontSize: 12.0),
+            ),
             color: new Color.fromRGBO(255, 255, 255, 1.0),
           ),
         ),
@@ -229,19 +226,19 @@ class SearchResultViewControllerState extends State<SearchResultViewController> 
     );
   }
 
-  searchAction(){
+  searchAction() {
     bookName = editController.text;
     getDataFromHttp();
   }
 
   Widget searchInput() {
     bool focus;
-    if(bookName.isEmpty){
+    if (bookName.isEmpty) {
       focus = true;
-    }else{
+    } else {
       focus = false;
     }
-    if(searchField == null){
+    if (searchField == null) {
       editController = new TextEditingController(text: bookName);
       searchField = TextField(
         controller: editController,
@@ -250,7 +247,7 @@ class SearchResultViewControllerState extends State<SearchResultViewController> 
           hintText: "请输入书籍名称",
           hintStyle: new TextStyle(color: XColor.fontColor),
         ),
-        onSubmitted: (String key){
+        onSubmitted: (String key) {
           searchAction();
         },
       );
@@ -261,7 +258,7 @@ class SearchResultViewControllerState extends State<SearchResultViewController> 
         children: <Widget>[
           new Container(
             child: new FlatButton.icon(
-              onPressed: (){
+              onPressed: () {
                 Navigator.of(context).pop();
               },
               icon: new Icon(Icons.arrow_back, color: XColor.fontColor),
@@ -270,29 +267,29 @@ class SearchResultViewControllerState extends State<SearchResultViewController> 
             width: 60.0,
           ),
           new Expanded(
-            child: Container(
-              alignment: AlignmentDirectional.center,
-              child: searchField,
-            )
-          ),
+              child: Container(
+            alignment: AlignmentDirectional.center,
+            child: searchField,
+          )),
           new Padding(
-            padding: EdgeInsets.all(0.0),
-            child: Container(
-              width: 40.0,
-              child:GestureDetector(
-                child: Text("确定",style: XTextStyle.barItemTStyle,),
-                onTap: (){
-                  searchAction();
-                },
-              ),
-            )
-          ),
+              padding: EdgeInsets.all(0.0),
+              child: Container(
+                width: 40.0,
+                child: GestureDetector(
+                  child: Text(
+                    "确定",
+                    style: XTextStyle.barItemTStyle,
+                  ),
+                  onTap: () {
+                    searchAction();
+                  },
+                ),
+              )),
         ],
       ),
       decoration: new BoxDecoration(
           borderRadius: const BorderRadius.all(const Radius.circular(4.0)),
-          color: XColor.searchBackgroundColor
-      ),
+          color: XColor.searchBackgroundColor),
     );
   }
 
@@ -300,26 +297,25 @@ class SearchResultViewControllerState extends State<SearchResultViewController> 
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
-      home:  Scaffold(
+      home: Scaffold(
           appBar: AppBar(
             title: searchInput(),
             backgroundColor: XColor.appBarColor,
             textTheme: TextTheme(title: XTextStyle.navigationTitleStyle),
             iconTheme: IconThemeData(color: Colors.white),
           ),
-          body:Stack(
+          body: Stack(
             children: <Widget>[
               Container(
                 padding: EdgeInsets.all(10.0),
                 child: new ListView.builder(
-                  itemCount: titles.length*2,
+                  itemCount: titles.length * 2,
                   itemBuilder: (context, i) => renderRow(i),
                 ),
               ),
               hud,
             ],
-          )
-      ),
+          )),
     );
   }
 }

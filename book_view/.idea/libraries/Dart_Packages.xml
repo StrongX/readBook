@@ -47,7 +47,7 @@
         <entry key="dio">
           <value>
             <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/dio-0.1.8/lib" />
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/dio-1.0.4/lib" />
             </list>
           </value>
         </entry>
@@ -68,7 +68,7 @@
         <entry key="flutter_slidable">
           <value>
             <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/flutter_slidable-0.4.4/lib" />
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/flutter_slidable-0.4.6/lib" />
             </list>
           </value>
         </entry>
@@ -186,9 +186,9 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/cookie_jar-0.0.6/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/csslib-0.14.5/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-0.1.2/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/dio-0.1.8/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/dio-1.0.4/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/flutter_refresh-0.0.2/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/flutter_slidable-0.4.4/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/flutter_slidable-0.4.6/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/html-0.13.3+3/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/logging-0.11.3+2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/meta-1.1.6/lib" />

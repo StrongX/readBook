@@ -58,4 +58,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation files('libs/android-support-v7-recyclerview.jar')
+    implementation files('libs/GDTUnionSDK.4.19.573.min.jar')
+    implementation files('libs/android-query-full.0.26.7.jar')
 }

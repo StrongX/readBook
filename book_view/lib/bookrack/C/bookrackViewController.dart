@@ -36,6 +36,8 @@ class BookRackState extends State<BookRack> {
   checkVersion(){
     print("checkVersion");
     XHttp.get("/checkVersion", {}, (Map response){
+      print("checkVersion success");
+
       if(response['code'] == 100){
         print("show alert");
         showDialog<String>(
@@ -65,7 +67,7 @@ class BookRackState extends State<BookRack> {
         );
       }
     }, (e){
-
+      print("checkVersion fail");
     });
   }
   updateRackList() async {

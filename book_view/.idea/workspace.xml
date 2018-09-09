@@ -5,32 +5,86 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35ab1461-c0ff-4787-a505-c17882dd39de" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/SplashNormal.imageset/SplashNormal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/SplashSmall.imageset/SplashSmall.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/SplashX.imageset/SplashX.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/logo.imageset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/logo.imageset/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../meta/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../meta/logo.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/icon1024iPadApp_76pt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/icon1024iPadApp_76pt@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/icon1024iPadNotifications_20pt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/icon1024iPadProApp_83.5pt@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/icon1024iPadSpootlight7_40pt.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/java/com/example/demo/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/java/com/example/demo/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Podfile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner/AppDelegate.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/AppDelegate.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/SplashNormal.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/SplashNormal.imageset/Contents.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/SplashNormal.imageset/SplashNormal@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/SplashSmall.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/SplashSmall.imageset/Contents.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/SplashSmall.imageset/SplashSmall@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/SplashX.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/SplashX.imageset/Contents.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/SplashX.imageset/SplashX@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner/Base.lproj/LaunchScreen.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Base.lproj/LaunchScreen.storyboard" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/icon1024.png" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/icon1024.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/icon1024iPadApp_76pt-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/icon1024iPadApp_76pt@2x-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/icon1024iPadNotifications_20pt-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/icon1024iPadNotifications_20pt@2x-1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/icon1024iPadNotifications_20pt@2x-1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/icon1024iPadNotifications_20pt@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/icon1024iPadNotifications_20pt@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/icon1024iPadProApp_83.5pt@2x-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/icon1024iPadSpootlight5_29pt-1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/icon1024iPadSpootlight5_29pt-1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/icon1024iPadSpootlight5_29pt.png" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/icon1024iPadSpootlight5_29pt.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/icon1024iPadSpootlight5_29pt@2x-1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/icon1024iPadSpootlight5_29pt@2x-1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/icon1024iPadSpootlight5_29pt@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/icon1024iPadSpootlight5_29pt@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/icon1024iPadSpootlight7_40pt-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/icon1024iPadSpootlight7_40pt@2x-1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/icon1024iPadSpootlight7_40pt@2x-1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/icon1024iPadSpootlight7_40pt@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/icon1024iPadSpootlight7_40pt@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/icon1024iPhoneApp_60pt@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/icon1024iPhoneApp_60pt@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/icon1024iPhoneApp_60pt@3x.png" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/icon1024iPhoneApp_60pt@3x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/icon1024iPhoneNotification_20pt@3x.png" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/icon1024iPhoneNotification_20pt@3x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/icon1024iPhoneSpootlight5_29pt@3x.png" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/icon1024iPhoneSpootlight5_29pt@3x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/icon1024iPhoneSpootlight7_40pt@3x.png" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/icon1024iPhoneSpootlight7_40pt@3x.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Global/XContants.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Global/XContants.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Global/XHttp.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Global/XHttp.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../meta/Splash.psd" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/Splash.psd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../meta/SplashNormal.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/SplashNormal.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../meta/SplashSmall.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/SplashSmall.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../meta/SplashX.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/SplashX.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../readBookServer/readBookServer/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/../readBookServer/readBookServer/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/bookrack/C/bookrackViewController.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bookrack/C/bookrackViewController.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/searchBook/searchResultViewController.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/searchBook/searchResultViewController.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/Android/Images.xcassets/AppIcon.appiconset/icon1024AndroidIcon_36pt.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/Android/Images.xcassets/AppIcon.appiconset/icon1024AndroidIcon_36pt.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/Android/Images.xcassets/AppIcon.appiconset/icon1024AndroidIcon_36pt@1.3x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/Android/Images.xcassets/AppIcon.appiconset/icon1024AndroidIcon_36pt@1.3x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/Android/Images.xcassets/AppIcon.appiconset/icon1024AndroidIcon_36pt@2.7x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/Android/Images.xcassets/AppIcon.appiconset/icon1024AndroidIcon_36pt@2.7x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/Android/Images.xcassets/AppIcon.appiconset/icon1024AndroidIcon_36pt@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/Android/Images.xcassets/AppIcon.appiconset/icon1024AndroidIcon_36pt@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/Apple Watch/Images.xcassets/AppIcon.appiconset/icon1024appLauncher_40pt@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/Apple Watch/Images.xcassets/AppIcon.appiconset/icon1024appLauncher_40pt@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/Apple Watch/Images.xcassets/AppIcon.appiconset/icon1024companion_29pt@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/Apple Watch/Images.xcassets/AppIcon.appiconset/icon1024companion_29pt@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/Apple Watch/Images.xcassets/AppIcon.appiconset/icon1024companion_29pt@3x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/Apple Watch/Images.xcassets/AppIcon.appiconset/icon1024companion_29pt@3x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/Apple Watch/Images.xcassets/AppIcon.appiconset/icon1024longLook_44pt@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/Apple Watch/Images.xcassets/AppIcon.appiconset/icon1024longLook_44pt@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/Apple Watch/Images.xcassets/AppIcon.appiconset/icon1024notificationCenter_24pt@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/Apple Watch/Images.xcassets/AppIcon.appiconset/icon1024notificationCenter_24pt@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/Apple Watch/Images.xcassets/AppIcon.appiconset/icon1024notificationCenter_27.5pt@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/Apple Watch/Images.xcassets/AppIcon.appiconset/icon1024notificationCenter_27.5pt@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/Apple Watch/Images.xcassets/AppIcon.appiconset/icon1024shortLook_86pt@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/Apple Watch/Images.xcassets/AppIcon.appiconset/icon1024shortLook_86pt@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/Apple Watch/Images.xcassets/AppIcon.appiconset/icon1024shortLook_98pt@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/Apple Watch/Images.xcassets/AppIcon.appiconset/icon1024shortLook_98pt@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/OSX/Images.xcassets/AppIcon.appiconset/icon1024MacHuge_512pt.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/OSX/Images.xcassets/AppIcon.appiconset/icon1024MacHuge_512pt.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/OSX/Images.xcassets/AppIcon.appiconset/icon1024MacHuge_512pt@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/OSX/Images.xcassets/AppIcon.appiconset/icon1024MacHuge_512pt@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/OSX/Images.xcassets/AppIcon.appiconset/icon1024MacLarge_256pt.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/OSX/Images.xcassets/AppIcon.appiconset/icon1024MacLarge_256pt.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/OSX/Images.xcassets/AppIcon.appiconset/icon1024MacLarge_256pt@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/OSX/Images.xcassets/AppIcon.appiconset/icon1024MacLarge_256pt@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/OSX/Images.xcassets/AppIcon.appiconset/icon1024MacMedium_128pt.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/OSX/Images.xcassets/AppIcon.appiconset/icon1024MacMedium_128pt.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/OSX/Images.xcassets/AppIcon.appiconset/icon1024MacMedium_128pt@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/OSX/Images.xcassets/AppIcon.appiconset/icon1024MacMedium_128pt@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/OSX/Images.xcassets/AppIcon.appiconset/icon1024MacMicro_16pt.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/OSX/Images.xcassets/AppIcon.appiconset/icon1024MacMicro_16pt.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/OSX/Images.xcassets/AppIcon.appiconset/icon1024MacMicro_16pt@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/OSX/Images.xcassets/AppIcon.appiconset/icon1024MacMicro_16pt@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/OSX/Images.xcassets/AppIcon.appiconset/icon1024MacSmall_32pt.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/OSX/Images.xcassets/AppIcon.appiconset/icon1024MacSmall_32pt.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/OSX/Images.xcassets/AppIcon.appiconset/icon1024MacSmall_32pt@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/OSX/Images.xcassets/AppIcon.appiconset/icon1024MacSmall_32pt@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/iOS/Images.xcassets/AppIcon.appiconset/icon1024iPadApp_76pt.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/iOS/Images.xcassets/AppIcon.appiconset/icon1024iPadApp_76pt.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/iOS/Images.xcassets/AppIcon.appiconset/icon1024iPadApp_76pt@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/iOS/Images.xcassets/AppIcon.appiconset/icon1024iPadApp_76pt@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/iOS/Images.xcassets/AppIcon.appiconset/icon1024iPadNotifications_20pt.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/iOS/Images.xcassets/AppIcon.appiconset/icon1024iPadNotifications_20pt.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/iOS/Images.xcassets/AppIcon.appiconset/icon1024iPadNotifications_20pt@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/iOS/Images.xcassets/AppIcon.appiconset/icon1024iPadNotifications_20pt@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/iOS/Images.xcassets/AppIcon.appiconset/icon1024iPadProApp_83.5pt@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/iOS/Images.xcassets/AppIcon.appiconset/icon1024iPadProApp_83.5pt@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/iOS/Images.xcassets/AppIcon.appiconset/icon1024iPadSpootlight5_29pt.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/iOS/Images.xcassets/AppIcon.appiconset/icon1024iPadSpootlight5_29pt.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/iOS/Images.xcassets/AppIcon.appiconset/icon1024iPadSpootlight5_29pt@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/iOS/Images.xcassets/AppIcon.appiconset/icon1024iPadSpootlight5_29pt@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/iOS/Images.xcassets/AppIcon.appiconset/icon1024iPadSpootlight7_40pt.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/iOS/Images.xcassets/AppIcon.appiconset/icon1024iPadSpootlight7_40pt.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/iOS/Images.xcassets/AppIcon.appiconset/icon1024iPadSpootlight7_40pt@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/iOS/Images.xcassets/AppIcon.appiconset/icon1024iPadSpootlight7_40pt@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/iOS/Images.xcassets/AppIcon.appiconset/icon1024iPhoneApp_60pt@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/iOS/Images.xcassets/AppIcon.appiconset/icon1024iPhoneApp_60pt@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/iOS/Images.xcassets/AppIcon.appiconset/icon1024iPhoneApp_60pt@3x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/iOS/Images.xcassets/AppIcon.appiconset/icon1024iPhoneApp_60pt@3x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/iOS/Images.xcassets/AppIcon.appiconset/icon1024iPhoneNotification_20pt@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/iOS/Images.xcassets/AppIcon.appiconset/icon1024iPhoneNotification_20pt@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/iOS/Images.xcassets/AppIcon.appiconset/icon1024iPhoneNotification_20pt@3x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/iOS/Images.xcassets/AppIcon.appiconset/icon1024iPhoneNotification_20pt@3x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/iOS/Images.xcassets/AppIcon.appiconset/icon1024iPhoneSpootlight5_29pt@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/iOS/Images.xcassets/AppIcon.appiconset/icon1024iPhoneSpootlight5_29pt@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/iOS/Images.xcassets/AppIcon.appiconset/icon1024iPhoneSpootlight5_29pt@3x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/iOS/Images.xcassets/AppIcon.appiconset/icon1024iPhoneSpootlight5_29pt@3x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/iOS/Images.xcassets/AppIcon.appiconset/icon1024iPhoneSpootlight7_40pt@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/iOS/Images.xcassets/AppIcon.appiconset/icon1024iPhoneSpootlight7_40pt@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/iOS/Images.xcassets/AppIcon.appiconset/icon1024iPhoneSpootlight7_40pt@3x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/iOS/Images.xcassets/AppIcon.appiconset/icon1024iPhoneSpootlight7_40pt@3x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.png/iOS/Images.xcassets/AppIcon.appiconset/icon1024store_1024pt.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.png/iOS/Images.xcassets/AppIcon.appiconset/icon1024store_1024pt.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon.psd" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon.psd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../meta/icon1024.png" beforeDir="false" afterPath="$PROJECT_DIR$/../meta/icon1024.png" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -82,9 +136,9 @@
     <session id="1846092668">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="34" />
-          <entry key="project.open.time.1" value="5" />
-          <entry key="project.open.time.10" value="4" />
+          <entry key="project.closed" value="36" />
+          <entry key="project.open.time.1" value="6" />
+          <entry key="project.open.time.10" value="5" />
           <entry key="project.open.time.11" value="3" />
           <entry key="project.open.time.12" value="2" />
           <entry key="project.open.time.13" value="3" />
@@ -92,32 +146,34 @@
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.open.time.8" value="4" />
+          <entry key="project.open.time.8" value="5" />
           <entry key="project.open.time.9" value="8" />
-          <entry key="project.opened" value="34" />
+          <entry key="project.opened" value="37" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dart" value="25108" />
-          <entry key="yaml" value="150" />
+          <entry key="dart" value="25319" />
+          <entry key="yaml" value="159" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Dart" value="25108" />
-          <entry key="YAML" value="150" />
+          <entry key="Dart" value="25319" />
+          <entry key="YAML" value="159" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="dart" value="248" />
+          <entry key="dart" value="251" />
+          <entry key="java" value="1" />
           <entry key="yaml" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Dart" value="248" />
+          <entry key="Dart" value="251" />
+          <entry key="JAVA" value="1" />
           <entry key="YAML" value="9" />
         </counts>
       </usages-collector>
@@ -126,43 +182,31 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/bookDetail/bookDetailViewController.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/rankList/rankDetail/V/rightList.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="900">
-              <caret line="67" column="24" selection-start-line="67" selection-start-column="24" selection-end-line="67" selection-end-column="24" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/Global/XHttp.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+            <state relative-caret-position="360">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
+              <folding>
+                <element signature="e#0#30#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/menu/MenuViewController.dart">
+        <entry file="file://$USER_HOME$/flutter/bin/cache/pkg/sky_engine/lib/core/uri.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+            <state relative-caret-position="187">
+              <caret line="164" column="35" selection-start-line="164" selection-start-column="26" selection-end-line="164" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/bookrack/C/bookrackViewController.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="397">
+              <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -173,17 +217,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pubspec.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+            <state relative-caret-position="270">
+              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/Global/XContants.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="29" column="58" lean-forward="true" selection-start-line="29" selection-start-column="58" selection-end-line="29" selection-end-column="58" />
+            <state relative-caret-position="435">
+              <caret line="29" column="58" selection-start-line="29" selection-start-column="58" selection-end-line="29" selection-end-column="58" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -192,9 +236,18 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/Global/Adnet.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="52" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/read/readViewController.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
+            <state relative-caret-position="480">
               <caret line="32" selection-start-line="32" selection-end-line="32" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
@@ -203,11 +256,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/searchBook/searchResultViewController.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="39" column="60" selection-start-line="39" selection-start-column="60" selection-end-line="39" selection-end-column="60" />
+            <state relative-caret-position="235">
+              <caret line="98" column="23" selection-start-line="98" selection-start-column="23" selection-end-line="98" selection-end-column="23" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -218,7 +271,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/rankList/rankDetail/V/leftList.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
+            <state relative-caret-position="510">
               <caret line="34" selection-start-line="34" selection-end-line="34" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
@@ -315,16 +368,16 @@
         <option value="$PROJECT_DIR$/lib/Global/dataHelper.dart" />
         <option value="$PROJECT_DIR$/lib/read/V/ReadTopView.dart" />
         <option value="$PROJECT_DIR$/lib/tools/XRegexObject.dart" />
-        <option value="$PROJECT_DIR$/lib/bookrack/C/bookrackViewController.dart" />
-        <option value="$PROJECT_DIR$/pubspec.yaml" />
         <option value="$PROJECT_DIR$/lib/rankList/rankDetail/V/leftList.dart" />
         <option value="$PROJECT_DIR$/lib/rankList/rankDetail/V/rightList.dart" />
         <option value="$PROJECT_DIR$/lib/bookDetail/bookDetailViewController.dart" />
-        <option value="$PROJECT_DIR$/lib/searchBook/searchResultViewController.dart" />
         <option value="$PROJECT_DIR$/lib/menu/MenuViewController.dart" />
         <option value="$PROJECT_DIR$/lib/read/readViewController.dart" />
-        <option value="$PROJECT_DIR$/lib/Global/XHttp.dart" />
         <option value="$PROJECT_DIR$/lib/Global/XContants.dart" />
+        <option value="$PROJECT_DIR$/pubspec.yaml" />
+        <option value="$PROJECT_DIR$/lib/bookrack/C/bookrackViewController.dart" />
+        <option value="$PROJECT_DIR$/lib/Global/XHttp.dart" />
+        <option value="$PROJECT_DIR$/lib/searchBook/searchResultViewController.dart" />
       </list>
     </option>
   </component>
@@ -347,6 +400,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -490,6 +544,16 @@
             <path>
               <item name="book_view" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Dart Packages" type="3dd79eb:DartTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="book_view" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Dart SDK" type="3dd79eb:DartTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="book_view" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
               <item name="Flutter Plugins" type="70bed36:NamedLibraryElementNode" />
             </path>
           </expand>
@@ -497,17 +561,16 @@
         </subPane>
         <option name="show-excluded-files" value="false" />
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536134716814" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536503859884" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -538,6 +601,32 @@
       <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="USB_DEVICE" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <Java />
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -603,7 +692,7 @@
     </task>
     <servers />
   </component>
-  <component name="TodoView">
+  <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -616,7 +705,7 @@
     <frame x="6" y="23" width="1658" height="1027" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24195544" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24195544" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Build Variants" order="3" side_tool="true" />
@@ -627,7 +716,7 @@
       <window_info id="UI Designer" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4996809" visible="true" weight="0.3721925" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4996809" visible="true" weight="0.3721925" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -660,20 +749,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/flutter/packages/flutter/lib/src/cupertino/bottom_tab_bar.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1127">
-          <caret line="37" column="2" selection-start-line="37" selection-start-column="2" selection-end-line="37" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/pull_to_refresh-1.1.5/lib/src/smart_refresher.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="360" column="6" selection-start-line="360" selection-start-column="6" selection-end-line="360" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/progress_hud-1.0.0/lib/progress_hud.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -839,13 +914,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Global/Adnet.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/Global/cacehHelper.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
@@ -917,16 +985,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/bookrack/C/bookrackViewController.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="30" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/flutter/packages/flutter/lib/src/material/dialog.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8715">
@@ -971,9 +1029,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/android/app/src/main/java/com/example/demo/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/rankList/rankDetail/V/rightList.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
+        <state relative-caret-position="1005">
           <caret line="67" column="24" selection-start-line="67" selection-start-column="24" selection-end-line="67" selection-end-column="24" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
@@ -981,16 +1046,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Global/XHttp.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/menu/MenuViewController.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
+        <state relative-caret-position="525">
           <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
@@ -998,27 +1056,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
+    <entry file="file://$PROJECT_DIR$/lib/Global/XContants.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/read/readViewController.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="435">
+          <caret line="29" column="58" selection-start-line="29" selection-start-column="58" selection-end-line="29" selection-end-column="58" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/searchBook/searchResultViewController.dart">
+    <entry file="file://$PROJECT_DIR$/lib/Global/Adnet.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="52" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/read/readViewController.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
-          <caret line="39" column="60" selection-start-line="39" selection-start-column="60" selection-end-line="39" selection-end-column="60" />
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -1027,7 +1085,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/rankList/rankDetail/V/leftList.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
+        <state relative-caret-position="510">
           <caret line="34" selection-start-line="34" selection-end-line="34" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
@@ -1042,10 +1100,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Global/XContants.dart">
+    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="29" column="58" lean-forward="true" selection-start-line="29" selection-start-column="58" selection-end-line="29" selection-end-column="58" />
+        <state relative-caret-position="270">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/flutter/bin/cache/pkg/sky_engine/lib/core/uri.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="164" column="35" selection-start-line="164" selection-start-column="26" selection-end-line="164" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/bookrack/C/bookrackViewController.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Global/XHttp.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/searchBook/searchResultViewController.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="98" column="23" selection-start-line="98" selection-start-column="23" selection-end-line="98" selection-end-column="23" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>

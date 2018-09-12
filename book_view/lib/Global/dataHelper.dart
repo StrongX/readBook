@@ -3,7 +3,7 @@ import 'package:sqflite/sqflite.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-const dbName = 'test7.db';
+const dbName = 'test03.db';
 
 Future<DataHelper>getDataHelp()async{
   DataHelper helper = DataHelper();
@@ -29,7 +29,7 @@ class DataHelper{
             // When creating the db, create the table
           });
     }
-    await database.execute("CREATE TABLE IF NOT EXISTS Chapter (id INTEGER PRIMARY KEY, bookName TEXT, chapterName TEXT, link TEXT,menuLink TEXT)");
+    await database.execute("CREATE TABLE IF NOT EXISTS Chapter (id INTEGER PRIMARY KEY, bookName TEXT, chapterName TEXT UNIQUE, link TEXT,menuLink TEXT)");
     await database.execute("CREATE TABLE IF NOT EXISTS RackList (id INTEGER PRIMARY KEY, bookName TEXT, cover TEXT, link TEXT,author TEXT,type TEXT,lastChapter TEXT,desc TEXT,shortIntro TEXT,lastChapterDate TEXT,currentChapter TEXT,offset REAL)");
     await database.execute("CREATE TABLE IF NOT EXISTS ChapterCache (id INTEGER PRIMARY KEY, bookName TEXT, chapterName TEXT, content TEXT,link TEXT)");
 

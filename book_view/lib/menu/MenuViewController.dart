@@ -91,6 +91,7 @@ class MenuViewControllerState extends State<MenuViewController> {
       DataHelper db = await getDataHelp();
       await db.insertChapterList(bookName, titles, links, url);
       menuList = await db.getChapterList(bookName);
+      print(menuList.length);
       setState(() {});
       print("更新成功");
     });

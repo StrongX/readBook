@@ -84,6 +84,7 @@ class ReadViewControllerState extends State<ReadViewController> {
 
   nextChapter() async {
     print("next");
+    print(chapter);
     DataHelper db = await getDataHelp();
     await db.updateOffset(chapter['bookName'], 0.0);
     chapter = await db.getNextChapter(chapter['bookName'], chapter["id"]);

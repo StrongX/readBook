@@ -34,13 +34,7 @@ class DataHelper{
     await database.execute("CREATE TABLE IF NOT EXISTS ChapterCache (id INTEGER PRIMARY KEY, bookName TEXT, chapterName TEXT, content TEXT,link TEXT)");
 
   }
-//  closeDataBase()async{
-//    await database.close();
-//  }
-//  insertChapter(String bookName,String chapterName,String link)async{
-//    await database.rawInsert('INSERT OR IGNORE INTO Chapter(bookName, chapterName, link) VALUES("$bookName", "$chapterName", "$link")');
-//
-//  }
+
   insertChapterList(String bookName,List chapters,List links,String menuLink)async{
     Batch batch = database.batch();
     for(int i = 0; i<chapters.length;i++){
@@ -82,14 +76,9 @@ class DataHelper{
     return book['offset'];
   }
   cacheChapter(String bookName,String chapterName,String content,String link)async{
-//    var values = <String, dynamic>{
-//      'bookName': bookName,
-//      'chapterName': chapterName,
-//      'content': content,
-//    };
+
     List val = [bookName,chapterName,content];
-//    await database.insert('ChapterCache', values,conflictAlgorithm: ConflictAlgorithm.ignore);
-//    await database.execute("INSERT INTO ChapterCache(bookName,chapterName,content) select '$bookName','$chapterName','$content' where not exists (select * from ChapterCache where bookName = '$bookName' and chapterName='$chapterName')");
+
     List list = await database.rawQuery('select * from ChapterCache where bookName = "$bookName" and chapterName = "$chapterName"');
     if(list.length == 0){
       await database.execute("INSERT OR IGNORE INTO ChapterCache(bookName,chapterName,content) values (?,?,?)",val);

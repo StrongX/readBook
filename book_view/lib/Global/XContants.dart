@@ -27,7 +27,7 @@ class DefaultSetting{
       int code = response['code'];
       if (code == 100) {
         SharedPreferences prefs = await SharedPreferences.getInstance();
-        int myRegexVersion = prefs.getInt("regexVersion");
+        double myRegexVersion = prefs.getDouble("regexVersion");
         double regexVersion = response['regexVersion'];
         print('myRegexVersion:$myRegexVersion');
         print('regexVersion:$regexVersion');

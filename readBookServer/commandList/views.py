@@ -147,7 +147,8 @@ def getRankList(request):
 	"chapterRegex":menuChapterRegex,
 	"linkRegex":menuLinkRegex,
 	};
-	menuData['regex'] = menuRegex;
+	menuData['regex'] = menuRegex
+	menuData['skip'] = 12
 
 
 	readData = {};
@@ -156,7 +157,7 @@ def getRankList(request):
 	"contentRegex":readContentRegex,
 	};
 	readData['regex'] = readRegex;
-	return JsonResponse({'code':100,'regexVersion':1,'rankList':rankList,'typeList':typeList,"rankRegex":rankRegex,"qiDianIndexRegex":qiDianIndexRegex,
+	return JsonResponse({'code':100,'regexVersion':1.1,'rankList':rankList,'typeList':typeList,"rankRegex":rankRegex,"qiDianIndexRegex":qiDianIndexRegex,
 		"searchData":searchData,"menuData":menuData,"readData":readData})
 
 @csrf_exempt

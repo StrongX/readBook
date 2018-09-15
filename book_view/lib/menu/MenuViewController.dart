@@ -60,10 +60,13 @@ class MenuViewControllerState extends State<MenuViewController> {
       XRegexObject find = new XRegexObject(text: response);
       String chapterRegex = regexData['regex']['chapterRegex'];
       String linkRegex = regexData['regex']['linkRegex'];
-
+      int skip = regexData['skip'];
       List titles = find.getListWithRegex(chapterRegex);
       List links = find.getListWithRegex(linkRegex);
+      titles = titles.sublist(skip);
+      links = links.sublist(skip);
       print(titles);
+
       hud.state.showWithString("正在更新本地目录");
 
       DataHelper db = await getDataHelp();
@@ -85,9 +88,11 @@ class MenuViewControllerState extends State<MenuViewController> {
       XRegexObject find = new XRegexObject(text: response);
       String chapterRegex = regexData['regex']['chapterRegex'];
       String linkRegex = regexData['regex']['linkRegex'];
-
+      int skip = regexData['skip'];
       List titles = find.getListWithRegex(chapterRegex);
       List links = find.getListWithRegex(linkRegex);
+      titles = titles.sublist(skip);
+      links = links.sublist(skip);
       DataHelper db = await getDataHelp();
       await db.insertChapterList(bookName, titles, links, url);
       menuList = await db.getChapterList(bookName);

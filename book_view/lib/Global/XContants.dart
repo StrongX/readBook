@@ -28,13 +28,13 @@ class DefaultSetting{
       if (code == 100) {
         SharedPreferences prefs = await SharedPreferences.getInstance();
         int myRegexVersion = prefs.getInt("regexVersion");
-        int regexVersion = response['regexVersion'];
+        double regexVersion = response['regexVersion'];
         print('myRegexVersion:$myRegexVersion');
         print('regexVersion:$regexVersion');
         String rankList;
         if(myRegexVersion==null || regexVersion>myRegexVersion){
           print("get new");
-          await prefs.setInt('regexVersion', regexVersion);
+          await prefs.setDouble('regexVersion', regexVersion);
           rankList = json.encode(response['rankList']);
           await prefs.setString("rankList", rankList);
           String typeList = json.encode(response['typeList']);
@@ -54,7 +54,7 @@ class DefaultSetting{
           rankList = prefs.getString('rankList');
         }
         if(rankList == null){
-          await prefs.setInt('regexVersion', 0);
+          await prefs.setDouble('regexVersion', 0.0);
           DefaultSetting.getRankList((List rank){
             callBack(rank);
           });
@@ -266,6 +266,7 @@ class DefaultSetting{
         "linkRegex":menuLinkRegex,
       };
       menuData['regex'] = menuRegex;
+      menuData['skip'] = 12;
       return menuData;
     }
   }

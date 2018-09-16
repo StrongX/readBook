@@ -2,7 +2,7 @@
 .vagrant/
 .sconsign.dblite
 .svn/
-
+/Runner/laji
 .DS_Store
 *.swp
 profile

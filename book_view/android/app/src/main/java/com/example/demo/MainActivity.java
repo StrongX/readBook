@@ -2,10 +2,16 @@ package com.example.demo;
 
 import android.Manifest;
 import android.os.Bundle;
+import android.provider.SyncStateContract;
 import android.util.Log;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.qq.e.ads.interstitial.AbstractInterstitialADListener;
 import com.qq.e.ads.interstitial.InterstitialAD;
+import com.qq.e.ads.splash.SplashAD;
+import com.qq.e.ads.splash.SplashADListener;
 import com.qq.e.comm.util.AdError;
 
 import java.util.ArrayList;
@@ -25,6 +31,13 @@ public class MainActivity extends FlutterActivity {
 
   InterstitialAD iad;
 
+  private SplashAD splashAD;
+  private ViewGroup container;
+  private TextView skipView;
+  private ImageView splashHolder;
+
+
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -33,6 +46,7 @@ public class MainActivity extends FlutterActivity {
 
       checkAndRequestPermission();
 
+        //平台通道
       new MethodChannel(getFlutterView(), CHANNEL).setMethodCallHandler(
             new MethodCallHandler() {
               @Override
@@ -93,4 +107,10 @@ public class MainActivity extends FlutterActivity {
 //      requestPermissions(requestPermissions, 1024);
         }
     }
+
+
+
+
+
+
 }

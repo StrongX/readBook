@@ -8,6 +8,9 @@ import requests
 import json
 
 # Create your views here.
+def home(request):
+	return render(request,'index.html')
+
 @csrf_exempt
 def getRankList(request):
 	rankList = []

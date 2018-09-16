@@ -5,14 +5,527 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35ab1461-c0ff-4787-a505-c17882dd39de" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/ios/Runner/Runner.entitlements" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AFNetworking/AFNetworking/AFHTTPSessionManager.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AFNetworking/AFNetworking/AFHTTPSessionManager.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AFNetworking/AFNetworking/AFNetworkReachabilityManager.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AFNetworking/AFNetworking/AFNetworkReachabilityManager.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AFNetworking/AFNetworking/AFNetworking.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AFNetworking/AFNetworking/AFSecurityPolicy.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AFNetworking/AFNetworking/AFSecurityPolicy.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AFNetworking/AFNetworking/AFURLRequestSerialization.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AFNetworking/AFNetworking/AFURLRequestSerialization.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AFNetworking/AFNetworking/AFURLResponseSerialization.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AFNetworking/AFNetworking/AFURLResponseSerialization.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AFNetworking/AFNetworking/AFURLSessionManager.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AFNetworking/AFNetworking/AFURLSessionManager.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AFNetworking/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AFNetworking/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AFNetworking/UIKit+AFNetworking/AFAutoPurgingImageCache.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AFNetworking/UIKit+AFNetworking/AFAutoPurgingImageCache.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AFNetworking/UIKit+AFNetworking/AFImageDownloader.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AFNetworking/UIKit+AFNetworking/AFImageDownloader.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AFNetworking/UIKit+AFNetworking/AFNetworkActivityIndicatorManager.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AFNetworking/UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AFNetworking/UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AFNetworking/UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AFNetworking/UIKit+AFNetworking/UIButton+AFNetworking.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AFNetworking/UIKit+AFNetworking/UIButton+AFNetworking.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AFNetworking/UIKit+AFNetworking/UIImage+AFNetworking.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AFNetworking/UIKit+AFNetworking/UIImageView+AFNetworking.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AFNetworking/UIKit+AFNetworking/UIImageView+AFNetworking.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AFNetworking/UIKit+AFNetworking/UIKit+AFNetworking.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AFNetworking/UIKit+AFNetworking/UIProgressView+AFNetworking.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AFNetworking/UIKit+AFNetworking/UIProgressView+AFNetworking.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AFNetworking/UIKit+AFNetworking/UIRefreshControl+AFNetworking.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AFNetworking/UIKit+AFNetworking/UIRefreshControl+AFNetworking.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AFNetworking/UIKit+AFNetworking/UIWebView+AFNetworking.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AFNetworking/UIKit+AFNetworking/UIWebView+AFNetworking.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AutoCoding/AutoCoding/AutoCoding.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AutoCoding/AutoCoding/AutoCoding.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AutoCoding/LICENCE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/AutoCoding/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/BabyBluetooth/Classes/objc/BabyBluetooth.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/BabyBluetooth/Classes/objc/BabyBluetooth.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/BabyBluetooth/Classes/objc/BabyCallback.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/BabyBluetooth/Classes/objc/BabyCallback.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/BabyBluetooth/Classes/objc/BabyCentralManager.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/BabyBluetooth/Classes/objc/BabyCentralManager.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/BabyBluetooth/Classes/objc/BabyDefine.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/BabyBluetooth/Classes/objc/BabyDefine.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/BabyBluetooth/Classes/objc/BabyOptions.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/BabyBluetooth/Classes/objc/BabyOptions.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/BabyBluetooth/Classes/objc/BabyPeripheralManager.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/BabyBluetooth/Classes/objc/BabyPeripheralManager.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/BabyBluetooth/Classes/objc/BabyRhythm.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/BabyBluetooth/Classes/objc/BabyRhythm.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/BabyBluetooth/Classes/objc/BabySpeaker.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/BabyBluetooth/Classes/objc/BabySpeaker.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/BabyBluetooth/Classes/objc/BabyToy.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/BabyBluetooth/Classes/objc/BabyToy.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/BabyBluetooth/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/BabyBluetooth/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MBProgressHUD/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MBProgressHUD/MBProgressHUD.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MBProgressHUD/MBProgressHUD.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MBProgressHUD/README.mdown" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/Base/MJRefreshAutoFooter.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/Base/MJRefreshAutoFooter.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/Base/MJRefreshBackFooter.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/Base/MJRefreshBackFooter.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/Base/MJRefreshComponent.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/Base/MJRefreshComponent.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/Base/MJRefreshFooter.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/Base/MJRefreshFooter.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/Base/MJRefreshHeader.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/Base/MJRefreshHeader.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/Custom/Footer/Auto/MJRefreshAutoGifFooter.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/Custom/Footer/Auto/MJRefreshAutoGifFooter.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/Custom/Footer/Auto/MJRefreshAutoNormalFooter.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/Custom/Footer/Auto/MJRefreshAutoNormalFooter.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/Custom/Footer/Auto/MJRefreshAutoStateFooter.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/Custom/Footer/Auto/MJRefreshAutoStateFooter.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/Custom/Footer/Back/MJRefreshBackGifFooter.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/Custom/Footer/Back/MJRefreshBackGifFooter.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/Custom/Footer/Back/MJRefreshBackNormalFooter.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/Custom/Footer/Back/MJRefreshBackNormalFooter.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/Custom/Footer/Back/MJRefreshBackStateFooter.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/Custom/Footer/Back/MJRefreshBackStateFooter.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/Custom/Header/MJRefreshGifHeader.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/Custom/Header/MJRefreshGifHeader.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/Custom/Header/MJRefreshNormalHeader.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/Custom/Header/MJRefreshNormalHeader.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/Custom/Header/MJRefreshStateHeader.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/Custom/Header/MJRefreshStateHeader.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/MJRefresh.bundle/arrow@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/MJRefresh.bundle/en.lproj/Localizable.strings" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/MJRefresh.bundle/zh-Hans.lproj/Localizable.strings" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/MJRefresh.bundle/zh-Hant.lproj/Localizable.strings" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/MJRefresh.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/MJRefreshConst.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/MJRefreshConst.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/NSBundle+MJRefresh.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/NSBundle+MJRefresh.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/UIScrollView+MJExtension.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/UIScrollView+MJExtension.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/UIScrollView+MJRefresh.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/UIScrollView+MJRefresh.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/UIView+MJExtension.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/MJRefresh/UIView+MJExtension.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/MJRefresh/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/Masonry/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/Masonry/Masonry/MASCompositeConstraint.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/Masonry/Masonry/MASCompositeConstraint.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/Masonry/Masonry/MASConstraint+Private.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/Masonry/Masonry/MASConstraint.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/Masonry/Masonry/MASConstraint.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/Masonry/Masonry/MASConstraintMaker.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/Masonry/Masonry/MASConstraintMaker.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/Masonry/Masonry/MASLayoutConstraint.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/Masonry/Masonry/MASLayoutConstraint.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/Masonry/Masonry/MASUtilities.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/Masonry/Masonry/MASViewAttribute.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/Masonry/Masonry/MASViewAttribute.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/Masonry/Masonry/MASViewConstraint.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/Masonry/Masonry/MASViewConstraint.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/Masonry/Masonry/Masonry.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/Masonry/Masonry/NSArray+MASAdditions.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/Masonry/Masonry/NSArray+MASAdditions.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/Masonry/Masonry/NSArray+MASShorthandAdditions.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/Masonry/Masonry/NSLayoutConstraint+MASDebugAdditions.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/Masonry/Masonry/NSLayoutConstraint+MASDebugAdditions.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/Masonry/Masonry/View+MASAdditions.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/Masonry/Masonry/View+MASAdditions.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/Masonry/Masonry/View+MASShorthandAdditions.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/Masonry/Masonry/ViewController+MASAdditions.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/Masonry/Masonry/ViewController+MASAdditions.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/Masonry/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OHHTTPStubs/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OHHTTPStubs/OHHTTPStubs/Sources/Compatibility.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OHHTTPStubs/OHHTTPStubs/Sources/JSON/OHHTTPStubsResponse+JSON.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OHHTTPStubs/OHHTTPStubs/Sources/JSON/OHHTTPStubsResponse+JSON.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OHHTTPStubs/OHHTTPStubs/Sources/NSURLSession/NSURLRequest+HTTPBodyTesting.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OHHTTPStubs/OHHTTPStubs/Sources/NSURLSession/NSURLRequest+HTTPBodyTesting.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OHHTTPStubs/OHHTTPStubs/Sources/NSURLSession/OHHTTPStubs+NSURLSessionConfiguration.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OHHTTPStubs/OHHTTPStubs/Sources/NSURLSession/OHHTTPStubsMethodSwizzling.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OHHTTPStubs/OHHTTPStubs/Sources/NSURLSession/OHHTTPStubsMethodSwizzling.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OHHTTPStubs/OHHTTPStubs/Sources/OHHTTPStubs.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OHHTTPStubs/OHHTTPStubs/Sources/OHHTTPStubs.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OHHTTPStubs/OHHTTPStubs/Sources/OHHTTPStubsResponse.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OHHTTPStubs/OHHTTPStubs/Sources/OHHTTPStubsResponse.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OHHTTPStubs/OHHTTPStubs/Sources/OHPathHelpers/OHPathHelpers.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OHHTTPStubs/OHHTTPStubs/Sources/OHPathHelpers/OHPathHelpers.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OHHTTPStubs/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/calib3d.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/calib3d/calib3d.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/calib3d/calib3d_c.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/affine.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/base.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/bufferpool.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/core.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/core_c.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/cuda.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/cuda.inl.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/cuda_stream_accessor.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/cuda_types.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/cv_cpu_dispatch.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/cv_cpu_helper.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/cvdef.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/cvstd.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/cvstd.inl.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/directx.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/eigen.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/fast_math.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/hal/hal.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/hal/interface.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/hal/intrin.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/hal/intrin_cpp.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/hal/intrin_neon.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/hal/intrin_sse.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/ippasync.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/mat.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/mat.inl.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/matx.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/neon_utils.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/ocl.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/ocl_genbase.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/opengl.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/operations.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/optim.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/ovx.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/persistence.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/ptr.inl.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/saturate.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/softfloat.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/sse_utils.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/traits.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/types.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/types_c.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/utility.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/utils/logger.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/utils/trace.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/va_intel.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/version.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/core/wimage.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/cvconfig.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/dnn.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/dnn/all_layers.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/dnn/dict.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/dnn/dnn.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/dnn/dnn.inl.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/dnn/layer.details.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/dnn/layer.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/dnn/shape_utils.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/features2d.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/features2d/features2d.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/flann.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/flann/all_indices.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/flann/allocator.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/flann/any.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/flann/autotuned_index.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/flann/composite_index.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/flann/config.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/flann/defines.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/flann/dist.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/flann/dummy.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/flann/dynamic_bitset.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/flann/flann.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/flann/flann_base.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/flann/general.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/flann/ground_truth.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/flann/hdf5.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/flann/heap.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/flann/hierarchical_clustering_index.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/flann/index_testing.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/flann/kdtree_index.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/flann/kdtree_single_index.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/flann/kmeans_index.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/flann/linear_index.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/flann/logger.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/flann/lsh_index.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/flann/lsh_table.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/flann/matrix.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/flann/miniflann.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/flann/nn_index.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/flann/object_factory.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/flann/params.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/flann/random.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/flann/result_set.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/flann/sampling.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/flann/saving.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/flann/simplex_downhill.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/flann/timer.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/highgui.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/highgui/highgui.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/highgui/highgui_c.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/imgcodecs.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/imgcodecs/imgcodecs.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/imgcodecs/imgcodecs_c.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/imgcodecs/ios.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/imgproc.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/imgproc/detail/distortion_model.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/imgproc/hal/hal.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/imgproc/hal/interface.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/imgproc/imgproc.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/imgproc/imgproc_c.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/imgproc/types_c.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/ml.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/ml/ml.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/objdetect.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/objdetect/detection_based_tracker.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/objdetect/objdetect.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/objdetect/objdetect_c.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/opencv.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/opencv_modules.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/photo.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/photo/cuda.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/photo/photo.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/photo/photo_c.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/shape.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/shape/emdL1.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/shape/hist_cost.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/shape/shape.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/shape/shape_distance.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/shape/shape_transformer.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/stitching.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/stitching/detail/autocalib.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/stitching/detail/blenders.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/stitching/detail/camera.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/stitching/detail/exposure_compensate.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/stitching/detail/matchers.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/stitching/detail/motion_estimators.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/stitching/detail/seam_finders.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/stitching/detail/timelapsers.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/stitching/detail/util.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/stitching/detail/util_inl.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/stitching/detail/warpers.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/stitching/detail/warpers_inl.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/stitching/warpers.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/video.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/video/background_segm.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/video/tracking.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/video/tracking_c.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/video/video.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/videoio.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/videoio/cap_ios.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/videoio/videoio.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/videoio/videoio_c.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/videostab.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/videostab/deblurring.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/videostab/fast_marching.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/videostab/fast_marching_inl.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/videostab/frame_source.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/videostab/global_motion.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/videostab/inpainting.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/videostab/log.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/videostab/motion_core.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/videostab/motion_stabilizing.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/videostab/optical_flow.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/videostab/outlier_rejection.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/videostab/ring_buffer.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/videostab/stabilizer.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/videostab/wobble_suppression.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Headers/world.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/OpenCVForDH/opencv2.framework/opencv2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/PinYin4Objc/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/PinYin4Objc/PinYin4Objc/Classes/ChineseToPinyinResource.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/PinYin4Objc/PinYin4Objc/Classes/ChineseToPinyinResource.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/PinYin4Objc/PinYin4Objc/Classes/HanyuPinyinOutputFormat.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/PinYin4Objc/PinYin4Objc/Classes/HanyuPinyinOutputFormat.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/PinYin4Objc/PinYin4Objc/Classes/NSString+PinYin4Cocoa.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/PinYin4Objc/PinYin4Objc/Classes/NSString+PinYin4Cocoa.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/PinYin4Objc/PinYin4Objc/Classes/PinYin4Objc.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/PinYin4Objc/PinYin4Objc/Classes/PinyinFormatter.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/PinYin4Objc/PinYin4Objc/Classes/PinyinFormatter.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/PinYin4Objc/PinYin4Objc/Classes/PinyinHelper.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/PinYin4Objc/PinYin4Objc/Classes/PinyinHelper.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/PinYin4Objc/PinYin4Objc/Resources/unicode_to_hanyu_pinyin.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/PinYin4Objc/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/UITableView+FDTemplateLayoutCell/Classes/UITableView+FDIndexPathHeightCache.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/UITableView+FDTemplateLayoutCell/Classes/UITableView+FDIndexPathHeightCache.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/UITableView+FDTemplateLayoutCell/Classes/UITableView+FDKeyedHeightCache.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/UITableView+FDTemplateLayoutCell/Classes/UITableView+FDKeyedHeightCache.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/UITableView+FDTemplateLayoutCell/Classes/UITableView+FDTemplateLayoutCell.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/UITableView+FDTemplateLayoutCell/Classes/UITableView+FDTemplateLayoutCell.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/UITableView+FDTemplateLayoutCell/Classes/UITableView+FDTemplateLayoutCellDebug.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/UITableView+FDTemplateLayoutCell/Classes/UITableView+FDTemplateLayoutCellDebug.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/UITableView+FDTemplateLayoutCell/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/UITableView+FDTemplateLayoutCell/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/UITextView+Placeholder/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/UITextView+Placeholder/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/UITextView+Placeholder/Sources/UITextView+Placeholder.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/UITextView+Placeholder/Sources/UITextView+Placeholder.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/UnzipKit/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/UnzipKit/Lib/MiniZip/crypt.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/UnzipKit/Lib/MiniZip/ioapi.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/UnzipKit/Lib/MiniZip/ioapi.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/UnzipKit/Lib/MiniZip/mztools.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/UnzipKit/Lib/MiniZip/mztools.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/UnzipKit/Lib/MiniZip/unzip.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/UnzipKit/Lib/MiniZip/unzip.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/UnzipKit/Lib/MiniZip/zip.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/UnzipKit/Lib/MiniZip/zip.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/UnzipKit/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/UnzipKit/Resources/en.lproj/UnzipKit.strings" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/UnzipKit/Source/Extensions/NSURL+UnzipKitExtensions.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/UnzipKit/Source/Extensions/NSURL+UnzipKitExtensions.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/UnzipKit/Source/UZKArchive.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/UnzipKit/Source/UZKArchive.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/UnzipKit/Source/UZKFileInfo.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/UnzipKit/Source/UZKFileInfo.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/UnzipKit/Source/UZKFileInfo_Private.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/UnzipKit/Source/UnzipKit.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Cell/XLFormBaseCell.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Cell/XLFormBaseCell.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Cell/XLFormButtonCell.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Cell/XLFormButtonCell.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Cell/XLFormCheckCell.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Cell/XLFormCheckCell.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Cell/XLFormDateCell.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Cell/XLFormDateCell.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Cell/XLFormDatePickerCell.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Cell/XLFormDatePickerCell.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Cell/XLFormDescriptorCell.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Cell/XLFormImageCell.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Cell/XLFormImageCell.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Cell/XLFormInlineRowDescriptorCell.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Cell/XLFormInlineSelectorCell.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Cell/XLFormInlineSelectorCell.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Cell/XLFormLeftRightSelectorCell.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Cell/XLFormLeftRightSelectorCell.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Cell/XLFormPickerCell.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Cell/XLFormPickerCell.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Cell/XLFormSegmentedCell.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Cell/XLFormSegmentedCell.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Cell/XLFormSelectorCell.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Cell/XLFormSelectorCell.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Cell/XLFormSliderCell.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Cell/XLFormSliderCell.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Cell/XLFormStepCounterCell.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Cell/XLFormStepCounterCell.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Cell/XLFormSwitchCell.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Cell/XLFormSwitchCell.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Cell/XLFormTextFieldCell.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Cell/XLFormTextFieldCell.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Cell/XLFormTextViewCell.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Cell/XLFormTextViewCell.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Controllers/XLFormOptionsObject.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Controllers/XLFormOptionsObject.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Controllers/XLFormOptionsViewController.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Controllers/XLFormOptionsViewController.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Controllers/XLFormRowDescriptorViewController.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Controllers/XLFormViewController.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Controllers/XLFormViewController.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Descriptors/XLFormDescriptor.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Descriptors/XLFormDescriptor.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Descriptors/XLFormDescriptorDelegate.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Descriptors/XLFormRowDescriptor.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Descriptors/XLFormRowDescriptor.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Descriptors/XLFormSectionDescriptor.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Descriptors/XLFormSectionDescriptor.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Helpers/NSArray+XLFormAdditions.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Helpers/NSArray+XLFormAdditions.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Helpers/NSExpression+XLFormAdditions.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Helpers/NSExpression+XLFormAdditions.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Helpers/NSObject+XLFormAdditions.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Helpers/NSObject+XLFormAdditions.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Helpers/NSPredicate+XLFormAdditions.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Helpers/NSPredicate+XLFormAdditions.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Helpers/NSString+XLFormAdditions.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Helpers/NSString+XLFormAdditions.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Helpers/UIView+XLFormAdditions.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Helpers/UIView+XLFormAdditions.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Helpers/Views/XLFormRightDetailCell.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Helpers/Views/XLFormRightDetailCell.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Helpers/Views/XLFormRightImageButton.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Helpers/Views/XLFormRightImageButton.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Helpers/Views/XLFormRowNavigationAccessoryView.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Helpers/Views/XLFormRowNavigationAccessoryView.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Helpers/Views/XLFormTextView.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Helpers/Views/XLFormTextView.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Validation/XLFormRegexValidator.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Validation/XLFormRegexValidator.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Validation/XLFormValidationStatus.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Validation/XLFormValidationStatus.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Validation/XLFormValidator.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Validation/XLFormValidator.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/Validation/XLFormValidatorProtocol.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/XLForm.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XL/XLForm.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/XLForm/XLForm/XLForm.bundle/forwardarrow@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYModel/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYModel/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYModel/YYModel/NSObject+YYModel.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYModel/YYModel/NSObject+YYModel.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYModel/YYModel/YYClassInfo.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYModel/YYModel/YYClassInfo.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYModel/YYModel/YYModel.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/Component/YYTextContainerView.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/Component/YYTextContainerView.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/Component/YYTextDebugOption.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/Component/YYTextDebugOption.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/Component/YYTextEffectWindow.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/Component/YYTextEffectWindow.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/Component/YYTextInput.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/Component/YYTextInput.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/Component/YYTextKeyboardManager.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/Component/YYTextKeyboardManager.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/Component/YYTextLayout.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/Component/YYTextLayout.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/Component/YYTextLine.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/Component/YYTextLine.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/Component/YYTextMagnifier.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/Component/YYTextMagnifier.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/Component/YYTextSelectionView.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/Component/YYTextSelectionView.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/String/YYTextArchiver.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/String/YYTextArchiver.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/String/YYTextAttribute.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/String/YYTextAttribute.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/String/YYTextParser.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/String/YYTextParser.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/String/YYTextRubyAnnotation.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/String/YYTextRubyAnnotation.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/String/YYTextRunDelegate.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/String/YYTextRunDelegate.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/Utility/NSAttributedString+YYText.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/Utility/NSAttributedString+YYText.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/Utility/NSParagraphStyle+YYText.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/Utility/NSParagraphStyle+YYText.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/Utility/UIPasteboard+YYText.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/Utility/UIPasteboard+YYText.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/Utility/UIView+YYText.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/Utility/UIView+YYText.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/Utility/YYTextAsyncLayer.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/Utility/YYTextAsyncLayer.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/Utility/YYTextTransaction.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/Utility/YYTextTransaction.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/Utility/YYTextUtilities.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/Utility/YYTextUtilities.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/Utility/YYTextWeakProxy.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/Utility/YYTextWeakProxy.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/YYLabel.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/YYLabel.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/YYText.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/YYTextView.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Runner/laji/YYText/YYText/YYTextView.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Global/XContants.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Global/XContants.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Global/dataHelper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Global/dataHelper.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/java/com/example/demo/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/java/com/example/demo/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../readBookServer/commandList/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../readBookServer/commandList/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../readBookServer/readBookServer/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../readBookServer/readBookServer/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../readBookServer/readBookServer/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../readBookServer/readBookServer/urls.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -64,10 +577,10 @@
     <session id="1846092668">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="38" />
+          <entry key="project.closed" value="39" />
           <entry key="project.open.time.1" value="6" />
           <entry key="project.open.time.10" value="5" />
-          <entry key="project.open.time.11" value="4" />
+          <entry key="project.open.time.11" value="5" />
           <entry key="project.open.time.12" value="3" />
           <entry key="project.open.time.13" value="3" />
           <entry key="project.open.time.15" value="1" />
@@ -76,7 +589,7 @@
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="5" />
           <entry key="project.open.time.9" value="8" />
-          <entry key="project.opened" value="39" />
+          <entry key="project.opened" value="40" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -111,11 +624,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/menu/MenuViewController.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="98" column="29" lean-forward="true" selection-start-line="98" selection-start-column="29" selection-end-line="98" selection-end-column="29" />
+            <state relative-caret-position="1395">
+              <caret line="99" column="22" selection-start-line="99" selection-start-column="22" selection-end-line="99" selection-end-column="22" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -126,7 +639,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/flutter/bin/cache/pkg/sky_engine/lib/core/list.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
+            <state relative-caret-position="9000">
               <caret line="602" column="10" selection-start-line="602" selection-start-column="10" selection-end-line="602" selection-end-column="10" />
             </state>
           </provider>
@@ -135,7 +648,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/flutter/bin/cache/pkg/sky_engine/lib/core/iterable.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
+            <state relative-caret-position="7275">
               <caret line="487" column="14" selection-start-line="487" selection-start-column="14" selection-end-line="487" selection-end-column="14" />
             </state>
           </provider>
@@ -144,8 +657,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/Global/dataHelper.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="48" column="3" lean-forward="true" selection-start-line="48" selection-start-column="3" selection-end-line="48" selection-end-column="3" />
+            <state relative-caret-position="675">
+              <caret line="48" column="3" selection-start-line="48" selection-start-column="3" selection-end-line="48" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -153,13 +666,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/Global/cacehHelper.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-140">
+            <state relative-caret-position="345">
               <caret line="24" selection-start-line="24" selection-end-line="24" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/Global/XContants.dart">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="334">
@@ -174,7 +687,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/Global/XHttp.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
+            <state relative-caret-position="390">
               <caret line="27" column="8" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="8" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
@@ -186,7 +699,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/rankList/rankDetail/V/leftList.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1192">
+            <state relative-caret-position="1215">
               <caret line="82" column="33" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="33" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
@@ -198,7 +711,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/rankList/rankDetail/rankDetail.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
+            <state relative-caret-position="330">
               <caret line="25" selection-start-line="25" selection-end-line="25" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
@@ -210,7 +723,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/rankList/rankDetail/V/rightList.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
+            <state relative-caret-position="75">
               <caret line="12" selection-start-line="12" selection-end-line="12" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
@@ -330,29 +843,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="book_view" type="1abcf292:AndroidViewProjectNode" />
-              <item name="book_view" type="e9137016:NonAndroidModuleNode" />
-            </path>
-            <path>
-              <item name="book_view" type="1abcf292:AndroidViewProjectNode" />
-              <item name="book_view" type="e9137016:NonAndroidModuleNode" />
-              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="book_view" type="1abcf292:AndroidViewProjectNode" />
-              <item name="book_view" type="e9137016:NonAndroidModuleNode" />
-              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
-              <item name="C" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -491,10 +981,33 @@
         </subPane>
         <option name="show-excluded-files" value="false" />
       </pane>
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="book_view" type="1abcf292:AndroidViewProjectNode" />
+              <item name="book_view" type="e9137016:NonAndroidModuleNode" />
+            </path>
+            <path>
+              <item name="book_view" type="1abcf292:AndroidViewProjectNode" />
+              <item name="book_view" type="e9137016:NonAndroidModuleNode" />
+              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="book_view" type="1abcf292:AndroidViewProjectNode" />
+              <item name="book_view" type="e9137016:NonAndroidModuleNode" />
+              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
+              <item name="C" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536997505093" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537113646842" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -973,16 +1486,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/menu/MenuViewController.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1395">
+          <caret line="99" column="22" selection-start-line="99" selection-start-column="22" selection-end-line="99" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/flutter/bin/cache/pkg/sky_engine/lib/core/list.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9000">
+          <caret line="602" column="10" selection-start-line="602" selection-start-column="10" selection-end-line="602" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/flutter/bin/cache/pkg/sky_engine/lib/core/iterable.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7275">
+          <caret line="487" column="14" selection-start-line="487" selection-start-column="14" selection-end-line="487" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Global/dataHelper.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="48" column="3" selection-start-line="48" selection-start-column="3" selection-end-line="48" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/Global/cacehHelper.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-140">
+        <state relative-caret-position="345">
           <caret line="24" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/Global/XHttp.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
+        <state relative-caret-position="390">
           <caret line="27" column="8" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="8" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
@@ -990,23 +1534,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/flutter/bin/cache/pkg/sky_engine/lib/core/list.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="602" column="10" selection-start-line="602" selection-start-column="10" selection-end-line="602" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/flutter/bin/cache/pkg/sky_engine/lib/core/iterable.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="487" column="14" selection-start-line="487" selection-start-column="14" selection-end-line="487" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/rankList/rankDetail/V/leftList.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1192">
+        <state relative-caret-position="1215">
           <caret line="82" column="33" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="33" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
@@ -1016,8 +1546,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/rankList/rankDetail/rankDetail.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
+        <state relative-caret-position="330">
           <caret line="25" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/rankList/rankDetail/V/rightList.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -1028,33 +1568,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="334">
           <caret line="25" column="51" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rankList/rankDetail/V/rightList.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Global/dataHelper.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="48" column="3" lean-forward="true" selection-start-line="48" selection-start-column="3" selection-end-line="48" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/menu/MenuViewController.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="98" column="29" lean-forward="true" selection-start-line="98" selection-start-column="29" selection-end-line="98" selection-end-column="29" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>

@@ -35,4 +35,22 @@ class XHttp{
     }
 
   }
+  static awaitGetWithCompleteUrl(String url,Map<String, String> params) async {
+    print(url);
+    Dio dio = new Dio();
+    dio.onHttpClientCreate = (HttpClient client) {
+      client.badCertificateCallback =
+          (X509Certificate cert, String host, int port) {
+        return true;
+      };
+    };
+    try{
+      Response<String> response=await dio.get(url,data: params);
+      return response.data.toString();
+    }on DioError catch(e){
+      print(e);
+      return null;
+    }
+
+  }
 }

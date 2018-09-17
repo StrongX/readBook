@@ -97,7 +97,7 @@ class ReadViewControllerState extends State<ReadViewController> {
     print("last");
     DataHelper db = await getDataHelp();
     await db.updateOffset(chapter['bookName'], 0.0);
-    chapter = await db.getLastChapter(chapter['bookName'], chapter["id"]);
+    chapter = await db.getPreChapter(chapter['bookName'], chapter["id"]);
     if (chapter != null) {
       getDataFromHttp();
     }

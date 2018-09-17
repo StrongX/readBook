@@ -95,6 +95,22 @@ class DataHelper{
       return list.last;
     }
   }
+  getFirstChapter(String bookName)async{//第一章
+    List list = await database.rawQuery('select * from Chapter where bookName = "$bookName" limit 1');
+    if(list.length!=0){
+      return list.first;
+    }else{
+      return null;
+    }
+  }
+  getLastChapter(String bookName)async{//最后一章
+    List list = await database.rawQuery('select * from Chapter where bookName = "$bookName" order by id desc limit 1');
+    if(list.length!=0){
+      return list.first;
+    }else{
+      return null;
+    }
+  }
   chapterIsCache(String bookName,String chapterName)async{
     List list = await database.rawQuery('select * from ChapterCache where bookName = "$bookName" and chapterName = "$chapterName"');
     if(list.length == 0){
@@ -115,14 +131,14 @@ class DataHelper{
     List chapters = await database.rawQuery('select * from Chapter where bookName = "$bookName"');
     return chapters;
   }
-  Future<Map> getNextChapter(String bookName,int id)async{
+  Future<Map> getNextChapter(String bookName,int id)async{//下一章
     List chapters = await database.rawQuery('select * from Chapter where bookName = "$bookName" and id>"$id" limit 1');
     if(chapters.length==0){
       return null;
     }
     return chapters.first;
   }
-  Future<Map> getLastChapter(String bookName,int id)async{
+  Future<Map> getPreChapter(String bookName,int id)async{ //上一章
     List chapters = await database.rawQuery('select * from Chapter where bookName = "$bookName" and id<"$id"');
     return chapters.last;
   }

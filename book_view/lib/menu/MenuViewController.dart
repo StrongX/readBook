@@ -63,6 +63,9 @@ class MenuViewControllerState extends State<MenuViewController> {
       int skip = regexData['skip'];
       List titles = find.getListWithRegex(chapterRegex);
       List links = find.getListWithRegex(linkRegex);
+      if(skip>titles.length){
+        skip = titles.length;
+      }
       titles = titles.sublist(skip);
       links = links.sublist(skip);
       print(titles);
@@ -91,6 +94,9 @@ class MenuViewControllerState extends State<MenuViewController> {
       int skip = regexData['skip'];
       List titles = find.getListWithRegex(chapterRegex);
       List links = find.getListWithRegex(linkRegex);
+      if(skip>titles.length){
+        skip = titles.length;
+      }
       titles = titles.sublist(skip);
       links = links.sublist(skip);
       DataHelper db = await getDataHelp();

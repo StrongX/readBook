@@ -11,7 +11,9 @@ import 'package:book_view/Global/Adnet.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:book_view/Global/XHttp.dart';
 import 'package:flutter/cupertino.dart';
-
+import 'package:book_view/bookrack/M/BookRackModel.dart';
+import 'package:book_view/Global/V/XHUD.dart';
+import 'dart:async';
 class BookRack extends StatefulWidget {
   @override
   BookRackState createState() => new BookRackState();
@@ -20,6 +22,9 @@ class BookRack extends StatefulWidget {
 class BookRackState extends State<BookRack> {
   RefreshController refreshController = RefreshController();
   List rackList = [];
+  List lastChapterList = [];
+  XHud hud = XHud();
+
 
   BookRackState() {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light
@@ -81,6 +86,15 @@ class BookRackState extends State<BookRack> {
   getRackList() async {
     DataHelper db = await getDataHelp();
     rackList = await db.getRackList();
+    lastChapterList = [];
+    for(Map book in rackList){
+      Map lastChapter = await db.getLastChapter(book['bookName']);
+      if(lastChapter!=null){
+        lastChapterList.add({"lastChapter":"最新更新 "+lastChapter['chapterName'],"lastChapterDate":""});
+      }else{
+        lastChapterList.add({"lastChapter":book['lastChapter'],"lastChapterDate":book['lastChapterDate']});
+      }
+    }
   }
 
   startRead(index) async {
@@ -175,12 +189,13 @@ class BookRackState extends State<BookRack> {
         ),
       ],
     );
+    Map lastChapter = lastChapterList[i];
     var lastChapterRow = new Row(
       children: <Widget>[
         new Expanded(
 //          padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
           child: new Text(
-            book['lastChapter'] + "  \n. " + book['lastChapterDate'],
+            lastChapter['lastChapter'] + "  \n. " + lastChapter['lastChapterDate'],
             style: TextStyle(
                 color: const Color.fromRGBO(107, 125, 167, 1.0),
                 fontSize: 11.0),
@@ -257,12 +272,17 @@ class BookRackState extends State<BookRack> {
   }
 
   void _onRefresh(bool up) {
-    if (up) {
-      //headerIndicator callback
-      updateRackList();
-    } else {
-      //footerIndicator Callback
-    }
+    Future.delayed(const Duration(milliseconds: 300))
+        .then((val) {
+      if (up) {
+        //headerIndicator callback
+        updateRackList();
+      } else {
+        //footerIndicator Callback
+      }
+        });
+
+
   }
 
 
@@ -294,7 +314,26 @@ class BookRackState extends State<BookRack> {
           title: new Text("书架"),
           backgroundColor: XColor.appBarColor,
           textTheme: TextTheme(title: XTextStyle.navigationTitleStyle),
+          actions: <Widget>[
+            CupertinoButton(child: Text("检查更新",style: TextStyle(color: Colors.white),),
+
+            onPressed: (){
+              hud.state.show();
+              BookRackModel.checkBookUpdate((){
+                hud.state.showSuccessWithString("更新成功");
+                updateRackList();
+              });
+            },
+            )
+          ],
         ),
-        body: _body);
+        body:  Stack(
+          children: <Widget>[
+            _body,
+            hud,
+          ],
+        )
+
+    );
   }
 }

@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35ab1461-c0ff-4787-a505-c17882dd39de" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/lib/Global/V/XHUD.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Global/V/XHUD.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Global/dataHelper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Global/dataHelper.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/menu/MenuViewController.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/menu/MenuViewController.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/read/readViewController.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/read/readViewController.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/rankList/rankDetail/rankDetail.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/rankList/rankDetail/rankDetail.dart" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -77,19 +74,19 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dart" value="27610" />
+          <entry key="dart" value="27652" />
           <entry key="yaml" value="159" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Dart" value="27610" />
+          <entry key="Dart" value="27652" />
           <entry key="YAML" value="159" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="dart" value="274" />
+          <entry key="dart" value="275" />
           <entry key="java" value="2" />
           <entry key="xml" value="1" />
           <entry key="yaml" value="9" />
@@ -97,7 +94,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Dart" value="274" />
+          <entry key="Dart" value="275" />
           <entry key="JAVA" value="2" />
           <entry key="XML" value="1" />
           <entry key="YAML" value="9" />
@@ -110,8 +107,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/menu/MenuViewController.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-194">
-              <caret line="24" column="17" lean-forward="true" selection-start-line="24" selection-end-line="25" />
+            <state relative-caret-position="322">
+              <caret line="32" column="3" lean-forward="true" selection-start-line="28" selection-start-column="2" selection-end-line="32" selection-end-column="3" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -128,11 +125,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/read/readViewController.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="150" column="53" selection-start-line="150" selection-start-column="53" selection-end-line="150" selection-end-column="53" />
+            <state relative-caret-position="196">
+              <caret line="154" column="41" selection-start-line="154" selection-start-column="41" selection-end-line="154" selection-end-column="41" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/rankList/rankDetail/rankDetail.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="362">
+              <caret line="32" column="6" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -178,15 +187,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1152">
               <caret line="136" column="23" selection-start-line="136" selection-end-line="137" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/flutter/packages/flutter/lib/src/cupertino/dialog.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15285">
-              <caret line="1029" column="12" selection-start-line="1029" selection-start-column="12" selection-end-line="1029" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -292,7 +292,6 @@
         <option value="$PROJECT_DIR$/lib/bookDetail/bookDetailViewController.dart" />
         <option value="$PROJECT_DIR$/pubspec.yaml" />
         <option value="$PROJECT_DIR$/lib/searchBook/searchResultViewController.dart" />
-        <option value="$PROJECT_DIR$/lib/rankList/rankDetail/rankDetail.dart" />
         <option value="$PROJECT_DIR$/lib/Global/XContants.dart" />
         <option value="$PROJECT_DIR$/lib/rankList/rankDetail/V/rightList.dart" />
         <option value="$PROJECT_DIR$/lib/BookRackModel.dart" />
@@ -303,6 +302,7 @@
         <option value="$PROJECT_DIR$/lib/Global/dataHelper.dart" />
         <option value="$PROJECT_DIR$/lib/Global/V/XHUD.dart" />
         <option value="$PROJECT_DIR$/lib/read/readViewController.dart" />
+        <option value="$PROJECT_DIR$/lib/rankList/rankDetail/rankDetail.dart" />
       </list>
     </option>
   </component>
@@ -391,6 +391,34 @@
               <item name="book_view" type="b2602c69:ProjectViewProjectNode" />
               <item name="book_view" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="rankList" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="book_view" type="b2602c69:ProjectViewProjectNode" />
+              <item name="book_view" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="rankList" type="462c0819:PsiDirectoryNode" />
+              <item name="rankDetail" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="book_view" type="b2602c69:ProjectViewProjectNode" />
+              <item name="book_view" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="rankList" type="462c0819:PsiDirectoryNode" />
+              <item name="rankDetail" type="462c0819:PsiDirectoryNode" />
+              <item name="V" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="book_view" type="b2602c69:ProjectViewProjectNode" />
+              <item name="book_view" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="rankList" type="462c0819:PsiDirectoryNode" />
+              <item name="V" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="book_view" type="b2602c69:ProjectViewProjectNode" />
+              <item name="book_view" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
               <item name="read" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -468,7 +496,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537371249546" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537372266178" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -903,13 +931,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1215">
           <caret line="82" column="33" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rankList/rankDetail/rankDetail.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -917,6 +941,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="12" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -934,6 +961,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="417">
           <caret line="46" column="17" selection-start-line="37" selection-start-column="10" selection-end-line="46" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -991,16 +1021,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/menu/MenuViewController.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-194">
-          <caret line="24" column="17" lean-forward="true" selection-start-line="24" selection-end-line="25" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/Global/dataHelper.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="268">
@@ -1024,8 +1044,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/read/readViewController.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="150" column="53" selection-start-line="150" selection-start-column="53" selection-end-line="150" selection-end-column="53" />
+        <state relative-caret-position="196">
+          <caret line="154" column="41" selection-start-line="154" selection-start-column="41" selection-end-line="154" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/menu/MenuViewController.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="32" column="3" lean-forward="true" selection-start-line="28" selection-start-column="2" selection-end-line="32" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/rankList/rankDetail/rankDetail.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="32" column="6" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>

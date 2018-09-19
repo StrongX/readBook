@@ -16,17 +16,25 @@ class RankDetailViewDetail extends State<RankDetailView> {
   Map model;
 
   RankDetailViewDetail({Key key, @required this.model,});
-
-
+  RankDetailRightList rightList;
+  Widget leftList;
   @override
-  Widget build(BuildContext context) {
-    RankDetailRightList rightList = RankDetailRightList(source: model);
+  initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setup());
+  }
+  setup(){
+    rightList = RankDetailRightList(source: model);
 
-    Widget leftList = RankDetailLeftList(selectedBack: (String chn){
+    leftList = RankDetailLeftList(selectedBack: (String chn){
       rightList.selectedTypeWithChn(chn);
     },);
-
-
+    setState(() {
+      
+    });
+  }
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(model['name']),

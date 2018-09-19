@@ -29,6 +29,7 @@ class XHud extends StatefulWidget {
 class XHudState extends State<XHud> {
   bool _visible = true;
   bool _isSuccess = false;
+  bool _isError = false;
   String _text;
 
   @override
@@ -53,6 +54,7 @@ class XHudState extends State<XHud> {
       return;
     }
     _isSuccess = false;
+    _isError = false;
     _text = text;
     setState(() {
       this._visible = true;
@@ -63,6 +65,7 @@ class XHudState extends State<XHud> {
       return;
     }
     _isSuccess = true;
+    _isError = false;
     _text = text;
     setState(() {
       this._visible = true;
@@ -70,6 +73,21 @@ class XHudState extends State<XHud> {
     Future.delayed(const Duration(milliseconds: 2000))
         .then((val) {
           dismiss();
+    });
+  }
+  void showErrorWithString(String text) {
+    if(widget == null){
+      return;
+    }
+    _isSuccess = false;
+    _isError = true;
+    _text = text;
+    setState(() {
+      this._visible = true;
+    });
+    Future.delayed(const Duration(milliseconds: 2000))
+        .then((val) {
+      dismiss();
     });
   }
   void show() {
@@ -91,8 +109,8 @@ class XHudState extends State<XHud> {
             children: <Widget>[
               new Center(
                 child: new Container(
-                  width: 100.0,
-                  height: 100.0,
+                  width: 150.0,
+                  height: 150.0,
                   decoration: new BoxDecoration(
                       color: widget.containerColor,
                       borderRadius: new BorderRadius.all(
@@ -120,7 +138,7 @@ class XHudState extends State<XHud> {
         children: [
           _getCircularProgress(),
           new Container(
-            width: 90.0,
+            width: 140.0,
             margin: const EdgeInsets.fromLTRB(5.0, 15.0, 5.0, 0.0),
             child: new Text(
               _text,
@@ -134,7 +152,9 @@ class XHudState extends State<XHud> {
   }
 
   Widget _getCircularProgress() {
-    if(_isSuccess){
+    if(_isError){
+      return Icon(Icons.error,color: Colors.redAccent,size: 60.0,);
+    }else if(_isSuccess){
       return Icon(Icons.check,color: Colors.lightGreenAccent,size: 60.0,);
     }else{
       return new CircularProgressIndicator(

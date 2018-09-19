@@ -68,7 +68,7 @@ class MenuViewControllerState extends State<MenuViewController> {
       }
       titles = titles.sublist(skip);
       links = links.sublist(skip);
-      print(titles);
+      print("skip    $skip");
 
       hud.state.showWithString("正在更新本地目录");
 
@@ -97,6 +97,7 @@ class MenuViewControllerState extends State<MenuViewController> {
       if(skip>titles.length){
         skip = titles.length;
       }
+      print("skip    $skip");
       titles = titles.sublist(skip);
       links = links.sublist(skip);
       DataHelper db = await getDataHelp();

@@ -84,12 +84,14 @@ class ReadViewControllerState extends State<ReadViewController> {
 
   nextChapter() async {
     print("next");
-    print(chapter);
     DataHelper db = await getDataHelp();
     await db.updateOffset(chapter['bookName'], 0.0);
-    chapter = await db.getNextChapter(chapter['bookName'], chapter["id"]);
-    if (chapter != null) {
+    Map nextChapter = await db.getNextChapter(chapter['bookName'], chapter["id"]);
+    if (nextChapter != null) {
+      chapter = nextChapter;
       getDataFromHttp();
+    }else{
+      hud.state.showErrorWithString("您已经阅读完全部章节");
     }
   }
 
@@ -97,9 +99,12 @@ class ReadViewControllerState extends State<ReadViewController> {
     print("last");
     DataHelper db = await getDataHelp();
     await db.updateOffset(chapter['bookName'], 0.0);
-    chapter = await db.getPreChapter(chapter['bookName'], chapter["id"]);
-    if (chapter != null) {
+    Map lastChapter = await db.getPreChapter(chapter['bookName'], chapter["id"]);
+    if (lastChapter != null) {
+      chapter = lastChapter;
       getDataFromHttp();
+    }else{
+      hud.state.showErrorWithString("这已经是第一章了");
     }
   }
 
@@ -143,7 +148,7 @@ class ReadViewControllerState extends State<ReadViewController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color.fromRGBO(247, 235, 157, 1.0),
+        backgroundColor: Color.fromRGBO(220, 192, 137, 1.0),
         body: Stack(
           children: <Widget>[
             GestureDetector(

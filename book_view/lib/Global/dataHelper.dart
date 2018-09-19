@@ -3,7 +3,7 @@ import 'package:sqflite/sqflite.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-const dbName = 'test05.db';
+const dbName = 'test06.db';
 
 Future<DataHelper>getDataHelp()async{
   DataHelper helper = DataHelper();
@@ -140,6 +140,9 @@ class DataHelper{
   }
   Future<Map> getPreChapter(String bookName,int id)async{ //上一章
     List chapters = await database.rawQuery('select * from Chapter where bookName = "$bookName" and id<"$id"');
+    if(chapters.length==0){
+      return null;
+    }
     return chapters.last;
   }
   Future<List<Map<String, dynamic>>> getFlowChapter(String bookName,int id)async{//获取接下来的章节

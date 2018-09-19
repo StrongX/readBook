@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:html/parser.dart' as html show parse;
 import 'package:html/dom.dart' as html;
-
+import "package:pull_to_refresh/src/internals/refresh_physics.dart";
 class ReadHtmlParser{
   List<Widget> _widgets;
   List<TextSpan> _currentTextSpans;
@@ -24,7 +24,7 @@ class ReadHtmlParser{
     Widget tag = Text("继续上拉查看下一章",style: tagStyle,textAlign: TextAlign.center,);
     _widgets.add(tag);
 
-    ListView listView = ListView(children:_widgets,controller: scroll,);
+    ListView listView = ListView(children:_widgets,controller: scroll,physics: new RefreshScrollPhysics(enableOverScroll: true));
     return listView;
   }
 

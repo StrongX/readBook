@@ -30,7 +30,7 @@ class RankDetailViewDetail extends State<RankDetailView> {
       rightList.selectedTypeWithChn(chn);
     },);
     setState(() {
-      
+
     });
   }
   @override

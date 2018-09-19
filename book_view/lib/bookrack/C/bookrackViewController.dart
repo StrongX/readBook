@@ -14,6 +14,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:book_view/bookrack/M/BookRackModel.dart';
 import 'package:book_view/Global/V/XHUD.dart';
 import 'dart:async';
+import 'package:book_view/menu/MenuViewController.dart';
 class BookRack extends StatefulWidget {
   @override
   BookRackState createState() => new BookRackState();
@@ -99,13 +100,25 @@ class BookRackState extends State<BookRack> {
 
   startRead(index) async {
     Map book = rackList[index];
+    DataHelper db = await getDataHelp();
     if (book['currentChapter'] == null) {
-      Navigator.of(context).push(new MaterialPageRoute(
-          builder: (ctx) => SearchResultViewController(
-                bookName: book['bookName'],
-              )));
+      Map firstChapter = await db.getFirstChapter(book['bookName']);
+      if(firstChapter == null){
+        Navigator.of(context).push(new MaterialPageRoute(
+            builder: (ctx) => SearchResultViewController(
+              bookName: book['bookName'],
+            )));
+      }else{
+        String url = firstChapter['menuLink'];
+        print(url);
+        Navigator.of(context).push(new MaterialPageRoute(
+            builder: (ctx) => new MenuViewController(
+              url: url,
+              bookName: book['bookName'],
+            )));
+      }
+
     } else {
-      DataHelper db = await getDataHelp();
       Map chapter =
           await db.getChapter(book['bookName'], book['currentChapter']);
       if (chapter == null) {

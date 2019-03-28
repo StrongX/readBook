@@ -20,6 +20,7 @@ from commandList import views as commandList_views
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$',commandList_views.home,name='home'),
+    url(r'^agreement',commandList_views.agreement,name='agreement'),
     url(r'^rankList',commandList_views.getRankList,name='getRankList'),
     url(r'^checkVersion',commandList_views.checkVersion,name='checkVersion'),
 

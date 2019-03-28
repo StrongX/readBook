@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="flutter6">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/ios/.symlinks/flutter/android-arm64-dynamic-profile/flutter.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

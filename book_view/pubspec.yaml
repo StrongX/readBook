@@ -19,9 +19,9 @@ dependencies:
   dio: ^1.0.4
   sqflite: any
   path_provider: ^0.4.1
-  shared_preferences: ^0.4.2
+  shared_preferences: ^0.4.3
   path: ^1.5.1
-  pull_to_refresh: ^1.1.5
+  pull_to_refresh: ^1.1.6
   flutter_refresh : ^0.0.2
   flutter_slidable: any
 #  flutter_webview_plugin: "0.2.1"

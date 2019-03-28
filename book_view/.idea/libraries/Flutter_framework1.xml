@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Flutter.framework1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/ios/.symlinks/flutter/ios-release/Flutter.framework.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

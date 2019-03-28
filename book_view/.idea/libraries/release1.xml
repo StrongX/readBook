@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="release1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/build/path_provider/intermediates/intermediate-jars/release/res.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/path_provider/intermediates/intermediate-jars/release/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

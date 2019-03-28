@@ -110,14 +110,14 @@
         <entry key="pull_to_refresh">
           <value>
             <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/pull_to_refresh-1.1.5/lib" />
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/pull_to_refresh-1.1.6/lib" />
             </list>
           </value>
         </entry>
         <entry key="shared_preferences">
           <value>
             <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/shared_preferences-0.4.2/lib" />
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/shared_preferences-0.4.3/lib" />
             </list>
           </value>
         </entry>
@@ -194,8 +194,8 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/meta-1.1.6/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/path-1.6.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/path_provider-0.4.1/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/pull_to_refresh-1.1.5/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/shared_preferences-0.4.2/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/pull_to_refresh-1.1.6/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/shared_preferences-0.4.3/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/source_span-1.4.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/sqflite-0.11.2+2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/synchronized-1.5.1+1/lib" />

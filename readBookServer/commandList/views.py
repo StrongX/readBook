@@ -11,6 +11,9 @@ import json
 def home(request):
 	return render(request,'index.html')
 
+def agreement(request):
+	return render(request,'agreement.html')
+
 @csrf_exempt
 def getRankList(request):
 	rankList = []

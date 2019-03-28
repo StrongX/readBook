@@ -26,7 +26,10 @@ class DefaultSetting{
     XHttp.get('/rankList', {}, (Map response)async{
       int code = response['code'];
       if (code == 100) {
+        print("------11112222222");
         SharedPreferences prefs = await SharedPreferences.getInstance();
+        print("------1111");
+
         double myRegexVersion = prefs.getDouble("regexVersion");
         double regexVersion = response['regexVersion'];
         print('myRegexVersion:$myRegexVersion');

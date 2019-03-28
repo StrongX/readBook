@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="release">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/build/sqflite/intermediates/intermediate-jars/release/res.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/sqflite/intermediates/intermediate-jars/release/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

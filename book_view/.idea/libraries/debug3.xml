@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="debug3">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/build/url_launcher/intermediates/intermediate-jars/debug/classes.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/url_launcher/intermediates/intermediate-jars/debug/res.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

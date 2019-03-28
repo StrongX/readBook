@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="libs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/android/app/libs/GDTUnionSDK.4.19.573.min.jar!/" />
+      <root url="jar://$PROJECT_DIR$/android/app/libs/android-query-full.0.26.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/android/app/libs/android-support-v4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/android/app/libs/android-support-v7-recyclerview.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

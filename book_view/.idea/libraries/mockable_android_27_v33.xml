@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="mockable-android-27.v33">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/build/app/generated/mockable-android-27.v3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

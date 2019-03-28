@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="flutter3">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/ios/.symlinks/flutter/android-arm-dynamic-release/flutter.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

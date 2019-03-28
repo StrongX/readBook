@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="flutter-x86">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/build/app/intermediates/flutter/flutter-x86.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

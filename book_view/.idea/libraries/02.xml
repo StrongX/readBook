@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="02">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/build/sqflite/intermediates/transforms/mergeJavaRes/release/0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

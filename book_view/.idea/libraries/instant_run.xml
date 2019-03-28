@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="instant-run">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/build/app/intermediates/incremental-runtime-classes/debug/instant-run.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

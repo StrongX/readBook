@@ -1,39 +1,18 @@
-# readBook
+![logo](https://github.com/StrongX/readBook/blob/master/meta/icon512.png?raw=true)
 
-#### 项目介绍
-{**以下是码云平台说明，您可以替换为您的项目简介**
-码云是开源中国推出的基于 Git 的代码托管平台（同时支持 SVN）。专为开发者提供稳定、高效、安全的云端软件开发协作平台
-无论是个人、团队、或是企业，都能够用码云实现代码托管、项目管理、协作开发。企业项目请看 [https://gitee.com/enterprises](https://gitee.com/enterprises)}
+[Github](https://github.com/StrongX/readBook)
+> 用flutter写的一个比较完整的应用《书阁》（曾经尝试上架苹果，结果被拒了，所以干脆开源了），当然在设计模式等方面还不是很熟悉在flutter中需要怎么去架构，包括代码的规范等等，这部分有同学感兴趣可以改好提merge。
+`《书阁》app中所有的数据都是直接来自起点和第三方网站，爬取html页面之后，使用正则分析来获取资源，相当于简易的爬虫了。`
 
-#### 软件架构
-软件架构说明
+# 已经完成的功能：
+- 从起点获取各类排行榜的书单
+- 从起点获取书籍的详细信息
+- 实现了加入书架的功能
+- 从第三方网站查找书籍信息
+- 从第三方网站获取目录信息和章节内容
+- 实现了书籍的缓存功能
 
-
-#### 安装教程
-
-1. xxxx
-2. xxxx
-3. xxxx
-
-#### 使用说明
-
-1. xxxx
-2. xxxx
-3. xxxx
-
-#### 参与贡献
-
-1. Fork 本项目
-2. 新建 Feat_xxx 分支
-3. 提交代码
-4. 新建 Pull Request
-
-
-#### 码云特技
-
-1. 使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2. 码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3. 你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4. [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5. 码云官方提供的使用手册 [http://git.mydoc.io/](http://git.mydoc.io/)
-6. 码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+# 截图
+![排行榜](https://github.com/StrongX/readBook/blob/master/meta/0x0ss%20(1).jpg?raw=true)
+![目录](https://github.com/StrongX/readBook/blob/master/meta/0x0ss%20(2).jpg?raw=true)
+![阅读界面](https://github.com/StrongX/readBook/blob/master/meta/0x0ss%20(3).jpg?raw=true)

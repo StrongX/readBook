@@ -17,6 +17,7 @@
 - 实现了书籍的缓存功能
 
 # 截图
+![书架](https://github.com/StrongX/readBook/blob/master/meta/0x0ss.jpg?raw=true)
 ![排行榜](https://github.com/StrongX/readBook/blob/master/meta/0x0ss%20(1).jpg?raw=true)
 ![目录](https://github.com/StrongX/readBook/blob/master/meta/0x0ss%20(2).jpg?raw=true)
 ![阅读界面](https://github.com/StrongX/readBook/blob/master/meta/0x0ss%20(3).jpg?raw=true)

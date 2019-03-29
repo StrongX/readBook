@@ -7,6 +7,9 @@
 
 有问题可以在github提Issues  欢迎交流！！！！
 
+book_view目录中为flutter项目
+readBookServer中是一个响应的简单的Django服务器,忽略就好了，我应该在我自己线上服务器中部署好了。
+
 # flutter分支
 `dev`
 

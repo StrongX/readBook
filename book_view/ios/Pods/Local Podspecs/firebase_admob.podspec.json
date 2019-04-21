@@ -1,0 +1,33 @@
+{
+  "name": "firebase_admob",
+  "version": "0.0.1",
+  "summary": "Firebase Admob plugin for Flutter.",
+  "description": "Firebase Admob plugin for Flutter.",
+  "homepage": "https://github.com/flutter/plugins/tree/master/packages/firebase_admob",
+  "license": {
+    "file": "../LICENSE"
+  },
+  "authors": {
+    "Flutter Team": "flutter-dev@googlegroups.com"
+  },
+  "source": {
+    "path": "."
+  },
+  "source_files": "Classes/**/*",
+  "public_header_files": "Classes/**/*.h",
+  "dependencies": {
+    "Flutter": [
+
+    ],
+    "Firebase/Core": [
+
+    ],
+    "Firebase/AdMob": [
+
+    ]
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "static_framework": true
+}

@@ -1,0 +1,26 @@
+{
+  "name": "flutter_custom_tabs",
+  "version": "0.0.1",
+  "summary": "A Flutter plugin to use Chrome Custom Tabs.",
+  "description": "A Flutter plugin to use Chrome Custom Tabs.",
+  "homepage": "https://github.com/droibit/flutter_custom_tabs",
+  "license": {
+    "file": "../LICENSE"
+  },
+  "authors": {
+    "Your Company": "roomful.rooms@gmail.com"
+  },
+  "source": {
+    "path": "."
+  },
+  "source_files": "Classes/**/*",
+  "public_header_files": "Classes/**/*.h",
+  "dependencies": {
+    "Flutter": [
+
+    ]
+  },
+  "platforms": {
+    "ios": "8.0"
+  }
+}
